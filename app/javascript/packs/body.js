@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import CopyToClipboard from 'react-copy-to-clipboard';
+import React from 'react';
 
 function Body(){
 
     return (
-      <div>
-        
+      <div className='display-1'>
+        <p>This is body </p>
       </div>
   )
 }

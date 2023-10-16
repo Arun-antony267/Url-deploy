@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useState, useEffect } from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
 
-function Copy(){
-// const text="Hi this is react body"
+function Copyurl(){
+//  const text="Hi this is react body"
 
-const url="http://127.0.0.1:3000/srtUrl"
+const url=""
 const [text, setText]= useState('')
 
 const fetchInfo = () => {
@@ -30,4 +31,4 @@ function handleCopy(){
   )
 }
 
-export default Copy
+export default Copyurl
