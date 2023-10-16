@@ -63,14 +63,15 @@ end
       $original_url = params[:url]
       @b = $original_url.chomp('\n')
 
-    # if $original_url.present?
+    if $original_url.present?
       if $original_url =~ /\A#{URI::regexp([ 'http', 'https'])}\z/
-      @reply = "$original_url is valid"
-      render 'new'
+        redirect_to :action => 'lookup_code'
+      
     else
       @reply = $original_url
       render 'new'
     end
+  end
   # end
       # if $original_url =~ /\A#{URI::regexp(['http', 'https','['])}\z/
  
