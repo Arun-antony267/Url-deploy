@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     
     get 'home/new'
      post 'home/check_url'
+     post 'home/multi_line'
+     get 'home/check_url'
       get 'home/lookup_code'
       get 'shortened_url', to: 'redirect#index'
       post 'home/redirect'

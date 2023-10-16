@@ -9,8 +9,8 @@
               <input type='text' name='url'/>
                 <%= submit_tag "Create" %>   
          <% end %> <br>
-         <%= form_tag :action => 'check_url' do %> 
-              <textarea rows="2" cols="70" name="url">
+         <%= form_tag :action => 'multi_line' do %> 
+              <textarea rows="2" cols="70" name="multi_url">
                 </textarea>
          <%= submit_tag "Create" %>   
          <% end %> <br>
@@ -22,7 +22,9 @@
      <input type="file" id="myFile" name="filename">
      <input type="submit">
   </form>
+  <%= @array%>
 
+    <%# <%= @input%>
    <%# <%= @reply %> 
    <%= @notice%><br>
    <%= $dis %><br>

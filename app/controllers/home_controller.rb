@@ -4,6 +4,7 @@ class HomeController < ApplicationController
 def index
 
   $short_count = ShortUrl.count 
+  
  
 end
 
@@ -41,6 +42,8 @@ else
 end
 end
 
+
+
 def file 
 
   $file = params[:filename]
@@ -49,20 +52,25 @@ def file
 end
 
 
-  # def multi_line
-  #   $original_url = params[:url]
+  def multi_line
 
-  #   b = $original_url.chomp('\n')
-
-  # end 
+    @input = params[:multi_url]
+    @after = @input.split(",")
+    @size= @after.size
+    # @array=@after[0]
+    
+    for i in [1,2,3] do
+      puts @array=@after[i]
+      
+    end
+    render 'new'
+  end 
    
    
    
     def check_url
       require 'uri'
       $original_url = params[:url]
-      @b = $original_url.chomp('\n')
-
     if $original_url.present?
       if $original_url =~ /\A#{URI::regexp([ 'http', 'https'])}\z/
         redirect_to :action => 'lookup_code'
