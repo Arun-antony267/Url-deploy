@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       
      get'/urlCount', to: 'home#urlCount'
      get '/srtUrl', to: 'home#srtUrl'
+     get '/ogurl', to: 'home#ogurl'   
 
       post 'home/lookup_code'
       get 'home/view'
@@ -18,7 +19,6 @@ Rails.application.routes.draw do
       get 'home/multi_line'
       get 'home/create'
      get 'home/show'
-    #  post 'home/show'
      get '/user/signup'
      post '/user/signup'
      post '/user/create'

@@ -68,7 +68,7 @@ end
         redirect_to :action => 'lookup_code'
       
     else
-      @reply = $original_url
+      @reply = 'Invalid url' 
       render 'new'
     end
   end
@@ -112,16 +112,16 @@ end
     end
     
     
-    def show
+    def ogurl
 
-      @original_url = $original_url
-      @shortened_url = $shortened_url
+      @original_url = $original_url.to_json
+      render json: @original_url
         
     end
 
     def srtUrl
     
-      @shortened_url = $shortened_url
+      @shortened_url = $shortened_url.to_json
       render json: @shortened_url
 
     end
