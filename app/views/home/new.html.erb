@@ -1,0 +1,29 @@
+
+<p>Hello <%= $name%>
+
+    <div class='container'>
+         <%= form_tag :action => 'check_url' do %> 
+         <%# <%= text_area(name="url",'', size: '50x2')   %> 
+              <p>URL</p>
+              <textarea rows="2" cols="50" name="url" >
+                </textarea>
+         <%= submit_tag "Create" %>   
+         <% end %> <br>
+   
+   <br><p><%= @reply %> 
+   <%# <div id='button'> %>
+
+  <form action="file">
+     <input type="file" id="myFile" name="filename">
+     <input type="submit">
+  </form>
+
+   <%# <%= @reply %> 
+   <%= @notice%><br>
+   <%= $dis %><br>
+   <%# <%=  $pdfstatus%> 
+   
+  <br><%= link_to 'logout', {:action => 'index'} %>
+  </div>
+
+  </body>

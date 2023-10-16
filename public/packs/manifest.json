@@ -1,0 +1,84 @@
+{
+  "Home.js": "/packs/js/Home-7b4e352c6b1f6c894a99.js",
+  "Home.js.map": "/packs/js/Home-7b4e352c6b1f6c894a99.js.map",
+  "application.js": "/packs/js/application-aeea26adb86243c42e58.js",
+  "application.js.map": "/packs/js/application-aeea26adb86243c42e58.js.map",
+  "body.js": "/packs/js/body-676a6797c808c975702d.js",
+  "body.js.map": "/packs/js/body-676a6797c808c975702d.js.map",
+  "buttons.js": "/packs/js/buttons-41069e05cac5a43d4194.js",
+  "buttons.js.map": "/packs/js/buttons-41069e05cac5a43d4194.js.map",
+  "count.js": "/packs/js/count-fdd27e6caba6d40be4a9.js",
+  "count.js.map": "/packs/js/count-fdd27e6caba6d40be4a9.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/packs/js/application-aeea26adb86243c42e58.js"
+      ],
+      "js.map": [
+        "/packs/js/application-aeea26adb86243c42e58.js.map"
+      ]
+    },
+    "body": {
+      "js": [
+        "/packs/js/body-676a6797c808c975702d.js"
+      ],
+      "js.map": [
+        "/packs/js/body-676a6797c808c975702d.js.map"
+      ]
+    },
+    "buttons": {
+      "js": [
+        "/packs/js/buttons-41069e05cac5a43d4194.js"
+      ],
+      "js.map": [
+        "/packs/js/buttons-41069e05cac5a43d4194.js.map"
+      ]
+    },
+    "count": {
+      "js": [
+        "/packs/js/count-fdd27e6caba6d40be4a9.js"
+      ],
+      "js.map": [
+        "/packs/js/count-fdd27e6caba6d40be4a9.js.map"
+      ]
+    },
+    "header": {
+      "js": [
+        "/packs/js/header-c252eb4673a8e7f3d016.js"
+      ],
+      "js.map": [
+        "/packs/js/header-c252eb4673a8e7f3d016.js.map"
+      ]
+    },
+    "hello_react": {
+      "js": [
+        "/packs/js/hello_react-f5f8da6608b349f6455a.js"
+      ],
+      "js.map": [
+        "/packs/js/hello_react-f5f8da6608b349f6455a.js.map"
+      ]
+    },
+    "Home": {
+      "js": [
+        "/packs/js/Home-7b4e352c6b1f6c894a99.js"
+      ],
+      "js.map": [
+        "/packs/js/Home-7b4e352c6b1f6c894a99.js.map"
+      ]
+    },
+    "server_rendering": {
+      "js": [
+        "/packs/js/server_rendering-752648374d75abd3adee.js"
+      ],
+      "js.map": [
+        "/packs/js/server_rendering-752648374d75abd3adee.js.map"
+      ]
+    }
+  },
+  "header.js": "/packs/js/header-c252eb4673a8e7f3d016.js",
+  "header.js.map": "/packs/js/header-c252eb4673a8e7f3d016.js.map",
+  "hello_react.js": "/packs/js/hello_react-f5f8da6608b349f6455a.js",
+  "hello_react.js.map": "/packs/js/hello_react-f5f8da6608b349f6455a.js.map",
+  "server_rendering.js": "/packs/js/server_rendering-752648374d75abd3adee.js",
+  "server_rendering.js.map": "/packs/js/server_rendering-752648374d75abd3adee.js.map"
+}

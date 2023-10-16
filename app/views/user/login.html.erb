@@ -1,0 +1,18 @@
+
+   <div class="container">
+ <h1> Login  </h1>
+ 
+ <%= form_tag :action => 'check_login' do %>
+ 
+        <label for="email"></label><br>
+        Email: <input class="shortInput" name="email"  type="text"><br>
+
+        <label for="password"></label><br>
+        Password: <input class="shortInput" name="password" type="text"><br>
+          <p><%= submit_tag "login"  %>
+          <%= @error%>
+          <% end%>
+          <p><%= @dis%>
+   
+        <p> <%= link_to 'Back', controller: :home, action: :index  %>
+          </div>
