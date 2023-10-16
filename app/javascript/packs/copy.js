@@ -36,10 +36,14 @@ function handleCopy(){
 }
 
     return (
+        <div className='p-1 '>
+            <div className='box-1'>
       <div className='container'>
         The Original URL is:<input type="text" name="name" value={text2} />
           The Shortened URL is :<input type="text" name="name" value={text} />
           <button onClick={handleCopy}>Copy</button>
+      </div>
+      </div>
       </div>
   )
 }

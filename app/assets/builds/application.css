@@ -605,6 +605,22 @@ progress {
 
 }
 
+.p-1 {
+  font-family: verdana;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height :60vh;
+
+}
+.box-1{
+  text-align: left;
+  height: 300px;
+  width: 500px;
+  background-color: #a9cfe9a1;
+}
+
 .box{
   text-align: center;
   background-color: rgb(255, 255, 255);
