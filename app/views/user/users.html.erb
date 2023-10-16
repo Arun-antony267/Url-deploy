@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<style>
+table {
+ 
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width:100%;
+
+}
+
+td, th {
+  border: 1px solid #000;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+<body>
+        <%= link_to "Download PDF file", user_users_path(format: 'pdf') %>
+
+
+
+      <div class="container">
+<table>     
+  <tr>   
+        <th>ID</th>   
+        <th>Email</th>   
+        <th>Name</th>   
+          
+      </tr>   
+       
+      <% @user.each do |user| %>   
+          <tr>   
+            <td><%= user.id %></td>   
+            <td><%= user.email  %></td>   
+            <td><%= user.name%></td>                 
+           </tr>   
+      <% end %>   <br>
+
+
+      </table>
+      </div>
+      </body>
+</html>

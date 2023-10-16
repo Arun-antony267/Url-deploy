@@ -1,0 +1,1 @@
+Mime::Type.register "applcation/pdfs", :pdf

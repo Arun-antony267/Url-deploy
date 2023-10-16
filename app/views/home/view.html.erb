@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<style>
+table {
+ 
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width:100%;
+
+}
+
+td, th {
+  border: 1px solid #000;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+<body>
+        <%= link_to "Download PDF file", home_view_path(format: 'pdf') %>
+       <p><%= link_to 'Back', {:action => 'index'} %>
+
+
+      <div class="container">
+<table>     
+  <tr>   
+        <th>Original Url</th>   
+        <th>Shortened Url</th>   
+        <th>Created Date</th>   
+          
+      </tr>   
+       
+      <% @short_url.each do |short_url| %>   
+          <tr>   
+            <td><%= short_url.original_url %></td>   
+            <td><%= short_url.shortened_url %></td>   
+            <td><%= short_url.created_at%></td>                 
+           </tr>   
+      <% end %>   <br>
+
+
+      </table>
+      </div>
+      </body>
+</html>
