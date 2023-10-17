@@ -76,6 +76,8 @@ $original_url = $after[$size]
             @reply = 'Invalid url' 
           render 'new'
          end
+         @reply = 'Invalid url' 
+         render 'new'
      end
     else
       @reply = 'No url' 
