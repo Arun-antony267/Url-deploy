@@ -10,6 +10,8 @@ Rails.application.routes.draw do
       get 'home/lookup_code'
       get 'shortened_url', to: 'redirect#index'
       post 'home/redirect'
+      get 'home/next'
+      post 'home/next'
       
      get'/urlCount', to: 'home#urlCount'
      get '/srtUrl', to: 'home#srtUrl'
