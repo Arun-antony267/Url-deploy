@@ -56,18 +56,28 @@ end
 
     @input = params[:multi_url]
     @after = @input.split(",")
-    @size= @after.size
-    # @array=@after[0]
-    
-    for i in [1,2,3] do
-      puts @array=@after[i]
-      
+    @size= @after.size 
+   
+    begin
+      num=0;
+      if @after[num].present?
+        $original_url =@after[num]
+        if $original_url =~ /\A#{URI::regexp([ 'http', 'https'])}\z/
+          redirect_to :action => 'lookup_code'
+        
+      else
+        @reply = 'Invalid url' 
+        render 'new'
+      end
     end
-    render 'new'
+    
+        num= num+1
+      end 
+      
+    #  render 'new'
+
   end 
-   
-   
-   
+ 
     def check_url
       require 'uri'
       $original_url = params[:url]

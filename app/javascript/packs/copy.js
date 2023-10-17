@@ -41,7 +41,10 @@ function handleCopy(){
       <div className='container'>
         The Original URL is:<input type="text" name="name" value={text2} />
           The Shortened URL is :<input type="text" name="name" value={text} />
-          <button onClick={handleCopy}>Copy</button>
+          <button class="btn btn-outline-success" onClick={handleCopy}>Copy</button>
+          <a href="/home/new">
+              <button class="btn btn-outline-success" type="button">Next</button>
+              </a>
       </div>
       </div>
       </div>
