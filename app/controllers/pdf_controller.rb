@@ -1,46 +1,29 @@
-require 'pdf/reader'
- require 'open-uri'
-
 class PdfController < ApplicationController
 
     def read_pdf
-
-    @pdf_file = $file
-
-    # pdf_reader = PDF::Reader.new(@pdf_file)
-
-
-    if @pdf_file .present?
-
-       
-        $pdfstatus = "Pdf uploaded"
-
-        redirect_to :action => 'print_pdf'
-        # redirect_to controller: "home", action: "new"
-    else
-        $pdfstatus ="Pdf not uploaded"
-
         redirect_to controller: "home", action: "new"
-    end
-   
+     end
 
-    # pdf_reader.pages.each do |page|
-    
-    
-end
-
-
-      def print_pdf
-        
-        io =open($file)
-        reader = PDF::Reader.new(io)
-
-        puts reader.pdf_version
-        puts reader.info
-        puts reader.metadata
-        puts reader.page_count
-
+     def uploadFile
+        post = DataFile.save(  $file)
         redirect_to controller: "home", action: "new"
-      end
-      
-end
+     end
+  end
+
+#     def read_pdf
+
+#     @pdf = $file
+#     name = upload[@pdf]
+#     directory = "/home/arun"
+#     # create the file path
+#     path = File.join(directory, name)
+#     aFile = File.open(path, "r")
+#    if aFile
+#     $value  = aFile.sysread(300)
+#    puts $value 
+#    redirect_to controller: "home", action: "new"
+#   else 
+#    puts "Unable to open file!"
+#    redirect_to controller: "home", action: "new"
+#    end
+    

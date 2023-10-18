@@ -46,8 +46,8 @@ end
 
 def file 
 
-  $file = params[:filename]
-  redirect_to controller: :pdf, action: :read_pdf
+  $file = params[:myFile]
+  redirect_to controller: :pdf, action: :uploadFile
  
 end
 
@@ -68,20 +68,20 @@ $original_url = $after[$size]
   if $size!= -1 
       if $original_url.present?
          if $original_url =~ /\A#{URI::regexp([ 'http', 'https'])}\z/
-          @reply = 'valid url'
-          @array = $original_url
-          redirect_to :action => 'lookup_code'
+           @reply = 'valid url'
+           @array = $original_url
+           redirect_to :action => 'lookup_code'
     
            else
             @reply = 'Invalid url' 
-          render 'new'
-         end
+           render 'new'
+          end
          @reply = 'Invalid url' 
          render 'new'
-     end
-    else
-      @reply = 'No url' 
-    render 'show'
+      end
+      else
+      @reply = 'No More url' 
+      render 'new'
    end
    
 end
@@ -101,17 +101,9 @@ end
       render 'new'
     end
   end
-  # end
-      # if $original_url =~ /\A#{URI::regexp(['http', 'https','['])}\z/
- 
-      #       redirect_to :action => 'lookup_code'
-      # else
-      #   @reply = 'Invalid url' 
-      #   render 'new'
-      # end
-    # end
     end
 
+    
     def lookup_code
       @display = "https://test.tin.ee/"
       @string = SecureRandom.uuid[0..6]

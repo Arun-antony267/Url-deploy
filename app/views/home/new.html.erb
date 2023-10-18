@@ -2,33 +2,29 @@
 <p>Hello <%= $name%>
 
     <div class='container'>
-         
-         <%# <%= text_area(name="url",'', size: '50x2')   %> 
               <p>URL</p>
                <%= form_tag :action => 'check_url' do %> 
               <input type='text' name='url'/>
                 <%= submit_tag "Create" %>   
          <% end %> <br>
          <%= form_tag :action => 'multi_line' do %> 
-              <textarea rows="2" cols="70" name="multi_url">
-                </textarea>
+              <textarea  rows="2" cols="70" name="multi_url"></textarea>
          <%= submit_tag "Create" %>   
          <% end %> <br>
    
    <br><p><%= @reply %> 
-   <%# <div id='button'> %>
+    
+    <br><p>File Upload</p>
 
   <form action="file">
-     <input type="file" id="myFile" name="filename">
+     <input type="file" id="myFile" name="myFile">
      <input type="submit">
   </form>
-  <%= @array%>
-  <br><%= @num%>
-    <%# <%= @input%>
-   <%# <%= @reply %> 
+   <%= @reply %> 
    <%= @notice%><br>
    <%= $dis %><br>
-   <%# <%=  $pdfstatus%> 
+   <%=  $pdfstatus%> 
+   <br><%=$strings%>
    
   <br><%= link_to 'logout', {:action => 'index'} %>
   <br><%= link_to 'refresh', {:action => 'new'} %>

@@ -30,6 +30,8 @@ Rails.application.routes.draw do
      post '/user/login'
      post 'user/check_login'
      get 'user/check_login'
+     get 'pdf/uploadFile'
+     get 'pdf/print_pdf'
       
        post 'home/new'
        post 'home/file'
