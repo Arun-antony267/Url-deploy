@@ -8,8 +8,8 @@ class PdfController < ApplicationController
      
      def next_line
       $size_pdf =  $value.size 
-      @limit = 0;
-      $element = $value [@limit]
+      $limit = 1;
+      $element = $value [$limit]
       @val1 = $element 
       if @val1.present?
          @@file_url =@val1
@@ -24,22 +24,9 @@ class PdfController < ApplicationController
       end
     end
 
-    def new
-      @limit = @@limit+1;
-      $element = $value [@@limit]
-      @val1 = $element 
-      if @val1.present?
-         @@file_url =@val1
-        #  render 'upload'
-          redirect_to :action => 'shorten'
-
-      else
-
-         @a ='no elements left'
-         render 'upload'
-         #  $value  = aFile.sysread(3000)
-      end
-    
+    def new_line
+     @z= 'this is from pdf/new '
+      render 'upload'
     end
 
       

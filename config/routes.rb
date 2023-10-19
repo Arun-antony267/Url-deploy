@@ -18,7 +18,7 @@ Rails.application.routes.draw do
      get '/ogurl', to: 'home#ogurl'  
      get 'pdf/fileogurl', to: 'pdf#fileOgUrl'
      get 'pdf/filesrturl', to: 'pdf#fileSrtUrl'
-     get 'pdf/new'
+     get 'pdf/new_line'
 
      
      post 'home/lookup_code'

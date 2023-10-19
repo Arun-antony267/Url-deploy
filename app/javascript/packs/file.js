@@ -42,7 +42,7 @@ function handleCopy(){
         The Original URL is:<input type="text" name="name" value={text2} />
           The Shortened URL is :<input type="text" name="name" value={text} />
           <button class="btn btn-outline-success" onClick={handleCopy}>Copy</button>
-          <a href="/pdf/new">
+          <a href="/pdf/new_line">
               <button class="btn btn-outline-success" type="button">Next</button>
               </a>
       </div>
