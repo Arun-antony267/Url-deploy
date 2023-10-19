@@ -1,29 +1,93 @@
 class PdfController < ApplicationController
-
-    def read_pdf
-        redirect_to controller: "home", action: "new"
-     end
+  
 
      def uploadFile
-        post = DataFile.save(  $file)
-        redirect_to controller: "home", action: "new"
+        post = DataFile.save($file)
+        redirect_to :action => 'next_line'
      end
-  end
+     
+     def next_line
+      $size_pdf =  $value.size 
+      @@limit = 0;
+      $element = $value [@@limit]
+      @val1 = $element 
+      if @val1.present?
+         @@file_url =@val1
+        #  render 'upload'
+          redirect_to :action => 'shorten'
 
-#     def read_pdf
+      else
 
-#     @pdf = $file
-#     name = upload[@pdf]
-#     directory = "/home/arun"
-#     # create the file path
-#     path = File.join(directory, name)
-#     aFile = File.open(path, "r")
-#    if aFile
-#     $value  = aFile.sysread(300)
-#    puts $value 
-#    redirect_to controller: "home", action: "new"
-#   else 
-#    puts "Unable to open file!"
-#    redirect_to controller: "home", action: "new"
-#    end
+         @a ='no elements left'
+         render 'upload'
+         #  $value  = aFile.sysread(3000)
+      end
+    end
+
+    def new
+      @@limit = @@limit+1;
+      $element = $value [@@limit]
+      @val1 = $element 
+      if @val1.present?
+         @@file_url =@val1
+        #  render 'upload'
+          redirect_to :action => 'shorten'
+
+      else
+
+         @a ='no elements left'
+         render 'upload'
+         #  $value  = aFile.sysread(3000)
+      end
+    
+    end
+
+      
+   
+      def shorten
+         @display = "https://test.tin.ee/"
+         @string = SecureRandom.uuid[0..6]
+         @file_url = @@file_url
+         @@file_srt_url = @display+@string 
+         @reply = 'Valid url'
+         render 'upload'
+         # redirect_to :action => 'display'
+      
+       end
+
+
+      #  def display
+
+      #    @Short_url = ShortUrl.new(original_url: $original_url, shortened_url: $shortened_url)
+     
+      #    if @Short_url.save
+      #      @original_url = $original_url
+      #      @shortened_url = $shortened_url
+      #      @reply = "created succesfully."
+      #      render 'upload'
+             
+      #    else
+      #      redirect_to root_path, notice: "!!!!ERROR!!!!"
+   
+      #    end
+         
+       
+      #  end
+     
+      def fileOgUrl
+
+        @original_url = @@file_url.to_json
+        render json: @original_url
+          
+      end
+  
+      def fileSrtUrl
+      
+        @shortened_url = @@file_srt_url.to_json
+        render json: @shortened_url
+  
+      end
+  
+
+end
     

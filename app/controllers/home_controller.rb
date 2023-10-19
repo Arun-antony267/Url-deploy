@@ -63,7 +63,7 @@ end
 
 
 def next
-$size = $size - 1;
+  $size = $size - 1;
 $original_url = $after[$size]
   if $size!= -1 
       if $original_url.present?
@@ -76,14 +76,14 @@ $original_url = $after[$size]
             @reply = 'Invalid url' 
            render 'new'
           end
-         @reply = 'Invalid url' 
-         render 'new'
+          @reply = 'Invalid url' 
+          render 'new'
       end
       else
       @reply = 'No More url' 
       render 'new'
-   end
    
+  end
 end
 
 
