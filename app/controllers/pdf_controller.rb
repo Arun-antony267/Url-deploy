@@ -8,8 +8,8 @@ class PdfController < ApplicationController
      
      def next_line
       $size_pdf =  $value.size 
-      @@limit = 0;
-      $element = $value [@@limit]
+      @limit = 0;
+      $element = $value [@limit]
       @val1 = $element 
       if @val1.present?
          @@file_url =@val1
@@ -25,7 +25,7 @@ class PdfController < ApplicationController
     end
 
     def new
-      @@limit = @@limit+1;
+      @limit = @@limit+1;
       $element = $value [@@limit]
       @val1 = $element 
       if @val1.present?
