@@ -36,6 +36,7 @@ Rails.application.routes.draw do
      get 'user/check_login'
      get 'pdf/uploadFile'
      get 'pdf/shorten'
+     get 'pdf/display'
       
        post 'home/new'
        post 'home/file'

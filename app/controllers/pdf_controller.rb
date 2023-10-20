@@ -8,25 +8,32 @@ class PdfController < ApplicationController
      
      def next_line
       $size_pdf =  $value.size 
-      $limit = 1;
-      $element = $value [$limit]
+      $size_pdf =$size_pdf -1
+      $element = $value [$size_pdf]
       @val1 = $element 
       if @val1.present?
          @@file_url =@val1
-        #  render 'upload'
           redirect_to :action => 'shorten'
 
       else
 
          @a ='no elements left'
          render 'upload'
-         #  $value  = aFile.sysread(3000)
       end
     end
 
     def new_line
-     @z= 'this is from pdf/new '
-      render 'upload'
+      $size_pdf = $size_pdf - 1
+
+      if $size_pdf != -1
+        @@file_url = $value [$size_pdf]
+        redirect_to :action => 'shorten'
+
+      else 
+        $error101 = 'Limit reached'
+        redirect_to controller: :home, action: :new
+
+      end     
     end
 
       
@@ -37,29 +44,29 @@ class PdfController < ApplicationController
          @file_url = @@file_url
          @@file_srt_url = @display+@string 
          @reply = 'Valid url'
-         render 'upload'
-         # redirect_to :action => 'display'
+    
+         redirect_to :action => 'display'
       
        end
 
 
-      #  def display
+       def display
 
-      #    @Short_url = ShortUrl.new(original_url: $original_url, shortened_url: $shortened_url)
+         @Short_url = ShortUrl.new(original_url: @@file_url, shortened_url: @@file_srt_url)
      
-      #    if @Short_url.save
-      #      @original_url = $original_url
-      #      @shortened_url = $shortened_url
-      #      @reply = "created succesfully."
-      #      render 'upload'
+         if @Short_url.save
+           @original_url = @@file_url
+           @shortened_url = @@file_srt_url
+           @reply = "created succesfully."
+           render 'upload'
              
-      #    else
-      #      redirect_to root_path, notice: "!!!!ERROR!!!!"
+         else
+           redirect_to root_path, notice: "!!!!ERROR!!!!"
    
-      #    end
+         end
          
        
-      #  end
+       end
      
       def fileOgUrl
 
