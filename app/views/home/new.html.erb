@@ -2,33 +2,28 @@
 <p>Hello <%= $name%>
 
     <div class='container'>
-         
-         <%# <%= text_area(name="url",'', size: '50x2')   %> 
-              <p>URL</p>
+              
+              <p>Use for single Urls
                <%= form_tag :action => 'check_url' do %> 
               <input type='text' name='url'/>
                 <%= submit_tag "Create" %>   
          <% end %> <br>
+         <p>Use for multiple urls shortening
          <%= form_tag :action => 'multi_line' do %> 
-              <textarea rows="2" cols="70" name="multi_url">
-                </textarea>
+              <textarea  rows="2" cols="70" name="multi_url"></textarea>
          <%= submit_tag "Create" %>   
          <% end %> <br>
-   
-   <br><p><%= @reply %> 
-   <%# <div id='button'> %>
+   <p>note: Use ',' to seperate between multiple url's.</p>
+    <br><p><%= @reply %> 
+    
+    <br><p>File Upload</p>
 
   <form action="file">
-     <input type="file" id="myFile" name="filename">
+     <input type="file" id="myFile" name="myFile">
      <input type="submit">
   </form>
-  <%= @array%>
-
-    <%# <%= @input%>
-   <%# <%= @reply %> 
-   <%= @notice%><br>
-   <%= $dis %><br>
-   <%# <%=  $pdfstatus%> 
+   <br><%=  $error101%>
+   
    
   <br><%= link_to 'logout', {:action => 'index'} %>
   <br><%= link_to 'refresh', {:action => 'new'} %>
