@@ -92,3 +92,7 @@ gem 'cssbundling-rails', '~> 1.2'
 gem 'react-rails', '~> 2.6', '>= 2.6.1'
 
 gem 'simplecov', '~> 0.15.0'
+
+gem 'sqlite3', group: :development
+
+gem 'rails_12factor', group: :production
