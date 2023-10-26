@@ -26,8 +26,10 @@ deploy-prod:
     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
   environment: production
 
-  deploy-heroku:
-  stage: production
-   script:
+ deploy:
+  stage: deploy
+  environment: production
+  script:
     - gem install dpl
     - dpl --provider=heroku --app=$HEROKU_APP_NAME --api-key=$HEROKU_PRODUCTION_KEY
+
