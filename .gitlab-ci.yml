@@ -1,45 +1,33 @@
-image: ruby:latest
-
-services:
-  - mysql:latest
-  - redis:latest
-  - postgres:latest
-
 variables:
-  POSTGRES_DB: database_name
+  HEROKU_APP_NAME: "URL Shortener"
+  HEROKU_PRODUCTION_KEY: "0e2b9b7d-7014-45f9-8cf1-1e54b4086959"
 
-
-cache:
-  paths:
-    - vendor/ruby
-
-
-before_script:
-  - ruby -v  
-  - bundle config set --local deployment true 
-  - bundle install -j $(nproc)
-
-
-rubocop:
+build-job:
+  stage: build
   script:
-    - rubocop
+    - echo "Hello, $GITLAB_USER_LOGIN!"
 
-rspec:
+test-job1:
+  stage: test
   script:
-    - rspec spec
+    - echo "This job tests something"
 
-rails:
-  variables:
-    DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/$POSTGRES_DB"
+test-job2:
+  stage: test
   script:
-    - rails db:migrate
-    - rails db:seed
-    - rails test
+    - echo "This job tests something, but takes more time than test-job1."
+    - echo "After the echo commands complete, it runs the sleep command for 20 seconds"
+    - echo "which simulates a test that runs 20 seconds longer than test-job1"
+    - sleep 20
 
-deploy:
+deploy-prod:
   stage: deploy
-  environment: production
   script:
+    - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
+  environment: production
+
+  deploy-heroku:
+  stage: production
+   script:
     - gem install dpl
     - dpl --provider=heroku --app=$HEROKU_APP_NAME --api-key=$HEROKU_PRODUCTION_KEY
-
