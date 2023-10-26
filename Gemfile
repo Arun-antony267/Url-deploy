@@ -90,3 +90,5 @@ gem 'pdf-reader', '~> 1.4'
 gem 'cssbundling-rails', '~> 1.2'
 
 gem 'react-rails', '~> 2.6', '>= 2.6.1'
+
+gem 'simplecov', '~> 0.15.0'

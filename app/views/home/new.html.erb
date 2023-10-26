@@ -3,12 +3,7 @@
 
     <div class='container'>
               
-              <p>Use for single Urls
-               <%= form_tag :action => 'check_url' do %> 
-              <input type='text' name='url'/>
-                <%= submit_tag "Create" %>   
-         <% end %> <br>
-         <p>Use for multiple urls shortening
+         <p>Use for single and multiple urls shortening
          <%= form_tag :action => 'multi_line' do %> 
               <textarea  rows="2" cols="70" name="multi_url"></textarea>
          <%= submit_tag "Create" %>   
