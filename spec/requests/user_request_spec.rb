@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'rails-helper'
 
 RSpec.describe "Users", type: :request do
 

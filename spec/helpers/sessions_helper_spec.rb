@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'rails-helper'
 
 # Specs in this file have access to a helper object that includes
 # the SessionsHelper. For example:
