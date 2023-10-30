@@ -14,7 +14,7 @@ before_script:
 build:
   stage: build
   script:
-         - bundle exec rails assets:precompile
+         - bundle exec rake assets:precompile
 
 test:
   stage: test 
