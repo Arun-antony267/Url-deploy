@@ -6,8 +6,10 @@ stages:
     - deploy
 
 before_script:
-     -gem install bundler
-     -bundle install
+     - apt-get update -qy
+     - apt-get install -y nodejs
+     - gem install bundler
+     - bundle install
   
 build:
   stage: build
