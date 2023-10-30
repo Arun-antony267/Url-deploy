@@ -9,13 +9,13 @@ function Header() {
         
         <div >
           <a href="/">
-            <button class="btn btn-outline-success" type="button">Home</button>
+            <button class="btn btn-outline-primary" type="button">Home</button>
           </a>
           <a href="/user/login">
-            <button class="btn btn-outline-success" type="button">Login</button>
+            <button class="btn btn-outline-primary" type="button">Login</button>
           </a>
           <a href="/user/signup">
-            <button class="btn btn-outline-success" type="button">Signup</button>
+            <button class="btn btn-outline-primary" type="button">Signup</button>
           </a>
         </div>
        
@@ -25,10 +25,10 @@ function Header() {
         <span class="navbar-toggler-icon"></span>
   <div class="dropdown-content" >
   <a href="/home/view">
-              <button class="btn btn-outline-success" type="button">List Of URL's Shortened</button>
+              <button class="btn btn-outline-primary" type="button">List Of URL's Shortened</button>
               </a>
               <a href="/user/users">
-              <button class="btn btn-outline-success" type="button">List Of Users</button>
+              <button class="btn btn-outline-primary" type="button">List Of Users</button>
               </a>
   </div>
 

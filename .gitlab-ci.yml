@@ -1,14 +1,20 @@
-image: ruby:2.7
+image: ruby:3.1
 
 stages: 
     - build
     - test
     - deploy
 
+before_script:
+    - apt-get update -qy
+    - apt-get install -y nodejs 
+    - gem install bundler
+    - bundle install 
+
 build:
   stage: build
   script:
-         - bundle exec rails assets:precompile
+         - bundle exec rake assets:precompile
 
 test:
   stage: test 
