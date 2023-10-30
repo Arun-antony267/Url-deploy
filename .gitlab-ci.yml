@@ -4,11 +4,11 @@ stages:
     - build
     - test
     - deploy
-    
+
 build:
   stage: build
   script:
-         - bundle exec rake assets:precompile
+         - bundle exec rails assets:precompile
 
 test:
   stage: test 
