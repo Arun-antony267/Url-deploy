@@ -8,7 +8,7 @@ stages:
 build:
   stage: build
   script:
-         - rails s
+         - bundle exec rails assets:precompile
 
 test:
   stage: test 
