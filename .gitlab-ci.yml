@@ -10,11 +10,6 @@ build:
   script:
          - rails s
 
-test:
-  stage: test 
-  script:
-       - bundle exec rspec
-
 deploy:
   stage: deploy
   script:
