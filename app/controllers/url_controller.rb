@@ -7,8 +7,4 @@ def new
 
 end
 
-def one
-@display = "hello from url controller"
-end
-
 end

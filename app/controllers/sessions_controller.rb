@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
 
-    include CurrentUserConcern
+    # include CurrentUserConcern
 
     def create
       user = User.find_by(email: params["user"]["email"]).try(:authenticate, params["user"]["password"])
@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
           logged_in: true,
           user: user
         }
+        redirect_to controller: :home, action: :new
       else
         render json: { status: 401 }
       end
