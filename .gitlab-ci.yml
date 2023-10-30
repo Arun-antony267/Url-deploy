@@ -4,13 +4,7 @@ stages:
     - build
     - test
     - deploy
-
-before_script:
-    - apt-get update -qy
-    - apt-get install -y nodejs 
-    - gem install bundler
-    - bundle install 
-
+    
 build:
   stage: build
   script:
