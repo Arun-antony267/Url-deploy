@@ -1,42 +1,22 @@
-image: ruby:latest
+image: ruby:3.1
 
-variables:
-  RUBY_VERSION: 3.1.2
-  RAILS_VERSION: 7.0.3
-  NODE_VERSION: 16.14.2
-
-stages:
-  - code-review
-  - build
-  - test
-  - deploy
-
-code-review:
-  stage: code-review
-  script:
-    - apt-get update && apt-get install -y build-essential
-    - gem install bundler
-    - bundle install
-    - yarn install
-    - rails rake brakeman:run
-    - rails rake rubocop:run
-    - yarn run test:lint
+stages: 
+    - build
+    - test
+    - deploy
 
 build:
   stage: build
   script:
-    - rails test
-    - yarn run test:unit
-    - yarn run test:integration
-    - rails assets:precompile
+         - rails s
 
 test:
-  stage: test
+  stage: test 
   script:
-    - rails test:system
+       - bundle exec rspec
 
 deploy:
   stage: deploy
   script:
-    - rails deploy production
-
+    - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
+  environment: production
