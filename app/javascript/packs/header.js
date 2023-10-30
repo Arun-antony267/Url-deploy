@@ -22,7 +22,7 @@ function Header() {
   
         <div class="dropdown">
  
-        <span class="navbar-toggler-icon"></span>
+        <button class="dropbtn">Reports</button>
   <div class="dropdown-content" >
   <a href="/home/view">
               <button class="btn btn-outline-primary" type="button">List Of URL's Shortened</button>

@@ -597,7 +597,7 @@ progress {
 
 .p {
   font-family: verdana;
-  font-size: 40px;
+  font-size: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -614,6 +614,7 @@ progress {
   height :60vh;
 
 }
+
 .box-1{
   text-align: left;
   height: 300px;
