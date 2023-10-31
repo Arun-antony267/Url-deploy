@@ -14,8 +14,10 @@ before_script:
 build:
   stage: build
   script:
+    - rails css:bild
+    - rails css:install
 
-    - bin/rails assets:precompile
+    - rails assets:precompile
 
 test:
   stage: test 
