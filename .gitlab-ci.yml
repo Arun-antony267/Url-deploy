@@ -10,11 +10,12 @@ before_script:
   - apt-get install -y nodejs
   - gem install bundler
   - bundle install
-  - apt-get install -y yarn 
-  
+  - apt-get install -y yarn
+
 build:
   stage: build
   script:
+  - rails db:setup
    - rails assets:precompile
     - rails css:build
     - rails css:install
