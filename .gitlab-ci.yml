@@ -6,10 +6,11 @@ stages:
     - deploy
 
 before_script:
-     - apt-get update -qy
-     - apt-get install -y nodejs
-     - gem install bundler
-     - bundle install
+  - apt-get update -qy
+  - apt-get install -y nodejs
+  - gem install bundler
+  - bundle install
+  - apt-get install -y yarn 
   
 build:
   stage: build
