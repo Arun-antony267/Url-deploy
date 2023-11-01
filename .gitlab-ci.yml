@@ -8,7 +8,6 @@ stages:
 before_script:
   - apt-get update -qy
   - apt-get install -y nodejs
-  - apt-get install -y yarn
   - gem install bundler
   - bundle install
   
