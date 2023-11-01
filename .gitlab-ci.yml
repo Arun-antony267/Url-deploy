@@ -10,7 +10,8 @@ before_script:
   - apt-get install -y nodejs
   - gem install bundler
   - bundle install
-
+  - apt-get install yarn
+  
 build:
   stage: build
   script:
