@@ -16,6 +16,8 @@ build:
   script:
   - ruby -v
   - echo "Hello, $GITLAB_USER_LOGIN!"
+  - bundle exec rake db:create db:migrate
+  - bundle exec rake assets:precompile 
    
 test:
   stage: test 
