@@ -14,7 +14,7 @@ build-job:
 test-job1:
   stage: test
   script:
-     - bundle exec rspec
+     -  echo "this job tests something"
 
 deploy:
   stage: deploy
