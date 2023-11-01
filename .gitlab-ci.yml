@@ -14,7 +14,7 @@ before_script:
 build:
   stage: build
   script:
-  - echo ruby -v
+  - ruby -v
   - echo "Hello, $GITLAB_USER_LOGIN!"
    
 test:
