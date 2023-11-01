@@ -1,8 +1,8 @@
 image: ruby:3.1.2
 
 variables:
-   - $HEROKU_APP_NAME: "url-shortener" 
-   - $HEROKU_PRODUCTION_KEY: "0e2b9b7d-7014-45f9-8cf1-1e54b4086959"
+   $HEROKU_APP_NAME: "url-shortener" 
+   $HEROKU_PRODUCTION_KEY: "0e2b9b7d-7014-45f9-8cf1-1e54b4086959"
 
 stages: 
     - build
@@ -36,8 +36,3 @@ deploy:
     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
   environment: production
 
-  heroku_deploy:
-  stage: production
-  script:
-    - gem install dpl
-    - dpl --provider=heroku --app=$HEROKU_APP_NAME --api-key=$HEROKU_PRODUCTION_KEY
