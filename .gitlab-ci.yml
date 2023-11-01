@@ -9,7 +9,7 @@ before_script:
 build-job:
   stage: build
   script:
-    - rails assets:precompile
+    - echo "Hello, $GITLAB_USER_LOGIN!"
 
 test-job1:
   stage: test
