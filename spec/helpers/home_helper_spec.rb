@@ -13,7 +13,7 @@ RSpec.describe "RegistrationHelper" do
         it "Validate original URL" do
        
                 url = "https://www.favouritewebsite.com/articles/coustemer-satisfaction"
-                expect(url) =~ /\A#{URI::regexp([ 'http', 'https'])}\z/ 
+                expect(url =~ /\A#{URI::regexp([ 'http', 'https'])}\z/ )
         end
 
         it "checks generated lookup code is oof length 7" do
