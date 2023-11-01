@@ -10,16 +10,12 @@ before_script:
   - apt-get install -y nodejs
   - gem install bundler
   - bundle install
-  - apt-get install -y yarn 
   
 build:
   stage: build
   script:
   - ruby -v
-  - yarn -v
   - echo "Hello, $GITLAB_USER_LOGIN!"
-  - yarn install
-  - bundle exec rake assets:precompile 
    
 test:
   stage: test 
