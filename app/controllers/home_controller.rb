@@ -106,9 +106,9 @@ end
     
     def lookup_code
       @display = "https://test.tin.ee/"
-      @string = SecureRandom.uuid[0..6]
+      $string = SecureRandom.uuid[0..6]
       $original_url = $original_url
-      $shortened_url = @display+@string 
+      $shortened_url = @display+$string 
       @reply = 'Valid url'
       redirect_to :action => 'create'
    
