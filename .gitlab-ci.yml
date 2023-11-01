@@ -15,6 +15,7 @@ build:
   stage: build
   script:
   - ruby -v
+  - yarn -v
   - echo "Hello, $GITLAB_USER_LOGIN!"
   - bundle exec rake assets:precompile 
    
