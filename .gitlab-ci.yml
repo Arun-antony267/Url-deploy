@@ -14,11 +14,8 @@ before_script:
 build:
   stage: build
   script:
-   - rails assets:precompile
-    - rails css:build
-    - rails css:install
+  - echo "Hello, $GITLAB_USER_LOGIN!"
    
-
 test:
   stage: test 
   script:
