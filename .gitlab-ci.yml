@@ -1,17 +1,12 @@
 image: ruby:3.1.2
 
-stages: 
-    - build
-    - test
-    - deploy
-
 before_script:
   - apt-get update -qy
   - apt-get install -y nodejs
   - gem install bundler
   - bundle install
   
-build:
+build-job:
   stage: build
   script:
   - echo "Hello, $GITLAB_USER_LOGIN!"
