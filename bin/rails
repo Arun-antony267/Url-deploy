@@ -2,3 +2,8 @@
 APP_PATH = File.expand_path("../config/application", __dir__)
 require_relative "../config/boot"
 require "rails/commands"
+require 'simplecov'
+SimpleCov.start 'rails' do
+add_filter '/app/channels/'
+add_filter '/lib/'
+end

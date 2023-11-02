@@ -9,15 +9,16 @@ before_script:
 build-job:
   stage: build
   script:
-    - echo "Hello, $GITLAB_USER_LOGIN!"
-
-test-job1:
-  stage: test
+  - echo "Hello, $GITLAB_USER_LOGIN!"
+   
+test:
+  stage: test 
   script:
-     -  echo "this job tests something"
+       - bundle exec rspec
 
 deploy:
   stage: deploy
   script:
     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
   environment: production
+

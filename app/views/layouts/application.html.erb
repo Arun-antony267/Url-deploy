@@ -64,7 +64,108 @@ button:hover {
 .loginbtn, .signupbtn {
   float: center;
   width: 15%;
-}     
+}
+
+.dropbtn {
+  background-color: transparent;
+  color: #46bff7;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: transparent}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: white;
+}
+.p {
+  font-family: verdana;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height :60vh;
+
+}
+
+.p-1 {
+  font-family: verdana;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height :60vh;
+
+}
+
+.box-1{
+  text-align: left;
+  height: 300px;
+  width: 500px;
+  background-color: #a9cfe9a1;
+}
+
+.box{
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  height: 200px;
+  width: 500px;
+  border: transparent solid rgb(82, 127, 224);
+  padding: 35px;
+  margin: 0px;
+  cursor: pointer;
+  transition: all 0.5s  ease;
+}
+
+.box:hover{
+
+    color: var(--bs-box-hover-color);
+    background-color: var(--bs-box-hover-bg);
+    border-color: var(--bs-box-hover-border-color);
+  
+}
+
+.box-outline{
+  --bs-box-color: #000000;
+  --bs-box-border-color: transparent;
+  --bs-box-hover-color: #fff;
+  --bs-box-hover-bg: #46bff7;
+  --bs-box-hover-border-color: #46bff7;
+  --bs-box-focus-shadow-rgb: 25, 135, 84;
+  --bs-box-active-color: #fff;
+  --bs-box-active-bg: #46bff7;
+  --bs-box-active-border-color: transparent;
+  --bs-box-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
 
  </style>
 
