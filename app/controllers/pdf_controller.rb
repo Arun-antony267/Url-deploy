@@ -1,5 +1,8 @@
 class PdfController < ApplicationController
   
+  def new
+    redirect_to controller: :home, action: :new
+  end
 
      def uploadFile
         post = DataFile.save($file)
