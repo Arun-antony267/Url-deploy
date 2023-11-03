@@ -1,5 +1,4 @@
 class HomeController < ApplicationController 
-  
 
 def index
 
@@ -86,12 +85,19 @@ $original_url = $after[$size]
   end
 end
 
+def show
+  
+  $original_url= generate_short_url(url)
+  redirect_to :action => 'check_url'
+
+end
 
 
  
     def check_url
       require 'uri'
       $original_url = params[:url]
+
     if $original_url.present?
       if $original_url =~ /\A#{URI::regexp([ 'http', 'https'])}\z/
         redirect_to :action => 'lookup_code'

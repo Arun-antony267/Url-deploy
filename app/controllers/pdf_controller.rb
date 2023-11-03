@@ -30,7 +30,7 @@ class PdfController < ApplicationController
         redirect_to :action => 'shorten'
 
       else 
-        $error101 = 'Limit reached'
+        $error101 = 'End of file'
         redirect_to controller: :home, action: :new
 
       end     
