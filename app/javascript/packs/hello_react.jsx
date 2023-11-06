@@ -5,7 +5,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Header from './header';
-import Body from './body';
+import Component from './body';
 
 function App() {
   return (
@@ -15,12 +15,10 @@ function App() {
   );
 }
 
-function App1(){
+function Logout(){
   return(
-    <div className='app1'>
-
-    <Body/>
-
+    <div className="app1">
+      <Component/>
     </div>
   )
 }
@@ -35,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <App1 />,
+    <Logout />,
     document.getElementById('body'),
   )
 })

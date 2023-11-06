@@ -13,7 +13,8 @@ var App = React.createClass({
     );
   }
 });
+
 ReactDOM.render(
   <App />, 
-  document.getElementById('content')
+  document.getElementById('header')
 );

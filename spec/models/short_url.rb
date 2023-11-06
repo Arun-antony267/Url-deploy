@@ -1,10 +1,5 @@
 require "rspec"
 
-
-  RSpec.describe "Shortener" do
-    
-  it "shortens a given URL with a 7 character lookup code " do
-   
    def generate_short_url(url)
 
       @url_short = "https://test.tin.ee/343hhut"
@@ -12,17 +7,15 @@ require "rspec"
             
     end
 
-    def recieve_short_url(shortened_url)
+  RSpec.describe "Shortener" do
+    
+   it "shortens a given URL with a 7 character lookup code " do
 
-      $shortened_url = $short_url
+      @url = "https://www.favouritewebsite.com/articles/coustemer-satisfaction"
 
-   end
+      $short_url = generate_short_url(@url )
 
- $short_url = generate_short_url(@url )
-
- @url = "https://www.favouritewebsite.com/articles/coustemer-satisfaction"
-
- expect(recieve_short_url($short_url)).to eq("https://test.tin.ee/343hhut") 
+      expect($short_url).to eq("https://test.tin.ee/343hhut") 
  end
 
 

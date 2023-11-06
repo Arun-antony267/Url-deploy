@@ -85,12 +85,6 @@ $original_url = $after[$size]
   end
 end
 
-def show
-  
-  $original_url= generate_short_url(url)
-  redirect_to :action => 'check_url'
-
-end
 
 
  
@@ -128,8 +122,7 @@ end
         @original_url = $original_url
         @shortened_url = $shortened_url
         @reply = "created succesfully."
-        render 'show'
-          
+          render 'show'
       else
         redirect_to root_path, notice: "!!!!ERROR!!!!"
 

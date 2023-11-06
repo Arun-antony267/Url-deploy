@@ -1,5 +1,10 @@
-
-<p>Hello <%= $name%>
+<body>
+<ul>
+  <li><h1>URL Shortener</h1></li>
+  <li style="float:right"><a href="/">
+            <button class="btn btn-outline-primary" type="button">Logout </button>
+          </a></li>
+</ul>
 
     <div class='container'>
               
@@ -8,7 +13,7 @@
               <textarea  rows="2" cols="70" name="multi_url"></textarea>
          <%= submit_tag "Create" %>   
          <% end %> <br>
-   <p>note: Use ',' to seperate between multiple url's.</p>
+   <p>note: Use comma ( , ) to seperate between multiple url's.</p>
     <br><p><%= @reply %> 
     
     <br><p>File Upload</p>
@@ -18,10 +23,6 @@
      <input type="submit">
   </form>
    <br><%=  $error101%>
-   
-   
-  <br><%= link_to 'logout', {:action => 'index'} %>
-  <br><%= link_to 'refresh', {:action => 'new'} %>
   </div>
 
   </body>
