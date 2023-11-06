@@ -1,12 +1,13 @@
 <body>
 <ul>
   <li><h1>URL Shortener</h1></li>
-  <li style="float:right"><a href="/">
-            <button class="btn btn-outline-primary" type="button">Logout </button>
+  <li style="float:right"> <a href="/user/login">
+            <button class="btn btn-outline-primary" type="button">Logout</button>
           </a></li>
 </ul>
 
     <div class='container'>
+      <%= render "layouts/flash" %>
               
          <p>Use for single and multiple urls shortening
          <%= form_tag :action => 'multi_line' do %> 

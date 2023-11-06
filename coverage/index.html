@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-11-06T12:38:28+05:30">2023-11-06T12:38:28+05:30</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-11-06T12:57:44+05:30">2023-11-06T12:57:44+05:30</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -32,9 +32,9 @@
   <a name="AllFiles"></a>
   <div>
     <b>22</b> files in total.
-    <b>353</b> relevant lines. 
+    <b>358</b> relevant lines. 
     <span class="green"><b>0</b> lines covered</span> and
-    <span class="red"><b>353</b> lines missed </span>
+    <span class="red"><b>358</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -223,10 +223,10 @@
       <tr>
         <td class="strong"><a href="#ef5f21cbbd2e997f324d60ea2580d5b41b32f2c6" class="src_link" title="app/models/short_url.rb">app/models/short_url.rb</a></td>
         <td class="red strong">0.0 %</td>
-        <td>2</td>
-        <td>2</td>
+        <td>8</td>
+        <td>7</td>
         <td>0</td>
-        <td>2</td>
+        <td>7</td>
         <td>0.0</td>
       </tr>
       
@@ -454,9 +454,9 @@
   <a name="Models"></a>
   <div>
     <b>5</b> files in total.
-    <b>34</b> relevant lines. 
+    <b>39</b> relevant lines. 
     <span class="green"><b>0</b> lines covered</span> and
-    <span class="red"><b>34</b> lines missed </span>
+    <span class="red"><b>39</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -495,10 +495,10 @@
       <tr>
         <td class="strong"><a href="#ef5f21cbbd2e997f324d60ea2580d5b41b32f2c6" class="src_link" title="app/models/short_url.rb">app/models/short_url.rb</a></td>
         <td class="red strong">0.0 %</td>
-        <td>2</td>
-        <td>2</td>
+        <td>8</td>
+        <td>7</td>
         <td>0</td>
-        <td>2</td>
+        <td>7</td>
         <td>0.0</td>
       </tr>
       
@@ -3830,9 +3830,9 @@
     <h3>app/models/short_url.rb</h3>
     <h4><span class="red">0.0 %</span> covered</h4>
     <div>
-      <b>2</b> relevant lines. 
+      <b>7</b> relevant lines. 
       <span class="green"><b>0</b> lines covered</span> and
-      <span class="red"><b>2</b> lines missed.</span>
+      <span class="red"><b>7</b> lines missed.</span>
     </div>
   </div>
   
@@ -3845,7 +3845,43 @@
           <code class="ruby">class ShortUrl &lt; ApplicationRecord</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="2">
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="3">
+          
+          
+          <code class="ruby">    def lookup</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="4">
+          
+          
+          <code class="ruby">        code.to_s = SecureRandom.uuid[0..6]</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="5">
+          
+          
+          <code class="ruby">        srt_url =  &quot;https://test.tin.ee/&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="6">
+          
+          
+          <code class="ruby">        return(srt_url+ code)    </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="7">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="8">
           
           
           <code class="ruby">end</code>

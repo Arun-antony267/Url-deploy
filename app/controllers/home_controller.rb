@@ -79,8 +79,8 @@ $original_url = $after[$size]
      
       end
       else
-      @reply = 'No More url' 
-      render 'new'
+      flash[:message] = 'No More url'
+       render 'new'
    
   end
 end
@@ -121,8 +121,8 @@ end
       if @Short_url.save
         @original_url = $original_url
         @shortened_url = $shortened_url
-        @reply = "created succesfully."
-          render 'show'
+        flash[:message] = "created succesfully."
+        render 'show'
       else
         redirect_to root_path, notice: "!!!!ERROR!!!!"
 
