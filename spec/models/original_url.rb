@@ -1,4 +1,4 @@
-require "rspec"
+require 'rails_helper'
 require "uri"
 
 RSpec.describe "Original Url" do

@@ -52,6 +52,7 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem "rails-controller-testing"
+  gem 'factory_bot_rails', '~> 6.2'
 end
 
 group :test do
@@ -74,7 +75,7 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
-  gem "selenium-webdriver"
+  gem 'selenium-webdriver', '~> 4.15'
 
 end
 
@@ -101,3 +102,5 @@ gem 'sqlite3', group: :development
 gem 'rails_12factor', group: :production
 
 gem 'rails-helper', '~> 0.1.0'
+
+gem 'devise', '~> 4.7', '>= 4.7.3'

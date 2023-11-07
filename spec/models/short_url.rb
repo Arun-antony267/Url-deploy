@@ -1,4 +1,4 @@
-require "rspec"
+require 'rails_helper'
 
    def generate_short_url(url)
 
@@ -31,5 +31,6 @@ require "rspec"
 
     expect(code_2).not_to eq(code_1)
  end
+
 end 
 

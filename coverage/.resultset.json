@@ -111,12 +111,6 @@
         0,
         0,
         null,
-        0,
-        null,
-        0,
-        0,
-        null,
-        0,
         null,
         null,
         null,
@@ -155,7 +149,6 @@
         0,
         0,
         0,
-        null,
         0,
         0,
         null,
@@ -399,6 +392,7 @@
         null,
         0,
         0,
+        0,
         null,
         0,
         0,
@@ -468,13 +462,6 @@
       "/home/arun/Documents/url_shortner/app/models/data_file.rb": [
         0,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         0,
         null,
         0,
@@ -494,6 +481,13 @@
       ],
       "/home/arun/Documents/url_shortner/app/models/short_url.rb": [
         0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
         0
       ],
       "/home/arun/Documents/url_shortner/app/models/url.rb": [
@@ -560,7 +554,7 @@
         0
       ]
     },
-    "timestamp": 1699005412
+    "timestamp": 1699334827
   },
   "Unknown Test Framework": {
     "coverage": {
@@ -955,6 +949,7 @@
         null,
         0,
         0,
+        0,
         null,
         0,
         0,
@@ -1024,13 +1019,6 @@
       "/home/arun/Documents/url_shortner/app/models/data_file.rb": [
         0,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         0,
         null,
         0,
@@ -1056,6 +1044,7 @@
         0,
         0,
         0,
+        null,
         0
       ],
       "/home/arun/Documents/url_shortner/app/models/url.rb": [
@@ -1074,6 +1063,11 @@
       ],
       "/home/arun/Documents/url_shortner/app/models/user.rb": [
         0,
+        null,
+        null,
+        0,
+        0,
+        null,
         0,
         null,
         0,
@@ -1122,6 +1116,6 @@
         0
       ]
     },
-    "timestamp": 1699255664
+    "timestamp": 1699338350
   }
 }
