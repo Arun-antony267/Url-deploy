@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-11-07T11:55:50+05:30">2023-11-07T11:55:50+05:30</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-11-08T12:03:36+05:30">2023-11-08T12:03:36+05:30</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -32,9 +32,9 @@
   <a name="AllFiles"></a>
   <div>
     <b>22</b> files in total.
-    <b>361</b> relevant lines. 
+    <b>360</b> relevant lines. 
     <span class="green"><b>0</b> lines covered</span> and
-    <span class="red"><b>361</b> lines missed </span>
+    <span class="red"><b>360</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -243,10 +243,10 @@
       <tr>
         <td class="strong"><a href="#45b24df82bf775f2da1adceb441a166fe15029f2" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
         <td class="red strong">0.0 %</td>
-        <td>18</td>
-        <td>10</td>
+        <td>15</td>
+        <td>9</td>
         <td>0</td>
-        <td>10</td>
+        <td>9</td>
         <td>0.0</td>
       </tr>
       
@@ -454,9 +454,9 @@
   <a name="Models"></a>
   <div>
     <b>5</b> files in total.
-    <b>41</b> relevant lines. 
+    <b>40</b> relevant lines. 
     <span class="green"><b>0</b> lines covered</span> and
-    <span class="red"><b>41</b> lines missed </span>
+    <span class="red"><b>40</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -515,10 +515,10 @@
       <tr>
         <td class="strong"><a href="#45b24df82bf775f2da1adceb441a166fe15029f2" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
         <td class="red strong">0.0 %</td>
-        <td>18</td>
-        <td>10</td>
+        <td>15</td>
+        <td>9</td>
         <td>0</td>
-        <td>10</td>
+        <td>9</td>
         <td>0.0</td>
       </tr>
       
@@ -3191,7 +3191,7 @@
         <li class="missed" data-hits="0" data-linenumber="26">
           
           
-          <code class="ruby">    flash[:message] = &quot;Your Account was Created Successfully!&quot;</code>
+          <code class="ruby">    flash[:message] = &quot;Your Account was Created Successfully&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="27">
@@ -3958,9 +3958,9 @@
     <h3>app/models/user.rb</h3>
     <h4><span class="red">0.0 %</span> covered</h4>
     <div>
-      <b>10</b> relevant lines. 
+      <b>9</b> relevant lines. 
       <span class="green"><b>0</b> lines covered</span> and
-      <span class="red"><b>10</b> lines missed.</span>
+      <span class="red"><b>9</b> lines missed.</span>
     </div>
   </div>
   
@@ -3985,16 +3985,16 @@
           <code class="ruby">  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="4">
+        <li class="never" data-hits="" data-linenumber="4">
           
           
-          <code class="ruby">  devise :database_authenticatable, :registerable,</code>
+          <code class="ruby">#   devise :database_authenticatable, :registerable,</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="5">
+        <li class="never" data-hits="" data-linenumber="5">
           
           
-          <code class="ruby">         :recoverable, :rememberable, :validatable</code>
+          <code class="ruby">#          :recoverable, :rememberable, :validatable</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
@@ -4018,58 +4018,40 @@
         <li class="missed" data-hits="0" data-linenumber="9">
           
           
-          <code class="ruby">VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i</code>
+          <code class="ruby">  validates :name, uniqueness: true</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="missed" data-hits="0" data-linenumber="10">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="11">
           
           
-          <code class="ruby">validates :email, presence: true,</code>
+          <code class="ruby">  validates :email, presence: true,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="13">
+        <li class="missed" data-hits="0" data-linenumber="12">
           
           
           <code class="ruby">               uniqueness: { case_sensitive: false },</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="15">
+        <li class="missed" data-hits="0" data-linenumber="13">
           
           
           <code class="ruby">               length: { maximum: 105 },</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="17">
+        <li class="missed" data-hits="0" data-linenumber="14">
           
           
           <code class="ruby">               format: { with: VALID_EMAIL_REGEX }</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="18">
+        <li class="missed" data-hits="0" data-linenumber="15">
           
           
           <code class="ruby">end</code>
