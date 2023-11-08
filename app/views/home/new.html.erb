@@ -5,9 +5,9 @@
             <button class="btn btn-outline-primary" type="button">Logout</button>
           </a></li>
 </ul>
-
+    <%= render "layouts/flash" %>
     <div class='container'>
-      <%= render "layouts/flash" %>
+  
               
          <p>Use for single and multiple urls shortening
          <%= form_tag :action => 'multi_line' do %> 

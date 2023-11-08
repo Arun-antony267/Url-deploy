@@ -6,11 +6,10 @@
             <button class="btn btn-outline-primary" type="button">Logout </button>
           </a></li>
 </ul>
-
+  <%= render "layouts/flash" %>
 <h4>Your new url is given below</h4>
 
 <div class='container'>
-  <%= render "layouts/flash" %>
 <div id="copy"></div>
  <p><%= @reply  %> 
  <p><%= @notice %> 

@@ -72,7 +72,7 @@ $original_url = $after[$size]
            redirect_to :action => 'lookup_code'
     
            else
-            @reply = 'Invalid url' 
+            flash[:message] = 'Invalid url'
            render 'new'
           end
           @reply = 'Invalid url' 
