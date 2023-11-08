@@ -8,6 +8,7 @@ require "rails_helper"
       it "should return 200:OK" do
 
         get :signup
+        user = FactoryBot.create(User.new(email: 'ashwathy@gmail.com', password_digest: '123'))
         expect(response).to have_http_status(:success)
       end
     end
@@ -16,8 +17,9 @@ require "rails_helper"
 
   describe "GET Login" do
     it "Should return 200:OK" do
-
+      
       get :check_login
+      user = FactoryBot.create(:user)
       expect(response).to have_http_status(:success)
     end
   end
