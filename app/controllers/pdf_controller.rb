@@ -17,7 +17,6 @@ class PdfController < ApplicationController
       if @val1.present?
          @@file_url =@val1
           redirect_to :action => 'shorten'
-
       else
 
          @a ='no elements left'
@@ -33,7 +32,7 @@ class PdfController < ApplicationController
         redirect_to :action => 'shorten'
 
       else 
-        $error101 = 'End of file'
+        flash[:message] = "End of file"
         redirect_to controller: :home, action: :new
 
       end     
