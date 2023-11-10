@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   # devise :database_authenticatable, :registerable,
   #        :recoverable, :rememberable, :validatable
-         
+  skip_before_action :verify_authenticity_token
   has_secure_password 
 
   validates :name, uniqueness: true
