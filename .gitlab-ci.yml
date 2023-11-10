@@ -11,7 +11,7 @@ before_script:
   - gem install bundler
   - bundle install
   
-build:
+build-job:
   stage: build
   script:
   - ruby -v
