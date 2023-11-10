@@ -20,7 +20,7 @@ build:
 test:
   stage: test 
   script:
-       - rspec ./spec
+       - bundle exec rspec
 
 deploy:
   stage: deploy
