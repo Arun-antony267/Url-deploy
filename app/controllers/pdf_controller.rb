@@ -1,5 +1,8 @@
 class PdfController < ApplicationController
   
+  def new
+    redirect_to controller: :home, action: :new
+  end
 
      def uploadFile
         post = DataFile.save($file)
@@ -30,7 +33,7 @@ class PdfController < ApplicationController
         redirect_to :action => 'shorten'
 
       else 
-        $error101 = 'Limit reached'
+        $error101 = 'End of file'
         redirect_to controller: :home, action: :new
 
       end     

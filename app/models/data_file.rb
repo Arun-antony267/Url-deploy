@@ -1,11 +1,4 @@
 class DataFile < ActiveRecord::Base
-
-    # def original_url_format
-    #     uri = URI.parse(orginal_url || "")
-    #     if uri.host.nil?
-    #         errors.add(:original_url, "Invalid URL format")
-    #     end
-    # end
     
     def self.save(upload)
 

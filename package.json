@@ -32,6 +32,7 @@
     "defaults"
   ],
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object":"7.21.11",
     "@babel/plugin-transform-private-property-in-object": "7.22.5",
     "bootstrap-sass": "^3.3.7",
     "webpack-dev-server": "^3"

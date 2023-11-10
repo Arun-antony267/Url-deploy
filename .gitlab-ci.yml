@@ -1,5 +1,10 @@
 image: ruby:3.1.2
 
+stages: 
+    - build
+    - test
+    - deploy
+
 before_script:
   - apt-get update -qy
   - apt-get install -y nodejs
@@ -9,6 +14,7 @@ before_script:
 build-job:
   stage: build
   script:
+  - ruby -v
   - echo "Hello, $GITLAB_USER_LOGIN!"
    
 test:

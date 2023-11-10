@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
- <div id="content"></div> 
   </head>
     <title>URL Shortener</title>
        <style>
@@ -166,6 +165,22 @@ button:hover {
   --bs-box-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding:0.5rem;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+li {
+  float: left;
+}
+
+li a {
+   padding:0.5rem;
+}
+
 
  </style>
 
@@ -174,14 +189,14 @@ button:hover {
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!-- Following will make the react components availabe to our layout -->
-    <%= javascript_pack_tag 'application' %>
-    
+    <%= javascript_pack_tag 'application' %> 
       <%= javascript_pack_tag "hello_react"%>
       <%= javascript_pack_tag "count" %>  
-       <%= javascript_pack_tag "copy_url" %>  
-        <%= javascript_pack_tag "show"%> 
-
+      <%= javascript_pack_tag "copy_url" %>  
+      <%= javascript_pack_tag "show"%> 
+      <%# <%= javascript_pack_tag "logout" %>
     <body >
+
        <%= yield %>
        
     </body>

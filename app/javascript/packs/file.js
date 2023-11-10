@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
 
+
 function Display(){
 //  const text="Hi this is react body"
 
@@ -35,20 +36,20 @@ function handleCopy(){
   alert("Copied Successfully")
 }
 
-    return (
-        <div className='p-1 '>
-            <div className='box-1'>
-      <div className='container'>
-        The Original URL is:<input type="text" name="name" value={text2} />
-          The Shortened URL is :<input type="text" name="name" value={text} />
-          <button class="btn btn-outline-success" onClick={handleCopy}>Copy</button>
-          <a href="/pdf/new_line">
-              <button class="btn btn-outline-success" type="button">Next</button>
-              </a>
-      </div>
-      </div>
-      </div>
-  )
+return (
+  <div className='p-1 '>
+      <div className='box-1'>
+<div className='container'>
+  The Original URL is:<input type="text" name="name" value={text2} />
+    The Shortened URL is :<input type="text" name="name" value={text} />
+    <button class="btn btn-outline-primary" onClick={handleCopy}>Copy</button>
+    <a href="/home/next">
+        <button class="btn btn-outline-primary" type="button">Next</button>
+        </a>
+</div>
+</div>
+</div>
+)
 }
 
 export default Display

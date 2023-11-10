@@ -1,5 +1,4 @@
 class HomeController < ApplicationController 
-  
 
 def index
 
@@ -80,8 +79,8 @@ $original_url = $after[$size]
      
       end
       else
-      @reply = 'No More url' 
-      render 'new'
+      flash[:message] = 'No More url'
+       render 'new'
    
   end
 end
@@ -92,6 +91,7 @@ end
     def check_url
       require 'uri'
       $original_url = params[:url]
+
     if $original_url.present?
       if $original_url =~ /\A#{URI::regexp([ 'http', 'https'])}\z/
         redirect_to :action => 'lookup_code'
@@ -106,9 +106,9 @@ end
     
     def lookup_code
       @display = "https://test.tin.ee/"
-      @string = SecureRandom.uuid[0..6]
+      $string = SecureRandom.uuid[0..6]
       $original_url = $original_url
-      $shortened_url = @display+@string 
+      $shortened_url = @display+$string 
       @reply = 'Valid url'
       redirect_to :action => 'create'
    
@@ -121,9 +121,8 @@ end
       if @Short_url.save
         @original_url = $original_url
         @shortened_url = $shortened_url
-        @reply = "created succesfully."
+        flash[:message] = "created succesfully."
         render 'show'
-          
       else
         redirect_to root_path, notice: "!!!!ERROR!!!!"
 

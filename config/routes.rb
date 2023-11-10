@@ -43,6 +43,7 @@ Rails.application.routes.draw do
        get 'home/file'
        get 'pdf/index'
        get 'pdf/next_line'
+       get'pdf/new'
 
 
 end
