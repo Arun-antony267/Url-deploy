@@ -10,7 +10,6 @@ before_script:
   - apt-get install -y nodejs
   - gem install bundler
   - bundle install
-  - verify_authenticity_token
   
 build:
   stage: build
