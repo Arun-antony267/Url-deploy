@@ -1,11 +1,6 @@
 require "rails_helper"
 
   RSpec.describe UserController, type: :controller do
-    
-    before do
-      allow(controller).to receive(:verify_authenticity_token).and_return(true)
-    end
-  
     user_params = {email: "kiran@gmail.com", password: "123", name: "kiran"}
 
     describe "GET create" do
