@@ -6382,3 +6382,75 @@ Node.js v18.13.0
 
   Rendered layout layouts/application.html.erb (Duration: 1562.0ms | Allocations: 5145)
 Completed 500 Internal Server Error in 1595ms (ActiveRecord: 8.2ms | Allocations: 20993)
+Started GET "/" for 127.0.0.1 at 2023-11-13 15:20:02 +0530
+Processing by HomeController#index as HTML
+  [1m[36mShortUrl Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "short_urls"[0m
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered layouts/_flash.html.erb (Duration: 1.2ms | Allocations: 583)
+  Rendered home/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1231)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+warning ../../package.json: No license field
+node:internal/process/promises:288
+            triggerUncaughtException(err, true /* fromPromise */);
+            ^
+
+Error: [BABEL]: --- PLACEHOLDER PACKAGE ---
+This @babel/plugin-proposal-private-property-in-object version is not meant to
+be imported. Something is importing
+@babel/plugin-proposal-private-property-in-object without declaring it in its
+dependencies (or devDependencies) in the package.json file.
+Add "@babel/plugin-proposal-private-property-in-object" to your devDependencies
+to work around this error. This will make this message go away.
+ (While processing: /home/arun/Desktop/url_shortner/node_modules/@babel/plugin-proposal-private-property-in-object/lib/index.js)
+    at Object.<anonymous> (/home/arun/Desktop/url_shortner/node_modules/@babel/plugin-proposal-private-property-in-object/lib/index.js:28:7)
+    at Module._compile (/home/arun/Desktop/url_shortner/node_modules/v8-compile-cache/v8-compile-cache.js:192:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1272:10)
+    at Module.load (node:internal/modules/cjs/loader:1081:32)
+    at Module._load (node:internal/modules/cjs/loader:922:12)
+    at Module.require (node:internal/modules/cjs/loader:1105:19)
+    at require (/home/arun/Desktop/url_shortner/node_modules/v8-compile-cache/v8-compile-cache.js:159:20)
+    at loadPartialConfigAsync (/home/arun/Desktop/url_shortner/node_modules/@babel/core/lib/config/index.js:34:85)
+    at Object.<anonymous> (/home/arun/Desktop/url_shortner/node_modules/babel-loader/lib/index.js:126:26)
+
+Node.js v18.13.0
+
+  Rendered layout layouts/application.html.erb (Duration: 1357.8ms | Allocations: 5138)
+Completed 500 Internal Server Error in 1380ms (ActiveRecord: 4.5ms | Allocations: 20985)
+Started GET "/" for 127.0.0.1 at 2023-11-13 15:26:15 +0530
+Processing by HomeController#index as HTML
+  [1m[36mShortUrl Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "short_urls"[0m
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered layouts/_flash.html.erb (Duration: 2.1ms | Allocations: 643)
+  Rendered home/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1291)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+warning ../../package.json: No license field
+node:internal/process/promises:288
+            triggerUncaughtException(err, true /* fromPromise */);
+            ^
+
+Error: [BABEL]: --- PLACEHOLDER PACKAGE ---
+This @babel/plugin-proposal-private-property-in-object version is not meant to
+be imported. Something is importing
+@babel/plugin-proposal-private-property-in-object without declaring it in its
+dependencies (or devDependencies) in the package.json file.
+Add "@babel/plugin-proposal-private-property-in-object" to your devDependencies
+to work around this error. This will make this message go away.
+ (While processing: /home/arun/Desktop/url_shortner/node_modules/@babel/plugin-proposal-private-property-in-object/lib/index.js)
+    at Object.<anonymous> (/home/arun/Desktop/url_shortner/node_modules/@babel/plugin-proposal-private-property-in-object/lib/index.js:28:7)
+    at Module._compile (/home/arun/Desktop/url_shortner/node_modules/v8-compile-cache/v8-compile-cache.js:192:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1272:10)
+    at Module.load (node:internal/modules/cjs/loader:1081:32)
+    at Module._load (node:internal/modules/cjs/loader:922:12)
+    at Module.require (node:internal/modules/cjs/loader:1105:19)
+    at require (/home/arun/Desktop/url_shortner/node_modules/v8-compile-cache/v8-compile-cache.js:159:20)
+    at loadPartialConfigAsync (/home/arun/Desktop/url_shortner/node_modules/@babel/core/lib/config/index.js:34:85)
+    at Object.<anonymous> (/home/arun/Desktop/url_shortner/node_modules/babel-loader/lib/index.js:126:26)
+
+Node.js v18.13.0
+
+  Rendered layout layouts/application.html.erb (Duration: 1537.7ms | Allocations: 5198)
+Completed 500 Internal Server Error in 1567ms (ActiveRecord: 5.9ms | Allocations: 21045)
