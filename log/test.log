@@ -6305,3 +6305,80 @@ Completed 200 OK in 29ms (Views: 24.7ms | ActiveRecord: 0.6ms | Allocations: 847
   [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "4ca6129dcac0bb3cb7655fc5f8c8c81802bbc4e4"], ["created_at", "2023-11-13 08:44:17.634779"], ["updated_at", "2023-11-13 08:44:17.634779"]]
   [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/home/new" for 127.0.0.1 at 2023-11-13 15:14:49 +0530
+Processing by HomeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/new.html.erb within layouts/application
+  Rendered layouts/_flash.html.erb (Duration: 1.7ms | Allocations: 783)
+  Rendered home/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 2702)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+warning ../../package.json: No license field
+node:internal/process/promises:288
+            triggerUncaughtException(err, true /* fromPromise */);
+            ^
+
+Error: [BABEL]: --- PLACEHOLDER PACKAGE ---
+This @babel/plugin-proposal-private-property-in-object version is not meant to
+be imported. Something is importing
+@babel/plugin-proposal-private-property-in-object without declaring it in its
+dependencies (or devDependencies) in the package.json file.
+Add "@babel/plugin-proposal-private-property-in-object" to your devDependencies
+to work around this error. This will make this message go away.
+ (While processing: /home/arun/Desktop/url_shortner/node_modules/@babel/plugin-proposal-private-property-in-object/lib/index.js)
+    at Object.<anonymous> (/home/arun/Desktop/url_shortner/node_modules/@babel/plugin-proposal-private-property-in-object/lib/index.js:28:7)
+    at Module._compile (/home/arun/Desktop/url_shortner/node_modules/v8-compile-cache/v8-compile-cache.js:192:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1272:10)
+    at Module.load (node:internal/modules/cjs/loader:1081:32)
+    at Module._load (node:internal/modules/cjs/loader:922:12)
+    at Module.require (node:internal/modules/cjs/loader:1105:19)
+    at require (/home/arun/Desktop/url_shortner/node_modules/v8-compile-cache/v8-compile-cache.js:159:20)
+    at loadPartialConfigAsync (/home/arun/Desktop/url_shortner/node_modules/@babel/core/lib/config/index.js:34:85)
+    at Object.<anonymous> (/home/arun/Desktop/url_shortner/node_modules/babel-loader/lib/index.js:126:26)
+
+Node.js v18.13.0
+
+  Rendered layout layouts/application.html.erb (Duration: 2056.8ms | Allocations: 6567)
+Completed 500 Internal Server Error in 2062ms (ActiveRecord: 0.0ms | Allocations: 11232)
+Started GET "/" for 127.0.0.1 at 2023-11-13 15:15:34 +0530
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 6990)
+Started GET "/" for 127.0.0.1 at 2023-11-13 15:16:44 +0530
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 6884)
+Started GET "/" for 127.0.0.1 at 2023-11-13 15:17:18 +0530
+Processing by HomeController#index as HTML
+  [1m[36mShortUrl Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "short_urls"[0m
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered layouts/_flash.html.erb (Duration: 1.7ms | Allocations: 583)
+  Rendered home/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1231)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+warning ../../package.json: No license field
+node:internal/process/promises:288
+            triggerUncaughtException(err, true /* fromPromise */);
+            ^
+
+Error: [BABEL]: --- PLACEHOLDER PACKAGE ---
+This @babel/plugin-proposal-private-property-in-object version is not meant to
+be imported. Something is importing
+@babel/plugin-proposal-private-property-in-object without declaring it in its
+dependencies (or devDependencies) in the package.json file.
+Add "@babel/plugin-proposal-private-property-in-object" to your devDependencies
+to work around this error. This will make this message go away.
+ (While processing: /home/arun/Desktop/url_shortner/node_modules/@babel/plugin-proposal-private-property-in-object/lib/index.js)
+    at Object.<anonymous> (/home/arun/Desktop/url_shortner/node_modules/@babel/plugin-proposal-private-property-in-object/lib/index.js:28:7)
+    at Module._compile (/home/arun/Desktop/url_shortner/node_modules/v8-compile-cache/v8-compile-cache.js:192:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1272:10)
+    at Module.load (node:internal/modules/cjs/loader:1081:32)
+    at Module._load (node:internal/modules/cjs/loader:922:12)
+    at Module.require (node:internal/modules/cjs/loader:1105:19)
+    at require (/home/arun/Desktop/url_shortner/node_modules/v8-compile-cache/v8-compile-cache.js:159:20)
+    at loadPartialConfigAsync (/home/arun/Desktop/url_shortner/node_modules/@babel/core/lib/config/index.js:34:85)
+    at Object.<anonymous> (/home/arun/Desktop/url_shortner/node_modules/babel-loader/lib/index.js:126:26)
+
+Node.js v18.13.0
+
+  Rendered layout layouts/application.html.erb (Duration: 1562.0ms | Allocations: 5145)
+Completed 500 Internal Server Error in 1595ms (ActiveRecord: 8.2ms | Allocations: 20993)
