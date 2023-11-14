@@ -1,4 +1,4 @@
-require "rails_helper"
+require "rails-helper"
 
 RSpec.describe "UserLoginAndSignup" do
     user_params = {email: "kiran@gmail.com", password: "123", name: "kiran"}

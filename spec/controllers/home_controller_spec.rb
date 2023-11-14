@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'rails-helper'
 require 'uri'
 
 value = rand.to_s[0..6]
