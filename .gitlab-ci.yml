@@ -16,7 +16,6 @@ build:
   script:
   - ruby -v
   - echo "Hello, $GITLAB_USER_LOGIN!"
-  - rails assets:precompile
    
 test:
   stage: test 
