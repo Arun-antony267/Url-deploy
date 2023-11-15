@@ -5,7 +5,7 @@ function Header() {
     return (
       <><div className="navbar" >
 
-        <li><h1>URL Shortener</h1></li>
+        <h1>URL Shortener</h1>
         
         <div >
           <a href="/">
