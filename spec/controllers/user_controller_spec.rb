@@ -5,9 +5,9 @@ RSpec.describe "UserLoginAndSignup" do
 
   describe "GET create" do
       it "from create user" do
-        user_params ={email: "kiran@gmail.com", password: "123", name: "kiran"}
-         @user =User.find_by(email:"kiran@gmail.com") 
-         user_check = @user.save
+         user_params ={ email: "Achilles@gmail.com", password: "123",created_at: Time.now, updated_at: Time.now, name: "Achilles"}
+         @user = User.create(user_params )
+         user_check = @user.present?
          
         # post :create, params: user_params   
         # user = build(:user)
@@ -20,11 +20,11 @@ RSpec.describe "UserLoginAndSignup" do
 
     describe "GET create" do
     it "user with invalid params" do
-    invalid_params = {email: "", password: "123", name: "Ajith"}
-    @user = User.create(invalid_params)
-    user_validate = @user.save
+    invalid_params = {email: "Ibrahim@gmail.com", password: "", name: ""}
+    @user = User.create(invalid_params )
+    user_validate =  @user.save
 
-    expect(user_validate).to eq(false)
+    expect( user_validate ).to eq(false)
     end
     end
 

@@ -1081,16 +1081,14 @@
       "/home/arun/Desktop/url_shortner/app/models/user.rb": [
         0,
         null,
-        null,
-        null,
-        null,
-        null,
         0,
         null,
         0,
         0,
         0,
         0,
+        0,
+        null,
         0,
         0
       ],
@@ -1129,6 +1127,6 @@
         0
       ]
     },
-    "timestamp": 1700026893
+    "timestamp": 1700033994
   }
 }
