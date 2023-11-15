@@ -3,7 +3,7 @@ require "rails_helper"
 
 RSpec.describe "UserLoginAndSignup" do
   user_params = {email: "kiran@gmail.com", password: "123", name: "kiran"}
-  # user = User.create(user_params)
+  user = User.create(user_params)
 
   describe "GET create" do
       it "from create user" do
