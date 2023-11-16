@@ -1,11 +1,5 @@
 image: ruby:3.1.2
 
-variables:
-  POSTGRES_DB: url_shortner_test
-  POSTGRES_USER: arun
-  POSTGRES_PASSWORD: qwer
-  POSTGRES_HOST: localhost
-
 stages: 
     - build
     - test
