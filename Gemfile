@@ -96,8 +96,6 @@ gem 'react-rails', '~> 2.6', '>= 2.6.1'
 
 gem 'simplecov', '~> 0.15.0'
 
-gem 'sqlite3', group: :development
-
 gem 'rails_12factor', group: :production
 
 gem 'rails-helper', '~> 0.1.0'
