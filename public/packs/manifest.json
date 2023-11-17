@@ -1,10 +1,8 @@
 {
-  "Home.js": "/packs/js/Home-2a304b4aa25d64615e13.js",
-  "Home.js.map": "/packs/js/Home-2a304b4aa25d64615e13.js.map",
   "application.js": "/packs/js/application-fb884cb1f22194395875.js",
   "application.js.map": "/packs/js/application-fb884cb1f22194395875.js.map",
-  "body.js": "/packs/js/body-fee0c002443388b68fbc.js",
-  "body.js.map": "/packs/js/body-fee0c002443388b68fbc.js.map",
+  "body.js": "/packs/js/body-d57ba32d1415dc2a6fe1.js",
+  "body.js.map": "/packs/js/body-d57ba32d1415dc2a6fe1.js.map",
   "copy.js": "/packs/js/copy-62be0598ef89ef4e541b.js",
   "copy.js.map": "/packs/js/copy-62be0598ef89ef4e541b.js.map",
   "copy_url.js": "/packs/js/copy_url-d14916c3ed33cba7f7da.js",
@@ -22,10 +20,10 @@
     },
     "body": {
       "js": [
-        "/packs/js/body-fee0c002443388b68fbc.js"
+        "/packs/js/body-d57ba32d1415dc2a6fe1.js"
       ],
       "js.map": [
-        "/packs/js/body-fee0c002443388b68fbc.js.map"
+        "/packs/js/body-d57ba32d1415dc2a6fe1.js.map"
       ]
     },
     "copy_url": {
@@ -78,18 +76,10 @@
     },
     "hello_react": {
       "js": [
-        "/packs/js/hello_react-8083b5ce6c4bbbfb9598.js"
+        "/packs/js/hello_react-0d5d6b02d855cab90f3a.js"
       ],
       "js.map": [
-        "/packs/js/hello_react-8083b5ce6c4bbbfb9598.js.map"
-      ]
-    },
-    "Home": {
-      "js": [
-        "/packs/js/Home-2a304b4aa25d64615e13.js"
-      ],
-      "js.map": [
-        "/packs/js/Home-2a304b4aa25d64615e13.js.map"
+        "/packs/js/hello_react-0d5d6b02d855cab90f3a.js.map"
       ]
     },
     "logout": {
@@ -123,8 +113,8 @@
   "header.js.map": "/packs/js/header-52c3b55930f94e91e384.js.map",
   "header_logout.js": "/packs/js/header_logout-f75726df647552cfd4ab.js",
   "header_logout.js.map": "/packs/js/header_logout-f75726df647552cfd4ab.js.map",
-  "hello_react.js": "/packs/js/hello_react-8083b5ce6c4bbbfb9598.js",
-  "hello_react.js.map": "/packs/js/hello_react-8083b5ce6c4bbbfb9598.js.map",
+  "hello_react.js": "/packs/js/hello_react-0d5d6b02d855cab90f3a.js",
+  "hello_react.js.map": "/packs/js/hello_react-0d5d6b02d855cab90f3a.js.map",
   "logout.js": "/packs/js/logout-cf8c9e29129efbcc5409.js",
   "logout.js.map": "/packs/js/logout-cf8c9e29129efbcc5409.js.map",
   "server_rendering.js": "/packs/js/server_rendering-70a6d0ba913d7707fd57.js",

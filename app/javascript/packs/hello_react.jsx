@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <Logout />,
-    document.getElementById('body'),
+    document.getElementById('header2'),
   )
 })
 

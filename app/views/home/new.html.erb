@@ -1,30 +1,26 @@
+<div id="header2"></div>
 <body>
-<ul>
-  <li><h1>URL Shortener</h1></li>
-  <li style="float:right"> <a href="/user/login">
-            <button class="btn btn-outline-primary" type="button">Logout</button>
-          </a></li>
-</ul>
-
     <%= render "layouts/flash"%>
-    <div class='container'>
-  
-              
-         <p>Use for single and multiple urls shortening
+    <div class='p-2'>
+         <%# <h5>Use for single and multiple urls shortening</h5> %>
+
          <%= form_tag :action => 'multi_line' do %> 
-              <textarea  rows="2" cols="70" name="multi_url"></textarea>
-         <%= submit_tag "Create" %>   
-         <% end %> <br>
-   <p>note: Use comma ( , ) to seperate between multiple url's.</p>
+              <textarea  rows="2" cols="70" name="multi_url" placeholder="Use for single and multiple urls shortening" ></textarea><br>
+        <button type="submit" class= "button" >create</button>
+         <% end %> 
+          </div>
+          <div class= "p-2">
+  <br> <p>note: Use comma ( , ) to seperate between multiple url's.</p>
+  </div>
     <br><p><%= @reply %> 
-    
+    <div class="container">
+      <div class= "p-3">
     <br><p>File Upload</p>
 
-  <form action="file">
+   <form action="file">
      <input type="file" id="myFile" name="myFile">
-     <input type="submit">
+     <p><button type="submit" class= "signupbtn" >Upload</button>
   </form>
-   <br><%=  $error101%>
   </div>
 
   </body>

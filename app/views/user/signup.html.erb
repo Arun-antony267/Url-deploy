@@ -1,29 +1,24 @@
  <div id="content"></div> 
    <div class="container">
-    <h1> Sign Up </h1>
     </div>
     <%= render "layouts/flash" %>
-    <div class="container">
+    <div class="p-1">
+       <center>
+      <h1> Sign Up </h1>
+     
  <%= form_tag :action => 'create' do %>
-
  <label for="name"></label><br>
-      Name: <input class="shortInput" name="name"  type="text"><br>
+      <input class="shortInput" name="name" placeholder="User Name"   type="text" style="width: 500px"><br>
  
         <label for="email"></label><br>
-      Email: <input class="shortInput" name="email"  type="text"><br>
+       <input class="shortInput" name="email" placeholder="Email" type="text" style="width: 500px"><br>
 
         <label for="password"></label><br>
-      Password: <input class="shortInput" name="password" type="text"><br>
+      <input class="shortInput" name="password" placeholder="Password" type="text" style="width: 500px"><br>
 
         <label for="confirmPassword"></label><br>
-      Confirm password: <input class="shortInput" name="password_confirmation" type="text"><br>
-
-         <br> <%= submit_tag "Create" %>
-
-          <%= @msg %>
-          <h4><p><%= @dis %></h4>
- 
-
-           <%= link_to 'Back', controller: :home, action: :index %>
+      <input class="shortInput" name="password_confirmation" placeholder="Confirm password" type="text" style="width: 500px"><br>
+ <button class="btn btn-outline-primary"  >Signup</button>
  <% end %>
+ </center>
  </div>

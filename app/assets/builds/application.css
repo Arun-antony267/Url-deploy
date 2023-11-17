@@ -4841,33 +4841,12 @@ textarea.form-control-lg {
 .alert-dismissible {
   padding-right: 3rem;
 }
-/* .alert-dismissible .btn-close {
-  position: left;
+.alert-dismissible .btn-close {
+  position: absolute;
   top: 0;
   right: 0;
   z-index: 2;
   padding: 1.25rem 1rem;
-} */
-
-.alert-box {
-	padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid transparent;
-    border-radius: 4px;  
-}
-
-.success {
-    color: inherit;
-    background-color: #dff0d8;
-    border-color: #d6e9c6;
-    display: none;
-}
-
-
-
-.btn-close{
-  position: left;
-  padding-right: 3rem
 }
 
 .alert-primary {
