@@ -107,6 +107,17 @@ button:hover {
 .dropdown:hover .dropbtn {
   background-color: white;
 }
+
+.topnav {
+  position: relative;
+ background-color:#eeeda5;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
+}
+
 .p {
   font-family: verdana;
   font-size: 30px;
@@ -132,7 +143,7 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* height :60vh; */
+  height :40vh;
 }
 
 .p-3{
@@ -141,6 +152,14 @@ button:hover {
   /* display: flex; */
   align-items: left;
 
+}
+
+.p-4{
+  font-family: verdana;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
 }
 
 .box-1{
@@ -211,6 +230,7 @@ li a {
       <%= javascript_pack_tag "count" %>  
       <%= javascript_pack_tag "copy_url" %>  
       <%= javascript_pack_tag "show"%> 
+      <%= javascript_pack_tag "Header3" %>
 
     <body >
 

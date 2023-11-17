@@ -2,17 +2,12 @@
 <body>
     <%= render "layouts/flash"%>
     <div class='p-2'>
-         <%# <h5>Use for single and multiple urls shortening</h5> %>
-
          <%= form_tag :action => 'multi_line' do %> 
               <textarea  rows="2" cols="70" name="multi_url" placeholder="Use for single and multiple urls shortening" ></textarea><br>
         <button type="submit" class= "button" >create</button>
          <% end %> 
+         <br><p>note: Use comma ( , ) to seperate between multiple url's.</p>
           </div>
-          <div class= "p-2">
-  <br> <p>note: Use comma ( , ) to seperate between multiple url's.</p>
-  </div>
-    <br><p><%= @reply %> 
     <div class="container">
       <div class= "p-3">
     <br><p>File Upload</p>

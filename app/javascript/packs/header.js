@@ -3,7 +3,7 @@ import React from 'react';
 
 function Header() {
     return (
-      <><div className="navbar" >
+      <><div className="topnav" >
 
         <h1>URL Shortener</h1>
         
