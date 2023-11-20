@@ -8,17 +8,37 @@
      
  <%= form_tag :action => 'create' do %>
  <label for="name"></label><br>
-      <input class="shortInput" name="name" placeholder="User Name"   type="text" style="width: 500px"><br>
+      <input class="shortInput" name="name" placeholder="User Name"   type="text" style="width: 500px">
  
         <label for="email"></label><br>
-       <input class="shortInput" name="email" placeholder="Email" type="text" style="width: 500px"><br>
+       <input class="shortInput" name="email" placeholder="Email" type="text" style="width: 500px">
 
         <label for="password"></label><br>
-      <input class="shortInput" name="password" placeholder="Password" type="text" style="width: 500px"><br>
+      <input class="shortInput" name="password" placeholder="Password" type="password" id="password" style="width: 500px">
 
         <label for="confirmPassword"></label><br>
-      <input class="shortInput" name="password_confirmation" placeholder="Confirm password" type="text" style="width: 500px"><br>
+      <input class="shortInput" name="password_confirmation" placeholder="Confirm password" type="password" id="pass2" style="width: 500px"><br><br><input type="checkbox" onclick="myFunction()">Show Password<br>
+
  <button class="btn btn-outline-primary"  >Signup</button>
  <% end %>
  </center>
  </div>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("password");
+  var y = document.getElementById("pass2");
+
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+
+  if (y.type === "password") {
+    y.type = "text";
+  } else {
+    y.type = "password";
+  }
+}
+</script>
