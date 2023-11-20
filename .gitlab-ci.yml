@@ -15,7 +15,6 @@ before_script:
 build:
   stage: build
   script:
-  - psql -h "localhost" -U "arun" -d "url_shortner_test" -c "SELECT 'OK' AS status;"
   - ruby -v
   - echo "Hello, $GITLAB_USER_LOGIN!"
    
