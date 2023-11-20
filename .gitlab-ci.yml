@@ -1,14 +1,5 @@
 image: ruby:3.1.2
 
-  variables:
-    
-  POSTGRES_DB: url_shortner_test
-  POSTGRES_USER: arun
-  POSTGRES_HOST_AUTH_METHOD: trust
-
-  
-
-
 stages: 
     - build
     - test
@@ -24,7 +15,7 @@ before_script:
 build:
   stage: build
   script:
-  - psql -h "localhost" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "SELECT 'OK' AS status;"
+  - psql -h "localhost" -U "arun" -d "url_shortner_test" -c "SELECT 'OK' AS status;"
   - ruby -v
   - echo "Hello, $GITLAB_USER_LOGIN!"
    
