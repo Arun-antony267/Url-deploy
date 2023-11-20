@@ -1,5 +1,4 @@
 image: ruby:3.1.2
-image: postgres
 
 host-auth:
   services:
