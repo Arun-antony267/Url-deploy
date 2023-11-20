@@ -23,13 +23,6 @@ test:
   services:
     - postgres:16.1
   script:
-    - adapter:postgresql
-    - encoding:unicode
-    - database:url_shortner_test
-    - username:arun
-    - password:qwer
-    - host:localhost
-    - port:5432
     - bundle exec rspec
 
 deploy:
