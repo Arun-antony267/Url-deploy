@@ -60,7 +60,7 @@ test:
   database: url_shortner_test
   username: arun
   password: qwer
-  host: postgres
+  host: localhost
   port: 5432
   
 # As with config/credentials.yml, you never want to store sensitive information,
