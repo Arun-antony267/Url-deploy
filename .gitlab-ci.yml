@@ -20,7 +20,7 @@ build:
    
 test:
   stage: test 
-   services:
+  services:
     - postgres:16.1
   script:
     - bundle exec rspec
