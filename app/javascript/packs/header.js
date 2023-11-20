@@ -9,13 +9,13 @@ function Header() {
         
         <div >
           <a href="/">
-            <button class="btn btn-outline-primary" type="button">Home</button>
+            <button class="dropbtn dropbtn-outline-primary" type="button">Home</button>
           </a>
           <a href="/user/login">
-            <button class="btn btn-outline-primary" type="button">Login</button>
+            <button class="dropbtn dropbtn-outline-primary" type="button">Login</button>
           </a>
           <a href="/user/signup">
-            <button class="btn btn-outline-primary" type="button">Signup</button>
+            <button class="dropbtn dropbtn-outline-primary" type="button">Signup</button>
           </a>
         </div>
        

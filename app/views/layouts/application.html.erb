@@ -68,12 +68,36 @@ button:hover {
 }
 
 .dropbtn {
+  text-align: center;
   background-color: transparent;
-  color: #46bff7;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
+  border-color:white;
+  /* border: transparent; */
+  padding: 5px;
+  margin: 0px;
   cursor: pointer;
+  transition: all 0.5s  ease;
+}
+
+.dropbtn:hover{
+
+    color: var(--bs-dropbtn-hover-color);
+    background-color: var(--bs-dropbtn-hover-bg);
+    border-color: var(--bs-dropbtn-hover-border-color);
+  
+}
+
+
+.dropbtn-outline-primary {
+ --bs-dropbtn-color: #000000;
+  --bs-dropbtn-border-color: transparent;
+  --bs-dropbtn-hover-color: #fff;
+  --bs-dropbtn-hover-bg: #56dadf;
+  --bs-dropbtn-hover-border-color: black;
+  --bs-dropbtn-focus-shadow-rgb: 25, 135, 84;
+  --bs-dropbtn-active-color: #fff;
+  --bs-dropbtn-active-bg: #46bff7;
+  --bs-dropbtn-active-border-color: transparent;
+  --bs-dropbtn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 
 .dropdown {
