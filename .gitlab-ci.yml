@@ -1,16 +1,12 @@
 image: ruby:3.1.2
 
-host-auth:
-  services:
-    - postgres
   variables:
-    # Configure postgres service (https://hub.docker.com/_/postgres/)
-    POSTGRES_DB: url_shortner_test
-    POSTGRES_USER: arun
-    POSTGRES_HOST_AUTH_METHOD: trust
-  image: postgres
-  script:
-    - psql -h "localhost" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "SELECT 'OK' AS status;"
+    
+  POSTGRES_DB: url_shortner_test
+  POSTGRES_USER: arun
+  POSTGRES_HOST_AUTH_METHOD: trust
+
+  
 
 
 stages: 
@@ -23,17 +19,19 @@ before_script:
   - apt-get install -y nodejs
   - gem install bundler
   - bundle install
-
+  
   
 build:
   stage: build
   script:
+  - psql -h "localhost" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "SELECT 'OK' AS status;"
   - ruby -v
   - echo "Hello, $GITLAB_USER_LOGIN!"
    
 test:
   stage: test 
   script:
+
     - bundle exec rspec
 
 deploy:
