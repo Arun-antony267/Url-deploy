@@ -78,6 +78,12 @@ group :test do
 
 end
 
+group :production do
+  # Add gems that are specific to the production environment here
+  gem 'rails_12factor'
+end
+
+
 gem 'shortener', '~> 0.5.5'
 
 gem 'prawn','~> 2.1'
@@ -95,8 +101,6 @@ gem 'cssbundling-rails', '~> 1.2'
 gem 'react-rails', '~> 2.6', '>= 2.6.1'
 
 gem 'simplecov', '~> 0.15.0'
-
-gem 'rails_12factor', group: :production
 
 gem 'rails-helper', '~> 0.1.0'
 
