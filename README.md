@@ -9,6 +9,14 @@ This is a simple URL shortener application built with Ruby on Rails for the back
 - Shorten Multiple URLs at a time.
 - Shorten Multiple URLs from upload(file should be of format csv).
 
+### How This Works
+
+The given URL is shortened to 7 digit random number and appended to the domain "https://test.tin.ee/" (for example https://test.tin.ee/qwe334f5 ). This short URL is then stored in the database along with the original long URL. 
+
+In the case of shortening multiple URLs at a time the long URLs should be seperated by a comma (","). The short URL corresponding to the original long URL will shown on the dashbord.
+
+In the case of shortening long URLs from a file the file should be of the format .csv. The short URL for each long URLs in the file will be shown in the dashboard along with the corresponding long URL.
+
 
 ### Prerequisites
 
