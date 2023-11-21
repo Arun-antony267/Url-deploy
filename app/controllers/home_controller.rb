@@ -41,13 +41,28 @@ else
 end
 end
 
+def is_csv_file?(file_path)
+  # Use File.extname to get the extension of the file
+  extension = File.extname(file_path)
+
+  # Check if the extension is ".csv" (case-insensitive)
+  return extension.downcase == ".csv"
+end
 
 
 def file 
-
+if params[:myFile].present?
   $file = params[:myFile]
+  if is_csv_file?( $file )
   redirect_to controller: :pdf, action: :uploadFile
- 
+else
+  flash[:message] = 'Invalid File'
+  render 'new'
+end
+else
+  flash[:message] = 'Invalid File'
+  render 'new'
+end
 end
 
 
