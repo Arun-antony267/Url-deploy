@@ -15,10 +15,9 @@ before_script:
 build:
   stage: build
   script:
-   - bundle install
-   - bundle exec rake assets:precompile
-   - bundle exec rake assets:clean
-   - bundle exec rake db:migrate
+  - ruby -v
+  - yarn --version
+  - echo "Hello, $GITLAB_USER_LOGIN!"
    
 test:
   stage: test 
