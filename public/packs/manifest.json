@@ -9,8 +9,8 @@
   "copy.js.map": "/packs/js/copy-62be0598ef89ef4e541b.js.map",
   "copy_url.js": "/packs/js/copy_url-d14916c3ed33cba7f7da.js",
   "copy_url.js.map": "/packs/js/copy_url-d14916c3ed33cba7f7da.js.map",
-  "count.js": "/packs/js/count-3546071190787ff14d32.js",
-  "count.js.map": "/packs/js/count-3546071190787ff14d32.js.map",
+  "count.js": "/packs/js/count-a3ce95a15aa3d45b2279.js",
+  "count.js.map": "/packs/js/count-a3ce95a15aa3d45b2279.js.map",
   "entrypoints": {
     "application": {
       "js": [
@@ -46,10 +46,10 @@
     },
     "count": {
       "js": [
-        "/packs/js/count-3546071190787ff14d32.js"
+        "/packs/js/count-a3ce95a15aa3d45b2279.js"
       ],
       "js.map": [
-        "/packs/js/count-3546071190787ff14d32.js.map"
+        "/packs/js/count-a3ce95a15aa3d45b2279.js.map"
       ]
     },
     "file": {
