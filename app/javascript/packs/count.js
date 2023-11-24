@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 
 function MyComponent(){
   
-  const url= "home/urlCount";
+  // const url= "home/urlCount";
   const [data, setData] = useState();
   
   const fetchInfo = () => {
-    return fetch(url)
+    return fetch('home/urlCount')
     .then ((res) => res.json())
     .then((d) => setData(d))
   }
@@ -18,7 +18,7 @@ function MyComponent(){
   return(
       <div className='p'>
         <div className='box box-outline '>
-        <p> The Number Of URL's Shortened is : {data}</p>
+        <p> The Number Of URL's Shortened is :{data}</p>
         </div>
       </div>
   )
