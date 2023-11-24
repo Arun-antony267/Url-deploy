@@ -110,3 +110,5 @@ gem 'factory_bot_rails', '~> 6.2'
 
 gem 'activesupport', '~> 7.0.8'
 gem 'actionpack', '~> 7.0.8'
+
+gem "matrix", "~> 0.4.2"

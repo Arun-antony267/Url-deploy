@@ -344,6 +344,7 @@ DEPENDENCIES
   factory_bot_rails (~> 6.2)
   importmap-rails
   jbuilder
+  matrix (~> 0.4.2)
   pdf-reader (~> 1.4)
   pg (~> 1.1)
   prawn (~> 2.1)
