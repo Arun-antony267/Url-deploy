@@ -77,7 +77,7 @@ end
 
 
 def next
-  $size = $size - 1;
+$size = $size - 1;
 $original_url = $after[$size]
   if $size!= -1 
       if $original_url.present?
