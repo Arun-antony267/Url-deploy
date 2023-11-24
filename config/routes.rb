@@ -14,7 +14,8 @@ Rails.application.routes.draw do
       get 'home/next'
       post 'home/next'
       
-     get'/urlCount', to: 'home#urlCount'
+    #  get'/urlCount', to: 'home#urlCount'
+     get 'home/urlCount'
      get '/srtUrl', to: 'home#srtUrl'
      get '/ogurl', to: 'home#ogurl'  
      get 'pdf/fileogurl', to: 'pdf#fileOgUrl'

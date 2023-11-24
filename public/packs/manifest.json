@@ -9,8 +9,8 @@
   "copy.js.map": "/packs/js/copy-62be0598ef89ef4e541b.js.map",
   "copy_url.js": "/packs/js/copy_url-d14916c3ed33cba7f7da.js",
   "copy_url.js.map": "/packs/js/copy_url-d14916c3ed33cba7f7da.js.map",
-  "count.js": "/packs/js/count-42fdc669800f194b5a92.js",
-  "count.js.map": "/packs/js/count-42fdc669800f194b5a92.js.map",
+  "count.js": "/packs/js/count-a3ce95a15aa3d45b2279.js",
+  "count.js.map": "/packs/js/count-a3ce95a15aa3d45b2279.js.map",
   "entrypoints": {
     "application": {
       "js": [
@@ -46,10 +46,10 @@
     },
     "count": {
       "js": [
-        "/packs/js/count-42fdc669800f194b5a92.js"
+        "/packs/js/count-a3ce95a15aa3d45b2279.js"
       ],
       "js.map": [
-        "/packs/js/count-42fdc669800f194b5a92.js.map"
+        "/packs/js/count-a3ce95a15aa3d45b2279.js.map"
       ]
     },
     "file": {
@@ -92,14 +92,6 @@
         "/packs/js/hello_react-0f38c6c9a8d47384f448.js.map"
       ]
     },
-    "logout": {
-      "js": [
-        "/packs/js/logout-636f151c702ca83a0e6e.js"
-      ],
-      "js.map": [
-        "/packs/js/logout-636f151c702ca83a0e6e.js.map"
-      ]
-    },
     "server_rendering": {
       "js": [
         "/packs/js/server_rendering-70a6d0ba913d7707fd57.js"
@@ -125,8 +117,6 @@
   "header3.js.map": "/packs/js/header3-c76770d3559695b88bfa.js.map",
   "hello_react.js": "/packs/js/hello_react-0f38c6c9a8d47384f448.js",
   "hello_react.js.map": "/packs/js/hello_react-0f38c6c9a8d47384f448.js.map",
-  "logout.js": "/packs/js/logout-636f151c702ca83a0e6e.js",
-  "logout.js.map": "/packs/js/logout-636f151c702ca83a0e6e.js.map",
   "server_rendering.js": "/packs/js/server_rendering-70a6d0ba913d7707fd57.js",
   "server_rendering.js.map": "/packs/js/server_rendering-70a6d0ba913d7707fd57.js.map",
   "show.js": "/packs/js/show-7e0447ffe9c4a2a8dab9.js",
