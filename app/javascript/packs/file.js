@@ -6,10 +6,10 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 function Display(){
 //  const text="Hi this is react body"
 
-const url="http://127.0.0.1:3000/pdf/filesrturl"
+const url="/filesrturl"
 const [text, setText]= useState('')
 
-const url2="http://127.0.0.1:3000/pdf/fileogurl"
+const url2="/fileogurl"
 const [text2, setText2]= useState('')
 
 const fetchInfo = () => {

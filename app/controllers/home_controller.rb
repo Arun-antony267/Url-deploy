@@ -149,15 +149,15 @@ end
     
     def ogurl
 
-      @original_url = $original_url.to_json
-      render json: @original_url
+      # @original_url = $original_url.to_json
+      render json: $original_url.to_json
         
     end
 
     def srtUrl
     
-      @shortened_url = $shortened_url.to_json
-      render json: @shortened_url
+      # @shortened_url = $shortened_url.to_json
+      render json: $shortened_url.to_json
 
     end
 

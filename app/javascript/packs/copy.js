@@ -5,14 +5,14 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 function Copyurl(){
 //  const text="Hi this is react body"
 
-const url="/srtUrl"
+// const url="/srtUrl"
 const [text, setText]= useState('')
 
-const url2="/ogurl"
+// const url2="/ogurl"
 const [text2, setText2]= useState('')
 
 const fetchInfo = () => {
-  return fetch(url)
+  return fetch("/srtUrl")
   .then ((res) => res.json())
   .then((d) => setText(d))
 }
@@ -22,7 +22,7 @@ useEffect(() => {
 });
 
 const fetchInfo2 = () => {
-    return fetch(url2)
+    return fetch("/ogurl")
     .then ((res) => res.json())
     .then((d) => setText2(d))
   }

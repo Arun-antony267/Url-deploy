@@ -72,15 +72,15 @@ class PdfController < ApplicationController
      
       def fileOgUrl
 
-        @original_url = @@file_url.to_json
-        render json: @original_url
+        @file_original_url = @@file_url.to_json
+        render json: @file_original_url
           
       end
   
       def fileSrtUrl
       
-        @shortened_url = @@file_srt_url.to_json
-        render json: @shortened_url
+        @file_shortened_url = @@file_srt_url.to_json
+        render json: @file_shortened_url
   
       end
   

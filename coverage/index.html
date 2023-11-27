@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-11-27T10:25:54+05:30">2023-11-27T10:25:54+05:30</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-11-27T11:37:39+05:30">2023-11-27T11:37:39+05:30</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -32,9 +32,9 @@
   <a name="AllFiles"></a>
   <div>
     <b>22</b> files in total.
-    <b>375</b> relevant lines. 
+    <b>373</b> relevant lines. 
     <span class="green"><b>0</b> lines covered</span> and
-    <span class="red"><b>375</b> lines missed </span>
+    <span class="red"><b>373</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -74,9 +74,9 @@
         <td class="strong"><a href="#4d89877c452833c6b98acc9b82bf2798c0fae933" class="src_link" title="app/controllers/home_controller.rb">app/controllers/home_controller.rb</a></td>
         <td class="red strong">0.0 %</td>
         <td>165</td>
-        <td>112</td>
+        <td>110</td>
         <td>0</td>
-        <td>112</td>
+        <td>110</td>
         <td>0.0</td>
       </tr>
       
@@ -290,9 +290,9 @@
   <a name="Controllers"></a>
   <div>
     <b>9</b> files in total.
-    <b>295</b> relevant lines. 
+    <b>293</b> relevant lines. 
     <span class="green"><b>0</b> lines covered</span> and
-    <span class="red"><b>295</b> lines missed </span>
+    <span class="red"><b>293</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -332,9 +332,9 @@
         <td class="strong"><a href="#4d89877c452833c6b98acc9b82bf2798c0fae933" class="src_link" title="app/controllers/home_controller.rb">app/controllers/home_controller.rb</a></td>
         <td class="red strong">0.0 %</td>
         <td>165</td>
-        <td>112</td>
+        <td>110</td>
         <td>0</td>
-        <td>112</td>
+        <td>110</td>
         <td>0.0</td>
       </tr>
       
@@ -1001,9 +1001,9 @@
     <h3>app/controllers/home_controller.rb</h3>
     <h4><span class="red">0.0 %</span> covered</h4>
     <div>
-      <b>112</b> relevant lines. 
+      <b>110</b> relevant lines. 
       <span class="green"><b>0</b> lines covered</span> and
-      <span class="red"><b>112</b> lines missed.</span>
+      <span class="red"><b>110</b> lines missed.</span>
     </div>
   </div>
   
@@ -1916,16 +1916,16 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="152">
+        <li class="never" data-hits="" data-linenumber="152">
           
           
-          <code class="ruby">      @original_url = $original_url.to_json</code>
+          <code class="ruby">      # @original_url = $original_url.to_json</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="153">
           
           
-          <code class="ruby">      render json: @original_url</code>
+          <code class="ruby">      render json: $original_url.to_json</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="154">
@@ -1958,16 +1958,16 @@
           <code class="ruby">    </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="159">
+        <li class="never" data-hits="" data-linenumber="159">
           
           
-          <code class="ruby">      @shortened_url = $shortened_url.to_json</code>
+          <code class="ruby">      # @shortened_url = $shortened_url.to_json</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="160">
           
           
-          <code class="ruby">      render json: @shortened_url</code>
+          <code class="ruby">      render json: $shortened_url.to_json</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="161">
@@ -2466,13 +2466,13 @@
         <li class="missed" data-hits="0" data-linenumber="75">
           
           
-          <code class="ruby">        @original_url = @@file_url.to_json</code>
+          <code class="ruby">        @file_original_url = @@file_url.to_json</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="76">
           
           
-          <code class="ruby">        render json: @original_url</code>
+          <code class="ruby">        render json: @file_original_url</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="77">
@@ -2508,13 +2508,13 @@
         <li class="missed" data-hits="0" data-linenumber="82">
           
           
-          <code class="ruby">        @shortened_url = @@file_srt_url.to_json</code>
+          <code class="ruby">        @file_shortened_url = @@file_srt_url.to_json</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="83">
           
           
-          <code class="ruby">        render json: @shortened_url</code>
+          <code class="ruby">        render json: @file_shortened_url</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="84">
