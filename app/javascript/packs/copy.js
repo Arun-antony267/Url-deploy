@@ -5,10 +5,10 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 function Copyurl(){
 //  const text="Hi this is react body"
 
-const url="http://127.0.0.1:3000/srtUrl"
+const url="/srtUrl"
 const [text, setText]= useState('')
 
-const url2="http://127.0.0.1:3000/ogurl"
+const url2="/ogurl"
 const [text2, setText2]= useState('')
 
 const fetchInfo = () => {
