@@ -10,11 +10,22 @@
         <input class="shortInput" name="email" placeholder="Email"  type="text" style="width: 500px;"><br>
 
         <label for="password"></label><br>
-        <input class="shortInput" name="password" placeholder="Password"  type="password" style="width: 500px;"><br>
+        <input class="shortInput" name="password" placeholder="Password"  type="password" id="password" style="width: 500px;"><br><input type="checkbox" onclick="myFunction()">Show Password<br>
         <button class="btn btn-outline-primary" >Login</button>
           <%= @error%>
           <% end%>
           <p><%= @dis%>
            </center>
           </div>
+          <script>
+function myFunction() {
+  var x = document.getElementById("password");
+
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
          
