@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html>
 <style>
-table {
- 
-  font-family: arial, sans-serif;
+
+.con {
+  margin: 50px 50px;
+}
+
+.l {
   border-collapse: collapse;
   width:100%;
-
 }
 
-td, th {
-  border: 1px solid #000;
-  text-align: left;
-  padding: 8px;
+.l th{
+   border: 2px solid #ddd;
+  padding: 10px;
+  text-align:center;
 }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
+.l td{
+  border: 2px solid #ddd;
+  padding:30px;
+max-width: 50px;
+overflow: hidden;
+}
+
+.l tr{
+  background-color: #ffffcc;
+  color: black;
 }
 </style>
 <div id="header3"></div>
@@ -24,23 +34,27 @@ tr:nth-child(even) {
         <%= link_to "Download PDF file", home_view_path(format: 'pdf') %>
 
 
-      <div class="container">
-<table>     
+      <div class="con">
+<table class= "l">    
+  <thead> 
   <tr>   
         <th>Original Url</th>   
         <th>Shortened Url</th>   
         <th>Created Date</th>   
           
       </tr>   
-       
+      </thead>
+
+      <tbody> 
       <% @short_url.each do |short_url| %>   
+      
           <tr>   
             <td><%= short_url.original_url %></td>   
             <td><%= short_url.shortened_url %></td>   
             <td><%= short_url.created_at%></td>                 
            </tr>   
-      <% end %>   <br>
-
+      <% end %>   
+            </tbody>
 
       </table>
       </div>
