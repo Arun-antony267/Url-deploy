@@ -28,9 +28,10 @@ Make sure you have the following installed:
 - [Yarn](https://yarnpkg.com/getting-started/install)
 
 
-### Installation
+### To View
 
-1. Clone this repository.
-2. Run rails s.
+You can access the project using the following link 
+
+:- https://url-shortner-e2w9.onrender.com/
 
 
