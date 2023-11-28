@@ -19,7 +19,6 @@ before_script:
   - apt-get install -y nodejs
   - gem install bundler
   - bundle install
-  - cp config/database.yml
   
 build:
   stage: build
