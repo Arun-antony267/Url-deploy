@@ -106,9 +106,28 @@
         null,
         null,
         null
+      ],
+      "/home/arun/Desktop/url_shortner/app/models/user.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/home/arun/Desktop/url_shortner/app/models/application_record.rb": [
+        1,
+        1,
+        null
       ]
     },
-    "timestamp": 1700733714
+    "timestamp": 1701165424
   },
   "Unknown Test Framework": {
     "coverage": {

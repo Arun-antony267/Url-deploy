@@ -31,7 +31,7 @@ RSpec.describe "UserLoginAndSignup" do
   describe "GET Login" do
     it "from a login user" do
  
-      user_check = User.find_by(email:"abin@gmail.com") 
+      user_check = User.find_by(email:"kiran@gmail.com") 
       user = user_check.present?
 
       # post :check_login, params:{email: 'iop@io.com', password: '123' }
