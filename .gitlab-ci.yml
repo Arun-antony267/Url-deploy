@@ -32,7 +32,7 @@ build:
 test:
   stage: test 
   script:
-    - psql -h 127.0.0.1 -p 5432 -U arun -d url_shortner_production
+    - psql -h postgres -p 5432 -U arun -d url_shortner_production
     - bundle exec rspec
 
 deploy:
