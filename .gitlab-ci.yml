@@ -2,13 +2,12 @@ image: ruby:3.1.2
 
 services:
   - name: postgres:latest
-    alias: postgres
-    command: ["postgres", "-c", "listen_addresses=127.0.0.1", "-p", "5432"]
  
 variables:
   POSTGRES_DB: url_shortner_production
   POSTGRES_USER: arun
   POSTGRES_PASSWORD: qwer
+  DATABASE_URL: postgres://arun:qwer@locallhost:5432/url_shortner_production
 
 
 stages: 
