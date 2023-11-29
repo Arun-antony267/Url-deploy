@@ -9,8 +9,11 @@
         <label for="email">  </label><br>
         <input class="shortInput" name="email" placeholder="Email"  type="text" style="width: 500px;"><br>
 
-        <label for="password"></label><br>
-        <input class="shortInput" name="password" placeholder="Password"  type="password" id="password" style="width: 500px;"><br><input type="checkbox" onclick="myFunction()">Show Password<br>
+         <label for="password"></label><br>
+        <div class = "password">
+        <input class="pass-field" name="password" placeholder="Password"  type="password" id="password">
+        <input class="pass-icon" type="checkbox" onclick="myFunction()">
+        </div><br>
         <button class="btn btn-outline-primary" >Login</button>
           <%= @error%>
           <% end%>
