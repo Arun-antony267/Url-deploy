@@ -1,13 +1,26 @@
 class PdfController < ApplicationController
+  require 'csv'
   
   def new
     redirect_to controller: :home, action: :new
   end
 
      def uploadFile
-        post = DataFile.save($file)
-        # redirect_to controller: :home, action: :new
-        redirect_to :action => 'next_line'
+        @post = UrlFile.new( file_params )
+        if @post.save   
+          
+          $csv = File.new($file, "r")
+          CSV.foreach($file.path) do |row|
+         
+         puts(CSV.read($file.path))
+        end
+        puts ("File saved")
+        redirect_to controller: :home, action: :new
+        else 
+          puts ("File not saved")
+          redirect_to controller: :home, action: :new
+        # redirect_to :action => 'next_line'
+        end
      end
      
      def next_line
@@ -84,7 +97,12 @@ class PdfController < ApplicationController
         render json: @file_shortened_url
   
       end
-  
+
+      private
+      
+      def file_params
+        params.permit(:file)
+      end
 
 end
     

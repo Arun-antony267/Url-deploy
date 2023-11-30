@@ -6,7 +6,7 @@ class DataFile < ActiveRecord::Base
         # $csv = File.new($file, "r")
         # $parsed_data = CSV.parse($csv)
         # $parsed_data.each do |row|
-        #       $f_url = row[1] 
+        #   $f_url = row[1]     
         # end
        
         @pdf = $file

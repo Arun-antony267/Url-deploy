@@ -12,13 +12,17 @@
       <div class= "p-3">
     <br><p>File Upload</p>
 
-   <form action="file">
+   <%# <form action="file">
      <input type="file" id="myFile" name="myFile">
   
      <p><button type="submit" class= "signupbtn" >Upload</button>
-  </form>
+  </form> %>
+ <%= form_with url: "file" do |form| %>
+ <%= form.label :query, "Upload File:" %>
+  <%= form.file_field :file, direct_upload: true %>
+  <%= form.submit %>
+<% end %>
   </div>
   <%# <%= $f_url %>
   <%# <%= $csv %> 
-
   </body>
