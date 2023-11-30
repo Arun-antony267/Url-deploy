@@ -6,6 +6,7 @@ class PdfController < ApplicationController
 
      def uploadFile
         post = DataFile.save($file)
+        # redirect_to controller: :home, action: :new
         redirect_to :action => 'next_line'
      end
      

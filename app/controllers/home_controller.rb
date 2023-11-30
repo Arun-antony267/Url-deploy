@@ -34,20 +34,6 @@ class HomeController < ApplicationController
   
   end 
   
-  def redirect
-  @short_url = params[:shortened_url]
-  
-  if @short_url.present?
-     @record = ShortUrl.find_by(shortened_url: @short_url)
-     @og_url = @record.original_url
-   
-  else
-  
-    @error = "Not entered url"
-    render 'index'
-  end
-  end
-  
   def is_csv_file?(file_path)
     # Use File.extname to get the extension of the file
     extension = File.extname(file_path)

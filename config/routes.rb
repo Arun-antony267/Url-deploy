@@ -17,8 +17,8 @@ Rails.application.routes.draw do
    get'/urlCount', to: 'home#urlCount'
    get '/srtUrl', to: 'home#srtUrl'
    get '/ogurl', to: 'home#ogurl'  
-   get 'pdf/fileogurl', to: 'pdf#fileOgUrl'
-   get 'pdf/filesrturl', to: 'pdf#fileSrtUrl'
+   get '/fileogurl', to: 'pdf#fileOgUrl'
+   get '/filesrturl', to: 'pdf#fileSrtUrl'
    get 'pdf/new_line'
 
    
