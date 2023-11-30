@@ -1,6 +1,56 @@
 {
   "RSpec": {
     "coverage": {
+      "/home/arun/Desktop/url_shortner/spec/helpers/home_helper_spec.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null
+      ],
       "/home/arun/Desktop/url_shortner/spec/helpers/user_helper_spec.rb": [
         1,
         null,
@@ -56,28 +106,9 @@
         null,
         null,
         null
-      ],
-      "/home/arun/Desktop/url_shortner/app/models/user.rb": [
-        1,
-        null,
-        1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null
-      ],
-      "/home/arun/Desktop/url_shortner/app/models/application_record.rb": [
-        1,
-        1,
-        null
       ]
     },
-    "timestamp": 1701341695
+    "timestamp": 1701344474
   },
   "Unknown Test Framework": {
     "coverage": {
