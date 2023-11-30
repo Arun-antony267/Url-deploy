@@ -4,7 +4,12 @@ services:
   - name: postgres
  
 variables:
-  DATABASE_URL: postgres://arun:qwer@localhost:5432/url_shortner_production
+  POSTGRES_DB: url_shortner_production
+  POSTGRES_HOST: localhost
+  POSTGRES_PORT: 5432
+  POSTGRES_USER: arun
+  POSTGRES_PASSWORD: qwer
+
 
 
 stages: 

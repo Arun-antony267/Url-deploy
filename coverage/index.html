@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-11-30T11:09:20+05:30">2023-11-30T11:09:20+05:30</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-11-30T11:31:33+05:30">2023-11-30T11:31:33+05:30</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -32,9 +32,9 @@
   <a name="AllFiles"></a>
   <div>
     <b>22</b> files in total.
-    <b>370</b> relevant lines. 
+    <b>371</b> relevant lines. 
     <span class="green"><b>0</b> lines covered</span> and
-    <span class="red"><b>370</b> lines missed </span>
+    <span class="red"><b>371</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -213,10 +213,10 @@
       <tr>
         <td class="strong"><a href="#095ff25d69889cf4a669accb4bc24325940bdac0" class="src_link" title="app/models/data_file.rb">app/models/data_file.rb</a></td>
         <td class="red strong">0.0 %</td>
-        <td>27</td>
-        <td>10</td>
+        <td>25</td>
+        <td>11</td>
         <td>0</td>
-        <td>10</td>
+        <td>11</td>
         <td>0.0</td>
       </tr>
       
@@ -454,9 +454,9 @@
   <a name="Models"></a>
   <div>
     <b>5</b> files in total.
-    <b>40</b> relevant lines. 
+    <b>41</b> relevant lines. 
     <span class="green"><b>0</b> lines covered</span> and
-    <span class="red"><b>40</b> lines missed </span>
+    <span class="red"><b>41</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -485,10 +485,10 @@
       <tr>
         <td class="strong"><a href="#095ff25d69889cf4a669accb4bc24325940bdac0" class="src_link" title="app/models/data_file.rb">app/models/data_file.rb</a></td>
         <td class="red strong">0.0 %</td>
-        <td>27</td>
-        <td>10</td>
+        <td>25</td>
+        <td>11</td>
         <td>0</td>
-        <td>10</td>
+        <td>11</td>
         <td>0.0</td>
       </tr>
       
@@ -2025,16 +2025,16 @@
           <code class="ruby">        post = DataFile.save($file)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="9">
+        <li class="never" data-hits="" data-linenumber="9">
           
           
-          <code class="ruby">        redirect_to controller: :home, action: :new</code>
+          <code class="ruby">        # redirect_to controller: :home, action: :new</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="missed" data-hits="0" data-linenumber="10">
           
           
-          <code class="ruby">        # redirect_to :action =&gt; &#39;next_line&#39;</code>
+          <code class="ruby">        redirect_to :action =&gt; &#39;next_line&#39;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="11">
@@ -2058,7 +2058,7 @@
         <li class="missed" data-hits="0" data-linenumber="14">
           
           
-          <code class="ruby">      $size_pdf =  $csv.size </code>
+          <code class="ruby">      $size_pdf =  $value.size </code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="15">
@@ -3769,9 +3769,9 @@
     <h3>app/models/data_file.rb</h3>
     <h4><span class="red">0.0 %</span> covered</h4>
     <div>
-      <b>10</b> relevant lines. 
+      <b>11</b> relevant lines. 
       <span class="green"><b>0</b> lines covered</span> and
-      <span class="red"><b>10</b> lines missed.</span>
+      <span class="red"><b>11</b> lines missed.</span>
     </div>
   </div>
   
@@ -3808,133 +3808,121 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="6">
+        <li class="never" data-hits="" data-linenumber="6">
           
           
-          <code class="ruby">        $csv = File.new($file, &quot;r&quot;)</code>
+          <code class="ruby">        # $csv = File.new($file, &quot;r&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="7">
           
           
-          <code class="ruby">        </code>
+          <code class="ruby">        # $parsed_data = CSV.parse($csv)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="8">
+        <li class="never" data-hits="" data-linenumber="8">
           
           
-          <code class="ruby">        $parsed_data = CSV.parse($csv)</code>
+          <code class="ruby">        # $parsed_data.each do |row|</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
           
           
-          <code class="ruby">      </code>
+          <code class="ruby">        #       $f_url = row[1] </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="10">
+        <li class="never" data-hits="" data-linenumber="10">
           
           
-          <code class="ruby">        $parsed_data.each do |row|</code>
+          <code class="ruby">        # end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="11">
+        <li class="never" data-hits="" data-linenumber="11">
           
           
-          <code class="ruby">              $f_url = row[1] </code>
+          <code class="ruby">       </code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="12">
           
           
-          <code class="ruby">        end</code>
+          <code class="ruby">        @pdf = $file</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="13">
+        <li class="missed" data-hits="0" data-linenumber="13">
           
           
-          <code class="ruby">        # @pdf = $file.open</code>
+          <code class="ruby">        name = upload[@pdf]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="missed" data-hits="0" data-linenumber="14">
           
           
-          <code class="ruby">        # puts (@pdf)</code>
+          <code class="ruby">        directory = &quot;/home/arun/Downloads&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="15">
           
           
-          <code class="ruby">        # name = upload[@pdf]</code>
+          <code class="ruby">        # create the file path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="missed" data-hits="0" data-linenumber="16">
           
           
-          <code class="ruby">        # directory = &quot;/home/arun/Downloads&quot;</code>
+          <code class="ruby">        path = File.join(directory, name)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="17">
           
           
-          <code class="ruby">        # # create the file path</code>
+          <code class="ruby">        # write the file</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="missed" data-hits="0" data-linenumber="18">
           
           
-          <code class="ruby">        # path = File.join(directory, name)</code>
+          <code class="ruby">        aFile = File.open(path, &quot;r&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="19">
+        <li class="missed" data-hits="0" data-linenumber="19">
           
           
-          <code class="ruby">        # # write the file</code>
+          <code class="ruby">        $value  = IO.readlines(aFile)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="20">
           
           
-          <code class="ruby">        # aFile = File.open(path, &quot;r&quot;)</code>
+          <code class="ruby">       </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="21">
           
           
-          <code class="ruby">        # $value  = IO.readlines(aFile)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="22">
-          
-          
           <code class="ruby">       </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
-          
-          
-          <code class="ruby">       </code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="24">
+        <li class="missed" data-hits="0" data-linenumber="22">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby">    </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="never" data-hits="" data-linenumber="24">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="27">
+        <li class="missed" data-hits="0" data-linenumber="25">
           
           
           <code class="ruby">end</code>
