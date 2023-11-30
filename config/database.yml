@@ -89,5 +89,5 @@ production:
   database: url_shortner_production
   username: arun
   password: qwer
-  host: postgres
+  host: localhost
   port: 5432
