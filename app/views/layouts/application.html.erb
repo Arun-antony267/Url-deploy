@@ -140,6 +140,33 @@ button:hover {
   padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
 }
 
+
+.block{
+  width: 40%;
+  height: 500px;
+  margin:20px auto;
+  background-image: url(<%= asset_path 'bg-1.jpg' %>);
+  float:left;
+}
+
+
+.block-2{
+   width: 40%;
+  height: 600px;
+  margin: 20px auto;
+  float:right;
+}
+
+
+.login-container {
+            text-align: center;
+            padding: 15px;
+         margin: 20%;
+         background-color: yellow;
+         border-radius: 7px;
+            }
+
+
 .p {
   font-family: verdana;
   font-size: 30px;
@@ -244,14 +271,14 @@ li a {
   display: inline-block;
   position: relative;
   border: transparent;
-  width: 520px;
+  width: auto;
 }
 
 .pass-field{
   padding: 15px 5px;
   outline: none;
   border: 0;
-  width: 250px;
+  width: auto;
 }
 
 
@@ -278,7 +305,7 @@ li a {
       <%= javascript_pack_tag "copy_url" %>  
       <%= javascript_pack_tag "show"%> 
       <%= javascript_pack_tag "Header3" %>
-
+ <%= javascript_pack_tag "Login" %>
     <body >
 
        <%= yield %>

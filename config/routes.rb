@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get 'home/index'
   get '/i', to: 'home#redirect_to_original'
-  root 'home#index'
+  root 'user#login'
   
   get 'home/new'
    post 'home/check_url'
