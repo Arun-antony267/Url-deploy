@@ -33,6 +33,7 @@ build:
 test:
   stage: test 
   script:
+    - bundle exec rake db:migrate
     - bundle exec rspec
 
 deploy:
