@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-12-01T14:54:35+05:30">2023-12-01T14:54:35+05:30</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-12-04T11:27:17+05:30">2023-12-04T11:27:17+05:30</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -32,9 +32,9 @@
   <a name="AllFiles"></a>
   <div>
     <b>23</b> files in total.
-    <b>390</b> relevant lines. 
+    <b>392</b> relevant lines. 
     <span class="green"><b>0</b> lines covered</span> and
-    <span class="red"><b>390</b> lines missed </span>
+    <span class="red"><b>392</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -74,9 +74,9 @@
         <td class="strong"><a href="#4d89877c452833c6b98acc9b82bf2798c0fae933" class="src_link" title="app/controllers/home_controller.rb">app/controllers/home_controller.rb</a></td>
         <td class="red strong">0.0 %</td>
         <td>159</td>
-        <td>108</td>
+        <td>109</td>
         <td>0</td>
-        <td>108</td>
+        <td>109</td>
         <td>0.0</td>
       </tr>
       
@@ -133,10 +133,10 @@
       <tr>
         <td class="strong"><a href="#2fa39cb38b20279cadf7e7358bf3325244133cec" class="src_link" title="app/controllers/user_controller.rb">app/controllers/user_controller.rb</a></td>
         <td class="red strong">0.0 %</td>
-        <td>60</td>
-        <td>42</td>
+        <td>61</td>
+        <td>43</td>
         <td>0</td>
-        <td>42</td>
+        <td>43</td>
         <td>0.0</td>
       </tr>
       
@@ -300,9 +300,9 @@
   <a name="Controllers"></a>
   <div>
     <b>9</b> files in total.
-    <b>306</b> relevant lines. 
+    <b>308</b> relevant lines. 
     <span class="green"><b>0</b> lines covered</span> and
-    <span class="red"><b>306</b> lines missed </span>
+    <span class="red"><b>308</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -342,9 +342,9 @@
         <td class="strong"><a href="#4d89877c452833c6b98acc9b82bf2798c0fae933" class="src_link" title="app/controllers/home_controller.rb">app/controllers/home_controller.rb</a></td>
         <td class="red strong">0.0 %</td>
         <td>159</td>
-        <td>108</td>
+        <td>109</td>
         <td>0</td>
-        <td>108</td>
+        <td>109</td>
         <td>0.0</td>
       </tr>
       
@@ -401,10 +401,10 @@
       <tr>
         <td class="strong"><a href="#2fa39cb38b20279cadf7e7358bf3325244133cec" class="src_link" title="app/controllers/user_controller.rb">app/controllers/user_controller.rb</a></td>
         <td class="red strong">0.0 %</td>
-        <td>60</td>
-        <td>42</td>
+        <td>61</td>
+        <td>43</td>
         <td>0</td>
-        <td>42</td>
+        <td>43</td>
         <td>0.0</td>
       </tr>
       
@@ -1021,9 +1021,9 @@
     <h3>app/controllers/home_controller.rb</h3>
     <h4><span class="red">0.0 %</span> covered</h4>
     <div>
-      <b>108</b> relevant lines. 
+      <b>109</b> relevant lines. 
       <span class="green"><b>0</b> lines covered</span> and
-      <span class="red"><b>108</b> lines missed.</span>
+      <span class="red"><b>109</b> lines missed.</span>
     </div>
   </div>
   
@@ -1048,16 +1048,16 @@
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="4">
+        <li class="missed" data-hits="0" data-linenumber="4">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby">    user= ShortUrl.where(user_id: $id).count</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="5">
           
           
-          <code class="ruby">    $short_count = ShortUrl.count </code>
+          <code class="ruby">    $short_count = user</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
@@ -1795,7 +1795,7 @@
         <li class="missed" data-hits="0" data-linenumber="128">
           
           
-          <code class="ruby">        @Short_url = ShortUrl.new(original_url: $original_url, shortened_url: $shortened_url)</code>
+          <code class="ruby">        @Short_url = ShortUrl.new(user_id: $id, original_url: $original_url, shortened_url: $shortened_url)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="129">
@@ -3259,9 +3259,9 @@
     <h3>app/controllers/user_controller.rb</h3>
     <h4><span class="red">0.0 %</span> covered</h4>
     <div>
-      <b>42</b> relevant lines. 
+      <b>43</b> relevant lines. 
       <span class="green"><b>0</b> lines covered</span> and
-      <span class="red"><b>42</b> lines missed.</span>
+      <span class="red"><b>43</b> lines missed.</span>
     </div>
   </div>
   
@@ -3439,7 +3439,7 @@
         <li class="missed" data-hits="0" data-linenumber="29">
           
           
-          <code class="ruby">    redirect_to controller: :home, action: :index</code>
+          <code class="ruby">    render &#39;login&#39;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="30">
@@ -3529,55 +3529,55 @@
         <li class="missed" data-hits="0" data-linenumber="44">
           
           
-          <code class="ruby">   flash[:message] = &quot;Logged In Succesfully&quot;</code>
+          <code class="ruby">  $id = @user.id</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="45">
           
           
-          <code class="ruby">  redirect_to controller: :home, action: :new</code>
+          <code class="ruby">   flash[:message] = &quot;Logged In Succesfully&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="46">
           
           
-          <code class="ruby">else</code>
+          <code class="ruby">  redirect_to controller: :home, action: :index</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="47">
           
           
-          <code class="ruby">  flash[:message] = &quot;!!!OOPS not going anywhere&quot;</code>
+          <code class="ruby">else</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="48">
           
           
-          <code class="ruby">  render &#39;login&#39;</code>
+          <code class="ruby">  flash[:message] = &quot;!!!OOPS not going anywhere&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="49">
           
           
+          <code class="ruby">  render &#39;login&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="50">
+          
+          
           <code class="ruby">end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="50">
+        <li class="never" data-hits="" data-linenumber="51">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="51">
+        <li class="missed" data-hits="0" data-linenumber="52">
           
           
           <code class="ruby">end </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="52">
-          
-          
-          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="53">
@@ -3586,43 +3586,49 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="54">
+        <li class="never" data-hits="" data-linenumber="54">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="55">
           
           
           <code class="ruby">  private</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="55">
+        <li class="never" data-hits="" data-linenumber="56">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="56">
-          
-          
-          <code class="ruby">  def user_params</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="57">
           
           
-          <code class="ruby">      params.permit(:name, :email, :password, :password_confirmation)</code>
+          <code class="ruby">  def user_params</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="58">
           
           
+          <code class="ruby">      params.permit(:name, :email, :password, :password_confirmation)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="59">
+          
+          
           <code class="ruby">   end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="59">
+        <li class="never" data-hits="" data-linenumber="60">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="60">
+        <li class="missed" data-hits="0" data-linenumber="61">
           
           
           <code class="ruby">end</code>

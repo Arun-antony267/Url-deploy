@@ -1,8 +1,8 @@
 class HomeController < ApplicationController 
 
   def index
-  
-    $short_count = ShortUrl.count 
+    user= ShortUrl.where(user_id: $id).count
+    $short_count = user
   
   end
   
@@ -125,7 +125,7 @@ class HomeController < ApplicationController
   
       def create
   
-        @Short_url = ShortUrl.new(original_url: $original_url, shortened_url: $shortened_url)
+        @Short_url = ShortUrl.new(user_id: $id, original_url: $original_url, shortened_url: $shortened_url)
     
         if @Short_url.save
           @original_url = $original_url
