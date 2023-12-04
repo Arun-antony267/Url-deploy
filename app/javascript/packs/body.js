@@ -9,7 +9,7 @@ function Component() {
        
         <div class="dropdown">
         <a href="/home/index">
-            <button class="btn btn-outline-primary" type="button">Logout</button>
+            <button class="btn btn-outline-primary" type="button">Home</button>
           </a>
         </div>
       </div>
