@@ -2,6 +2,7 @@ class HomeController < ApplicationController
 
   def index
     user= ShortUrl.where(user_id: $id).count
+    puts($id)
     $short_count = user
   
   end
@@ -23,7 +24,7 @@ class HomeController < ApplicationController
   
   
   def view   
-    @short_url = ShortUrl.all  
+    @short_url = ShortUrl.where(user_id: $id)
     respond_to do |format|
       format.html
       format.pdf do
