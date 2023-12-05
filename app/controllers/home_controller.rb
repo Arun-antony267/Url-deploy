@@ -47,9 +47,13 @@ class HomeController < ApplicationController
   def file 
   if params[:file].present?
     $file = params[:file]
+    $file_content = $file.read
     $file_name = $file.original_filename
-    if is_csv_file?( $file_name )
+    if is_csv_file?( $file )
     redirect_to controller: :pdf, action: :uploadFile
+    # puts($file_name )
+    # puts(file_content)
+    # render "new"
   else
     flash[:message] = 'Invalid File'
     render 'new'

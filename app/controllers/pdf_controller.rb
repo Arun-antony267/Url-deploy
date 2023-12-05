@@ -6,16 +6,18 @@ class PdfController < ApplicationController
   end
 
      def uploadFile
-        @post = UrlFile.new( file_params )
+        @post = UrlFile.new(name: $file_name, attachment: $file )
         if @post.save   
-          
-          $csv = File.new($file, "r")
-          CSV.foreach($file.path) do |row|
-         
-         puts(CSV.read($file.path))
-        end
-        puts ("File saved")
+          $file_urls = $file_content
+          csv_data = CSV.parse($file_urls)
+          $line_count =  csv_data.length
+          data = csv_data[5]
+          puts(csv_data )
+          puts ($line_count)
+          puts( data )
+          # puts (line)
         redirect_to controller: :home, action: :new
+        # redirect_to :action => 'next_line'
         else 
           puts ("File not saved")
           redirect_to controller: :home, action: :new
@@ -23,8 +25,17 @@ class PdfController < ApplicationController
         end
      end
      
+
+      def readInputFile
+          
+            puts ("Reached Next function")
+
+        redirect_to controller: :home, action: :new
+      end
+
+
      def next_line
-      $size_pdf =  $value.size 
+      $size_pdf =  $line_count
       $size_pdf =$size_pdf -1
       $element = $value [$size_pdf]
       @val1 = $element 
@@ -57,7 +68,7 @@ class PdfController < ApplicationController
       def shorten
          @display = "https://test.tin.ee/"
          @string = SecureRandom.uuid[0..6]
-         @file_url = @@file_url
+         @file_url = $file_og_url 
          @@file_srt_url = @display+@string 
          @reply = 'Valid url'
     
