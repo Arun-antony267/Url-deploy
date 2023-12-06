@@ -8,30 +8,26 @@ class PdfController < ApplicationController
      def uploadFile
         @post = UrlFile.new(name: $file_name, attachment: $file )
         if @post.save   
-          $file_urls = $file_content
-          # $urls_chomp = $file_urls.chomp
-          $csv_data = CSV.parse($file_urls)
-          $line_count =  $csv_data.length
-          $element = $csv_data[2]
-          $csv_data.each do |row|
-            # puts row
-            if row.present?
-            $file_s = row.to_s
-              puts ("value present")
-              puts (row)
+          $file_strip = $file_content.split
+          $line_count =  $file_strip.count 
+           puts ($line_count)
+          $file_s = $file_strip .each do |row|
+
+            if $line_count.present?
+                if  $element.present?
+                     $size_pdf = $line_count
+                     puts ("value present")
+                     puts ($element)
+                   else
+                     puts ("value not present")
+                 end
+           
             else
-            puts ("value not present")
+              puts("Line count not present")
             end
-          # end
-            # You can access specific columns like this:
-            # column_value = row['column_name']
-          end
-          # puts($csv_data )
-          # puts ($line_count)
-          # puts( $element  )
-          # puts (line)
-        redirect_to controller: :home, action: :new
-        # redirect_to :action => 'next_line'
+        end
+        # redirect_to controller: :home, action: :new
+        redirect_to :action => 'new_line'
         else 
           puts ("File not saved")
           redirect_to controller: :home, action: :new
@@ -40,42 +36,39 @@ class PdfController < ApplicationController
      end
      
 
-      def readInputFile
-          
-            puts ("Reached Next function")
-
-        redirect_to controller: :home, action: :new
-      end
-
-
-     def next_line
-      $size_pdf = $line_count 
-      $size_pdf = $size_pdf -1
-      $element = $csv_data [$size_pdf]
-      @val1 = $element 
-      if @val1 .present?
-        if @val1 =~ /\A#{URI::regexp([ 'http', 'https'])}\z/
-         $file_url = @val1
-          redirect_to :action => 'shorten'
-        else
-          puts ( $file_url )
-          flash[:message] = 'Invalid url'
-          redirect_to controller: :home, action: :new
-      end
-      else
-        flash[:message] =  "End of file"
-        redirect_to controller: :home, action: :new
-    end
-    end
+    #  def next_line
+    #   $size_pdf = $line_count 
+    #   $size_pdf = $size_pdf -1
+    #   $element = $csv_data [$size_pdf]
+    #   @val1 = $element 
+    #   if @val1 .present?
+    #     if @val1 =~ /\A#{URI::regexp([ 'http', 'https'])}\z/
+    #      $file_url = @val1
+    #       redirect_to :action => 'shorten'
+    #     else
+    #       puts ( $file_url )
+    #       flash[:message] = 'Invalid url'
+    #       # redirect_to controller: :home, action: :new
+    #   end
+    #   else
+    #     flash[:message] =  "End of file"
+    #     redirect_to controller: :home, action: :new
+    # end
+    # end
 
     def new_line
       if $size_pdf.present?
       $size_pdf = $size_pdf - 1
-
       if $size_pdf != -1
-        $element = $csv_data[$size_pdf]
-        redirect_to :action => 'shorten'
+        $element = $file_s [$size_pdf]
+        if $element =~ /\A#{URI::regexp([ 'http', 'https'])}\z/
 
+        redirect_to :action => 'shorten'
+        else
+          flash[:message] = "Invalid url"
+        # redirect_to controller: :home, action: :new
+           render "upload"
+        end 
       else 
         flash[:message] = "End of file"
         redirect_to controller: :home, action: :new
@@ -90,7 +83,7 @@ class PdfController < ApplicationController
       
    
       def shorten
-         @display = "https://test.tin.ee/"
+         @display = "https://url-shortner-e2w9.onrender.com/i?q="
          @string = SecureRandom.uuid[0..6]
          $file_og_url = $element 
          $file_srt_url = @display+@string 
@@ -103,7 +96,7 @@ class PdfController < ApplicationController
 
        def display
 
-         @Short_url = ShortUrl.new(original_url: $file_og_url, shortened_url: $file_srt_url)
+         @Short_url = ShortUrl.new(user_id: $id, original_url: $file_og_url, shortened_url: $file_srt_url)
      
          if @Short_url.save
            @original_url = $file_og_url

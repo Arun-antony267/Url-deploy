@@ -8,8 +8,8 @@
  <div class ='p-1 '>
             <div class ='box-1'>
       <div class ='container'>
-        The Original URL is:<input type="text" name="name" value=<%= @original_url%>/>
-          The Shortened URL is :<input type="text" name="name" value=<%= @shortened_url %> id= "short"/>
+        The Original URL is:<input type="text" name="name" placeholder= "Invalid Url" value= "<%= @original_url%>" />
+          The Shortened URL is :<input type="text" name="name" id= "short" value="<%= @shortened_url %>"/>
           <button class="btn btn-outline-primary" onclick="handleCopy()">Copy</button>
           <a href="/pdf/new_line">
               <button class="btn btn-outline-primary" type="button">Next</button>
