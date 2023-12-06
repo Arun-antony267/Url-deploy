@@ -26,6 +26,7 @@ Make sure you have the following installed:
 - [Rails](https://guides.rubyonrails.org/getting_started.html#installing-rails)
 - [Node.js](https://nodejs.org/en/download/)
 - [Yarn](https://yarnpkg.com/getting-started/install)
+<<<<<<< README.md
 
 
 ### To View
@@ -33,5 +34,4 @@ Make sure you have the following installed:
 You can access the project using the following link 
 
 :- https://url-shortner-e2w9.onrender.com/
-
 
