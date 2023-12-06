@@ -9,12 +9,25 @@ class PdfController < ApplicationController
         @post = UrlFile.new(name: $file_name, attachment: $file )
         if @post.save   
           $file_urls = $file_content
-          csv_data = CSV.parse($file_urls)
-          $line_count =  csv_data.length
-          data = csv_data[5]
-          puts(csv_data )
-          puts ($line_count)
-          puts( data )
+          # $urls_chomp = $file_urls.chomp
+          $csv_data = CSV.parse($file_urls)
+          $line_count =  $csv_data.length
+          $element = $csv_data[2]
+          $csv_data.each do |row|
+            # puts row
+            if row.present?
+              puts ("value present")
+              puts (row)
+            else
+            puts ("value not present")
+            end
+          # end
+            # You can access specific columns like this:
+            # column_value = row['column_name']
+          end
+          # puts($csv_data )
+          # puts ($line_count)
+          # puts( $element  )
           # puts (line)
         redirect_to controller: :home, action: :new
         # redirect_to :action => 'next_line'
@@ -35,25 +48,31 @@ class PdfController < ApplicationController
 
 
      def next_line
-      $size_pdf =  $line_count
-      $size_pdf =$size_pdf -1
-      $element = $value [$size_pdf]
+      $size_pdf = $line_count 
+      $size_pdf = $size_pdf -1
+      $element = $csv_data [$size_pdf]
       @val1 = $element 
-      if @val1.present?
-         @@file_url =@val1
+      if @val1 .present?
+        if @val1 =~ /\A#{URI::regexp([ 'http', 'https'])}\z/
+         $file_url = @val1
           redirect_to :action => 'shorten'
-      else
-
-         @a ='no elements left'
-         render 'upload'
+        else
+          puts ( $file_url )
+          flash[:message] = 'Invalid url'
+          redirect_to controller: :home, action: :new
       end
+      else
+        flash[:message] =  "End of file"
+        redirect_to controller: :home, action: :new
+    end
     end
 
     def new_line
+      if $size_pdf.present?
       $size_pdf = $size_pdf - 1
 
       if $size_pdf != -1
-        @@file_url = $value [$size_pdf]
+        $element = $csv_data[$size_pdf]
         redirect_to :action => 'shorten'
 
       else 
@@ -61,6 +80,10 @@ class PdfController < ApplicationController
         redirect_to controller: :home, action: :new
 
       end     
+    else
+      flash[:message] = "End of file"
+        redirect_to controller: :home, action: :new
+    end
     end
 
       
@@ -68,24 +91,29 @@ class PdfController < ApplicationController
       def shorten
          @display = "https://test.tin.ee/"
          @string = SecureRandom.uuid[0..6]
-         @file_url = $file_og_url 
-         @@file_srt_url = @display+@string 
-         @reply = 'Valid url'
-    
+         $file_og_url = $element 
+         $file_srt_url = @display+@string 
+         flash[:message] = 'Valid url'
          redirect_to :action => 'display'
+        # redirect_to controller: :home, action: :new
       
        end
 
 
        def display
 
-         @Short_url = ShortUrl.new(original_url: @@file_url, shortened_url: @@file_srt_url)
+         @Short_url = ShortUrl.new(original_url: $file_og_url, shortened_url: $file_srt_url)
      
          if @Short_url.save
-           @original_url = @@file_url
-           @shortened_url = @@file_srt_url
-           @reply = "created succesfully."
+           @original_url = $file_og_url
+           @shortened_url = $file_srt_url
+           flash[:message] ="created succesfully."
+          #  puts (@original_url)
+          #   puts(@shortened_url )
+          #  redirect_to controller: :home, action: :new
+
            render 'upload'
+
              
          else
            redirect_to root_path, notice: "!!!!ERROR!!!!"
@@ -97,14 +125,14 @@ class PdfController < ApplicationController
      
       def fileOgUrl
 
-        @file_original_url = @@file_url.to_json
+        @file_original_url = $file_og_url.to_json
         render json: @file_original_url
           
       end
   
       def fileSrtUrl
       
-        @file_shortened_url = @@file_srt_url.to_json
+        @file_shortened_url = $file_srt_url.to_json
         render json: @file_shortened_url
   
       end
