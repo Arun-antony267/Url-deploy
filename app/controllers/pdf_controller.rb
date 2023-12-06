@@ -16,6 +16,7 @@ class PdfController < ApplicationController
           $csv_data.each do |row|
             # puts row
             if row.present?
+            $file_s = row.to_s
               puts ("value present")
               puts (row)
             else
