@@ -38,17 +38,19 @@ overflow: hidden;
 <table class= "l">    
   <thead> 
   <tr>   
+        <th>Sl.no</th>
         <th>Original Url</th>   
         <th>Shortened Url</th>   
         <th>Created Date</th>   
           
       </tr>   
       </thead>
-
+         <% count= 0 %>
       <tbody> 
       <% @short_url.each do |short_url| %>   
       
           <tr>   
+            <td><%= count+=1%></td>
             <td><%= short_url.original_url %></td>   
             <td><%= short_url.shortened_url %></td>   
             <td><%= short_url.created_at%></td>                 
