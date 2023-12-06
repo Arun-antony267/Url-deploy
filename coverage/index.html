@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-12-05T11:26:14+05:30">2023-12-05T11:26:14+05:30</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-12-06T16:22:55+05:30">2023-12-06T16:22:55+05:30</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -32,9 +32,9 @@
   <a name="AllFiles"></a>
   <div>
     <b>23</b> files in total.
-    <b>399</b> relevant lines. 
+    <b>404</b> relevant lines. 
     <span class="green"><b>0</b> lines covered</span> and
-    <span class="red"><b>399</b> lines missed </span>
+    <span class="red"><b>404</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -73,20 +73,20 @@
       <tr>
         <td class="strong"><a href="#4d89877c452833c6b98acc9b82bf2798c0fae933" class="src_link" title="app/controllers/home_controller.rb">app/controllers/home_controller.rb</a></td>
         <td class="red strong">0.0 %</td>
-        <td>160</td>
-        <td>110</td>
+        <td>164</td>
+        <td>111</td>
         <td>0</td>
-        <td>110</td>
+        <td>111</td>
         <td>0.0</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#649daf896d946cac3800414bb3d98ce5f29d927a" class="src_link" title="app/controllers/pdf_controller.rb">app/controllers/pdf_controller.rb</a></td>
         <td class="red strong">0.0 %</td>
-        <td>108</td>
-        <td>74</td>
+        <td>109</td>
+        <td>78</td>
         <td>0</td>
-        <td>74</td>
+        <td>78</td>
         <td>0.0</td>
       </tr>
       
@@ -300,9 +300,9 @@
   <a name="Controllers"></a>
   <div>
     <b>9</b> files in total.
-    <b>309</b> relevant lines. 
+    <b>314</b> relevant lines. 
     <span class="green"><b>0</b> lines covered</span> and
-    <span class="red"><b>309</b> lines missed </span>
+    <span class="red"><b>314</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -341,20 +341,20 @@
       <tr>
         <td class="strong"><a href="#4d89877c452833c6b98acc9b82bf2798c0fae933" class="src_link" title="app/controllers/home_controller.rb">app/controllers/home_controller.rb</a></td>
         <td class="red strong">0.0 %</td>
-        <td>160</td>
-        <td>110</td>
+        <td>164</td>
+        <td>111</td>
         <td>0</td>
-        <td>110</td>
+        <td>111</td>
         <td>0.0</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#649daf896d946cac3800414bb3d98ce5f29d927a" class="src_link" title="app/controllers/pdf_controller.rb">app/controllers/pdf_controller.rb</a></td>
         <td class="red strong">0.0 %</td>
-        <td>108</td>
-        <td>74</td>
+        <td>109</td>
+        <td>78</td>
         <td>0</td>
-        <td>74</td>
+        <td>78</td>
         <td>0.0</td>
       </tr>
       
@@ -1021,9 +1021,9 @@
     <h3>app/controllers/home_controller.rb</h3>
     <h4><span class="red">0.0 %</span> covered</h4>
     <div>
-      <b>110</b> relevant lines. 
+      <b>111</b> relevant lines. 
       <span class="green"><b>0</b> lines covered</span> and
-      <span class="red"><b>110</b> lines missed.</span>
+      <span class="red"><b>111</b> lines missed.</span>
     </div>
   </div>
   
@@ -1327,43 +1327,43 @@
         <li class="missed" data-hits="0" data-linenumber="50">
           
           
-          <code class="ruby">    $file_name = $file.original_filename</code>
+          <code class="ruby">    $file_content = $file.read</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="51">
           
           
-          <code class="ruby">    if is_csv_file?( $file_name )</code>
+          <code class="ruby">    $file_name = $file.original_filename</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="52">
           
           
-          <code class="ruby">    redirect_to controller: :pdf, action: :uploadFile</code>
+          <code class="ruby">    if is_csv_file?( $file )</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="53">
           
           
-          <code class="ruby">  else</code>
+          <code class="ruby">    redirect_to controller: :pdf, action: :uploadFile</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="54">
+        <li class="never" data-hits="" data-linenumber="54">
           
           
-          <code class="ruby">    flash[:message] = &#39;Invalid File&#39;</code>
+          <code class="ruby">    # puts($file_name )</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="55">
+        <li class="never" data-hits="" data-linenumber="55">
           
           
-          <code class="ruby">    render &#39;new&#39;</code>
+          <code class="ruby">    # puts(file_content)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="56">
+        <li class="never" data-hits="" data-linenumber="56">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    # render &quot;new&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="57">
@@ -1393,31 +1393,31 @@
         <li class="missed" data-hits="0" data-linenumber="61">
           
           
+          <code class="ruby">  else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="62">
+          
+          
+          <code class="ruby">    flash[:message] = &#39;Invalid File&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="63">
+          
+          
+          <code class="ruby">    render &#39;new&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="64">
+          
+          
           <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="62">
-          
-          
-          <code class="ruby">  </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="63">
-          
-          
-          <code class="ruby">  </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="64">
-          
-          
-          <code class="ruby">  </code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="65">
           
           
-          <code class="ruby">    def multi_line</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="66">
@@ -1426,565 +1426,589 @@
           <code class="ruby">  </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="67">
+        <li class="never" data-hits="" data-linenumber="67">
           
           
-          <code class="ruby">      @input = params[:multi_url]</code>
+          <code class="ruby">  </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="68">
+        <li class="never" data-hits="" data-linenumber="68">
           
           
-          <code class="ruby">      $after = @input.split(&quot;,&quot;)</code>
+          <code class="ruby">  </code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="69">
           
           
-          <code class="ruby">      $size= $after.size </code>
+          <code class="ruby">    def multi_line</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="70">
+        <li class="never" data-hits="" data-linenumber="70">
           
           
-          <code class="ruby">      redirect_to :action =&gt; &#39;next&#39;</code>
+          <code class="ruby">  </code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="71">
           
           
-          <code class="ruby">    end </code>
+          <code class="ruby">      @input = params[:multi_url]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="72">
+        <li class="missed" data-hits="0" data-linenumber="72">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby">      $after = @input.split(&quot;,&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="73">
+        <li class="missed" data-hits="0" data-linenumber="73">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby">      $size= $after.size </code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="74">
           
           
-          <code class="ruby">    def next</code>
+          <code class="ruby">      redirect_to :action =&gt; &#39;next&#39;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="75">
           
           
-          <code class="ruby">      $size = $size - 1;</code>
+          <code class="ruby">    end </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="76">
+        <li class="never" data-hits="" data-linenumber="76">
           
           
-          <code class="ruby">      $original_url = $after[$size]</code>
+          <code class="ruby">  </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="77">
+        <li class="never" data-hits="" data-linenumber="77">
           
           
-          <code class="ruby">        if $size!= -1 </code>
+          <code class="ruby">  </code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="78">
           
           
-          <code class="ruby">            if $original_url.present?</code>
+          <code class="ruby">    def next</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="79">
           
           
-          <code class="ruby">               if $original_url =~ /\A#{URI::regexp([ &#39;http&#39;, &#39;https&#39;])}\z/</code>
+          <code class="ruby">      $size = $size - 1;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="80">
           
           
-          <code class="ruby">                 @reply = &#39;valid url&#39;</code>
+          <code class="ruby">      $original_url = $after[$size]</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="81">
           
           
-          <code class="ruby">                 @array = $original_url</code>
+          <code class="ruby">        if $size!= -1 </code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="82">
           
           
-          <code class="ruby">                 redirect_to :action =&gt; &#39;lookup_code&#39;</code>
+          <code class="ruby">            if $original_url.present?</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="83">
+        <li class="missed" data-hits="0" data-linenumber="83">
           
           
-          <code class="ruby">          </code>
+          <code class="ruby">               if $original_url =~ /\A#{URI::regexp([ &#39;http&#39;, &#39;https&#39;])}\z/</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="84">
           
           
-          <code class="ruby">                 else</code>
+          <code class="ruby">                 @reply = &#39;valid url&#39;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="85">
           
           
-          <code class="ruby">                  flash[:message] = &#39;Invalid url&#39;</code>
+          <code class="ruby">                 @array = $original_url</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="86">
           
           
-          <code class="ruby">                 render &#39;new&#39;</code>
+          <code class="ruby">                 redirect_to :action =&gt; &#39;lookup_code&#39;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="87">
-          
-          
-          <code class="ruby">                end</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="88">
-          
-          
-          <code class="ruby">                @reply = &#39;Invalid url&#39; </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="89">
-          
-          
-          <code class="ruby">           </code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="90">
-          
-          
-          <code class="ruby">            end</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="91">
-          
-          
-          <code class="ruby">            else</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="92">
-          
-          
-          <code class="ruby">            flash[:message] = &#39;No More url&#39;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="93">
-          
-          
-          <code class="ruby">             render &#39;new&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="94">
-          
-          
-          <code class="ruby">         </code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="95">
-          
-          
-          <code class="ruby">        end</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="96">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="97">
-          
-          
-          <code class="ruby">  </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="98">
-          
-          
-          <code class="ruby">  </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="99">
-          
-          
-          <code class="ruby">  </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="100">
-          
-          
-          <code class="ruby">   </code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="101">
-          
-          
-          <code class="ruby">      def check_url</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="102">
-          
-          
-          <code class="ruby">        require &#39;uri&#39;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="103">
-          
-          
-          <code class="ruby">        $original_url = params[:url]</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="104">
-          
-          
-          <code class="ruby">  </code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="105">
-          
-          
-          <code class="ruby">      if $original_url.present?</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="106">
-          
-          
-          <code class="ruby">        if $original_url =~ /\A#{URI::regexp([ &#39;http&#39;, &#39;https&#39;])}\z/</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="107">
-          
-          
-          <code class="ruby">          redirect_to :action =&gt; &#39;lookup_code&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="108">
-          
-          
-          <code class="ruby">        </code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="109">
-          
-          
-          <code class="ruby">      else</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="110">
-          
-          
-          <code class="ruby">        @reply = &#39;Invalid url&#39; </code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="111">
-          
-          
-          <code class="ruby">        render &#39;new&#39;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="112">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="113">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="114">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="115">
-          
-          
-          <code class="ruby">  </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="116">
-          
-          
-          <code class="ruby">      </code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="117">
-          
-          
-          <code class="ruby">      def lookup_code</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="118">
-          
-          
-          <code class="ruby">        @display = &quot;https://url-shortner-e2w9.onrender.com/i?q=&quot;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="119">
-          
-          
-          <code class="ruby">        $string = SecureRandom.uuid[0..3]</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="120">
-          
-          
-          <code class="ruby">        $original_url = $original_url</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="121">
-          
-          
-          <code class="ruby">        $shortened_url = @display+$string </code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="122">
-          
-          
-          <code class="ruby">        @reply = &#39;Valid url&#39;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="123">
-          
-          
-          <code class="ruby">        redirect_to :action =&gt; &#39;create&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="124">
-          
-          
-          <code class="ruby">     </code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="125">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="126">
-          
-          
-          <code class="ruby">  </code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="127">
-          
-          
-          <code class="ruby">      def create</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="128">
-          
-          
-          <code class="ruby">  </code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="129">
-          
-          
-          <code class="ruby">        @Short_url = ShortUrl.new(user_id: $id, original_url: $original_url, shortened_url: $shortened_url)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="130">
-          
-          
-          <code class="ruby">    </code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="131">
-          
-          
-          <code class="ruby">        if @Short_url.save</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="132">
-          
-          
-          <code class="ruby">          @original_url = $original_url</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="133">
-          
-          
-          <code class="ruby">          @shortened_url = $shortened_url</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="134">
-          
-          
-          <code class="ruby">          flash[:message] = &quot;created succesfully.&quot;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="135">
-          
-          
-          <code class="ruby">          render &#39;show&#39;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="136">
-          
-          
-          <code class="ruby">        else</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="137">
-          
-          
-          <code class="ruby">          redirect_to root_path, notice: &quot;!!!!ERROR!!!!&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="138">
-          
-          
-          <code class="ruby">  </code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="139">
-          
-          
-          <code class="ruby">        end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="140">
-          
-          
-          <code class="ruby">        </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="141">
-          
-          
-          <code class="ruby">      </code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="142">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="143">
-          
-          
-          <code class="ruby">      </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="144">
-          
-          
-          <code class="ruby">      </code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="145">
-          
-          
-          <code class="ruby">      def ogurl</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="146">
-          
-          
-          <code class="ruby">  </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="147">
-          
-          
-          <code class="ruby">        # @original_url = $original_url.to_json</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="148">
-          
-          
-          <code class="ruby">        render json: $original_url.to_json</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="149">
+        <li class="never" data-hits="" data-linenumber="87">
           
           
           <code class="ruby">          </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="150">
+        <li class="missed" data-hits="0" data-linenumber="88">
+          
+          
+          <code class="ruby">                 else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="89">
+          
+          
+          <code class="ruby">                  flash[:message] = &#39;Invalid url&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="90">
+          
+          
+          <code class="ruby">                 render &#39;new&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="91">
+          
+          
+          <code class="ruby">                end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="92">
+          
+          
+          <code class="ruby">                @reply = &#39;Invalid url&#39; </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="93">
+          
+          
+          <code class="ruby">           </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="94">
+          
+          
+          <code class="ruby">            end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="95">
+          
+          
+          <code class="ruby">            else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="96">
+          
+          
+          <code class="ruby">            flash[:message] = &#39;No More url&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="97">
+          
+          
+          <code class="ruby">             render &#39;new&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="98">
+          
+          
+          <code class="ruby">         </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="99">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="100">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="151">
+        <li class="never" data-hits="" data-linenumber="101">
           
           
           <code class="ruby">  </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="152">
+        <li class="never" data-hits="" data-linenumber="102">
           
           
-          <code class="ruby">      def srtUrl</code>
+          <code class="ruby">  </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="153">
+        <li class="never" data-hits="" data-linenumber="103">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="104">
+          
+          
+          <code class="ruby">   </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="105">
+          
+          
+          <code class="ruby">      def check_url</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="106">
+          
+          
+          <code class="ruby">        require &#39;uri&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="107">
+          
+          
+          <code class="ruby">        $original_url = params[:url]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="108">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="109">
+          
+          
+          <code class="ruby">      if $original_url.present?</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="110">
+          
+          
+          <code class="ruby">        if $original_url =~ /\A#{URI::regexp([ &#39;http&#39;, &#39;https&#39;])}\z/</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="111">
+          
+          
+          <code class="ruby">          redirect_to :action =&gt; &#39;lookup_code&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="112">
+          
+          
+          <code class="ruby">        </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="113">
+          
+          
+          <code class="ruby">      else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="114">
+          
+          
+          <code class="ruby">        @reply = &#39;Invalid url&#39; </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="115">
+          
+          
+          <code class="ruby">        render &#39;new&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="116">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="117">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="118">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="119">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="120">
           
           
           <code class="ruby">      </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="154">
+        <li class="missed" data-hits="0" data-linenumber="121">
           
           
-          <code class="ruby">        # @shortened_url = $shortened_url.to_json</code>
+          <code class="ruby">      def lookup_code</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="155">
+        <li class="missed" data-hits="0" data-linenumber="122">
           
           
-          <code class="ruby">        render json: $shortened_url.to_json</code>
+          <code class="ruby">        @display = &quot;https://url-shortner-e2w9.onrender.com/i?q=&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="156">
+        <li class="missed" data-hits="0" data-linenumber="123">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby">        $string = SecureRandom.uuid[0..3]</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="157">
+        <li class="missed" data-hits="0" data-linenumber="124">
+          
+          
+          <code class="ruby">        $original_url = $original_url</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="125">
+          
+          
+          <code class="ruby">        $shortened_url = @display+$string </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="126">
+          
+          
+          <code class="ruby">        @reply = &#39;Valid url&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="127">
+          
+          
+          <code class="ruby">        redirect_to :action =&gt; &#39;create&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="128">
+          
+          
+          <code class="ruby">     </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="129">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="158">
+        <li class="never" data-hits="" data-linenumber="130">
           
           
           <code class="ruby">  </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="159">
+        <li class="missed" data-hits="0" data-linenumber="131">
+          
+          
+          <code class="ruby">      def create</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="132">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="133">
+          
+          
+          <code class="ruby">        @Short_url = ShortUrl.new(user_id: $id, original_url: $original_url, shortened_url: $shortened_url)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="134">
           
           
           <code class="ruby">    </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="160">
+        <li class="missed" data-hits="0" data-linenumber="135">
+          
+          
+          <code class="ruby">        if @Short_url.save</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="136">
+          
+          
+          <code class="ruby">          @original_url = $original_url</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="137">
+          
+          
+          <code class="ruby">          @shortened_url = $shortened_url</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="138">
+          
+          
+          <code class="ruby">          flash[:message] = &quot;created succesfully.&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="139">
+          
+          
+          <code class="ruby">          render &#39;show&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="140">
+          
+          
+          <code class="ruby">        else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="141">
+          
+          
+          <code class="ruby">          redirect_to root_path, notice: &quot;!!!!ERROR!!!!&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="142">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="143">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="144">
+          
+          
+          <code class="ruby">        </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="145">
+          
+          
+          <code class="ruby">      </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="146">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="147">
+          
+          
+          <code class="ruby">      </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="148">
+          
+          
+          <code class="ruby">      </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="149">
+          
+          
+          <code class="ruby">      def ogurl</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="150">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="151">
+          
+          
+          <code class="ruby">        # @original_url = $original_url.to_json</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="152">
+          
+          
+          <code class="ruby">        render json: $original_url.to_json</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="153">
+          
+          
+          <code class="ruby">          </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="154">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="155">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="156">
+          
+          
+          <code class="ruby">      def srtUrl</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="157">
+          
+          
+          <code class="ruby">      </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="158">
+          
+          
+          <code class="ruby">        # @shortened_url = $shortened_url.to_json</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="159">
+          
+          
+          <code class="ruby">        render json: $shortened_url.to_json</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="160">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="161">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="162">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="163">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="164">
           
           
           <code class="ruby">  end</code>
@@ -2000,9 +2024,9 @@
     <h3>app/controllers/pdf_controller.rb</h3>
     <h4><span class="red">0.0 %</span> covered</h4>
     <div>
-      <b>74</b> relevant lines. 
+      <b>78</b> relevant lines. 
       <span class="green"><b>0</b> lines covered</span> and
-      <span class="red"><b>74</b> lines missed.</span>
+      <span class="red"><b>78</b> lines missed.</span>
     </div>
   </div>
   
@@ -2060,7 +2084,7 @@
         <li class="missed" data-hits="0" data-linenumber="9">
           
           
-          <code class="ruby">        @post = UrlFile.new( file_params )</code>
+          <code class="ruby">        @post = UrlFile.new(name: $file_name, attachment: $file )</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="10">
@@ -2069,220 +2093,220 @@
           <code class="ruby">        if @post.save   </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="11">
+        <li class="missed" data-hits="0" data-linenumber="11">
           
           
-          <code class="ruby">          </code>
+          <code class="ruby">          $file_strip = $file_content.split</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="12">
           
           
-          <code class="ruby">          $csv = File.new($file, &quot;r&quot;)</code>
+          <code class="ruby">          $line_count =  $file_strip.count </code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="13">
           
           
-          <code class="ruby">          CSV.foreach($file.path) do |row|</code>
+          <code class="ruby">           puts ($line_count)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="missed" data-hits="0" data-linenumber="14">
           
           
-          <code class="ruby">         </code>
+          <code class="ruby">          $file_s = $file_strip .each do |row|</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="15">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
-          <code class="ruby">         puts(CSV.read($file.path))</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="16">
           
           
-          <code class="ruby">        end</code>
+          <code class="ruby">            if $line_count.present?</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="17">
           
           
-          <code class="ruby">        puts (&quot;File saved&quot;)</code>
+          <code class="ruby">                     $size_pdf = $line_count</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="18">
           
           
-          <code class="ruby">        redirect_to controller: :home, action: :new</code>
+          <code class="ruby">                     puts (&quot;value present&quot;)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="19">
           
           
-          <code class="ruby">        else </code>
+          <code class="ruby">                     puts ($element)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="20">
+        <li class="never" data-hits="" data-linenumber="20">
           
           
-          <code class="ruby">          puts (&quot;File not saved&quot;)</code>
+          <code class="ruby">           </code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="21">
           
           
-          <code class="ruby">          redirect_to controller: :home, action: :new</code>
+          <code class="ruby">            else</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="22">
+        <li class="missed" data-hits="0" data-linenumber="22">
           
           
-          <code class="ruby">        # redirect_to :action =&gt; &#39;next_line&#39;</code>
+          <code class="ruby">              puts(&quot;Line count not present&quot;)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="23">
           
           
-          <code class="ruby">        end</code>
+          <code class="ruby">            end</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="24">
           
           
-          <code class="ruby">     end</code>
+          <code class="ruby">        end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="missed" data-hits="0" data-linenumber="25">
           
           
-          <code class="ruby">     </code>
+          <code class="ruby">        redirect_to :action =&gt; &#39;new_line&#39;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="26">
           
           
-          <code class="ruby">     def next_line</code>
+          <code class="ruby">        else </code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="27">
           
           
-          <code class="ruby">      $size_pdf =  $value.size </code>
+          <code class="ruby">          puts (&quot;File not saved&quot;)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="28">
           
           
-          <code class="ruby">      $size_pdf =$size_pdf -1</code>
+          <code class="ruby">          redirect_to controller: :home, action: :new</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="29">
           
           
-          <code class="ruby">      $element = $value [$size_pdf]</code>
+          <code class="ruby">        end</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="30">
           
           
-          <code class="ruby">      @val1 = $element </code>
+          <code class="ruby">     end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="31">
+        <li class="never" data-hits="" data-linenumber="31">
           
           
-          <code class="ruby">      if @val1.present?</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="32">
           
           
-          <code class="ruby">         @@file_url =@val1</code>
+          <code class="ruby">    def new_line</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="33">
           
           
-          <code class="ruby">          redirect_to :action =&gt; &#39;shorten&#39;</code>
+          <code class="ruby">      if $size_pdf.present?</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="34">
           
           
-          <code class="ruby">      else</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="35">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="36">
-          
-          
-          <code class="ruby">         @a =&#39;no elements left&#39;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="37">
-          
-          
-          <code class="ruby">         render &#39;upload&#39;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="38">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="39">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="40">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="41">
-          
-          
-          <code class="ruby">    def new_line</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="42">
-          
-          
           <code class="ruby">      $size_pdf = $size_pdf - 1</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="43">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="44">
+        <li class="missed" data-hits="0" data-linenumber="35">
           
           
           <code class="ruby">      if $size_pdf != -1</code>
         </li>
       
+        <li class="missed" data-hits="0" data-linenumber="36">
+          
+          
+          <code class="ruby">        $element = $file_s [$size_pdf]</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="37">
+          
+          
+          <code class="ruby">        if $element =~ /\A#{URI::regexp([ &#39;http&#39;, &#39;https&#39;])}\z/</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="39">
+          
+          
+          <code class="ruby">        redirect_to :action =&gt; &#39;shorten&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="40">
+          
+          
+          <code class="ruby">        else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="41">
+          
+          
+          <code class="ruby">          flash[:message] = &quot;Invalid url&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="42">
+          
+          
+          <code class="ruby">           render &quot;upload&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="43">
+          
+          
+          <code class="ruby">        end </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="44">
+          
+          
+          <code class="ruby">      else </code>
+        </li>
+      
         <li class="missed" data-hits="0" data-linenumber="45">
           
           
-          <code class="ruby">        @@file_url = $value [$size_pdf]</code>
+          <code class="ruby">        flash[:message] = &quot;End of file&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="46">
           
           
-          <code class="ruby">        redirect_to :action =&gt; &#39;shorten&#39;</code>
+          <code class="ruby">        redirect_to controller: :home, action: :new</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="47">
@@ -2294,31 +2318,31 @@
         <li class="missed" data-hits="0" data-linenumber="48">
           
           
-          <code class="ruby">      else </code>
+          <code class="ruby">      end     </code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="49">
           
           
-          <code class="ruby">        flash[:message] = &quot;End of file&quot;</code>
+          <code class="ruby">    else</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="50">
           
           
-          <code class="ruby">        redirect_to controller: :home, action: :new</code>
+          <code class="ruby">      flash[:message] = &quot;End of file&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="51">
+        <li class="missed" data-hits="0" data-linenumber="51">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        redirect_to controller: :home, action: :new</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="52">
           
           
-          <code class="ruby">      end     </code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="53">
@@ -2354,7 +2378,7 @@
         <li class="missed" data-hits="0" data-linenumber="58">
           
           
-          <code class="ruby">         @display = &quot;https://test.tin.ee/&quot;</code>
+          <code class="ruby">         @display = &quot;https://url-shortner-e2w9.onrender.com/i?q=&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="59">
@@ -2366,43 +2390,43 @@
         <li class="missed" data-hits="0" data-linenumber="60">
           
           
-          <code class="ruby">         @file_url = @@file_url</code>
+          <code class="ruby">         $file_og_url = $element </code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="61">
           
           
-          <code class="ruby">         @@file_srt_url = @display+@string </code>
+          <code class="ruby">         $file_srt_url = @display+@string </code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="62">
           
           
-          <code class="ruby">         @reply = &#39;Valid url&#39;</code>
+          <code class="ruby">         flash[:message] = &#39;Valid url&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="63">
-          
-          
-          <code class="ruby">    </code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="64">
+        <li class="missed" data-hits="0" data-linenumber="63">
           
           
           <code class="ruby">         redirect_to :action =&gt; &#39;display&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="65">
+        <li class="never" data-hits="" data-linenumber="64">
           
           
           <code class="ruby">      </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="66">
+        <li class="missed" data-hits="0" data-linenumber="65">
           
           
           <code class="ruby">       end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="66">
+          
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="67">
@@ -2411,58 +2435,58 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="68">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="69">
+        <li class="missed" data-hits="0" data-linenumber="68">
           
           
           <code class="ruby">       def display</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="70">
+        <li class="never" data-hits="" data-linenumber="69">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="71">
+        <li class="missed" data-hits="0" data-linenumber="70">
           
           
-          <code class="ruby">         @Short_url = ShortUrl.new(original_url: @@file_url, shortened_url: @@file_srt_url)</code>
+          <code class="ruby">         @Short_url = ShortUrl.new(user_id: $id, original_url: $file_og_url, shortened_url: $file_srt_url)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="72">
+        <li class="never" data-hits="" data-linenumber="71">
           
           
           <code class="ruby">     </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="73">
+        <li class="missed" data-hits="0" data-linenumber="72">
           
           
           <code class="ruby">         if @Short_url.save</code>
         </li>
       
+        <li class="missed" data-hits="0" data-linenumber="73">
+          
+          
+          <code class="ruby">           @original_url = $file_og_url</code>
+        </li>
+      
         <li class="missed" data-hits="0" data-linenumber="74">
           
           
-          <code class="ruby">           @original_url = @@file_url</code>
+          <code class="ruby">           @shortened_url = $file_srt_url</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="75">
           
           
-          <code class="ruby">           @shortened_url = @@file_srt_url</code>
+          <code class="ruby">           flash[:message] =&quot;created succesfully.&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="76">
+        <li class="never" data-hits="" data-linenumber="76">
           
           
-          <code class="ruby">           @reply = &quot;created succesfully.&quot;</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="77">
@@ -2474,184 +2498,190 @@
         <li class="never" data-hits="" data-linenumber="78">
           
           
-          <code class="ruby">             </code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="79">
+        <li class="never" data-hits="" data-linenumber="79">
           
           
-          <code class="ruby">         else</code>
+          <code class="ruby">             </code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="80">
           
           
+          <code class="ruby">         else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="81">
+          
+          
           <code class="ruby">           redirect_to root_path, notice: &quot;!!!!ERROR!!!!&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="81">
+        <li class="never" data-hits="" data-linenumber="82">
           
           
           <code class="ruby">   </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="82">
+        <li class="missed" data-hits="0" data-linenumber="83">
           
           
           <code class="ruby">         end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="83">
+        <li class="never" data-hits="" data-linenumber="84">
           
           
           <code class="ruby">         </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="84">
+        <li class="never" data-hits="" data-linenumber="85">
           
           
           <code class="ruby">       </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="85">
+        <li class="missed" data-hits="0" data-linenumber="86">
           
           
           <code class="ruby">       end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="86">
+        <li class="never" data-hits="" data-linenumber="87">
           
           
           <code class="ruby">     </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="87">
+        <li class="missed" data-hits="0" data-linenumber="88">
           
           
           <code class="ruby">      def fileOgUrl</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="88">
+        <li class="never" data-hits="" data-linenumber="89">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="89">
-          
-          
-          <code class="ruby">        @file_original_url = @@file_url.to_json</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="90">
           
           
+          <code class="ruby">        @file_original_url = $file_og_url.to_json</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="91">
+          
+          
           <code class="ruby">        render json: @file_original_url</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="91">
+        <li class="never" data-hits="" data-linenumber="92">
           
           
           <code class="ruby">          </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="92">
+        <li class="missed" data-hits="0" data-linenumber="93">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="93">
+        <li class="never" data-hits="" data-linenumber="94">
           
           
           <code class="ruby">  </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="94">
+        <li class="missed" data-hits="0" data-linenumber="95">
           
           
           <code class="ruby">      def fileSrtUrl</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="95">
+        <li class="never" data-hits="" data-linenumber="96">
           
           
           <code class="ruby">      </code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="96">
-          
-          
-          <code class="ruby">        @file_shortened_url = @@file_srt_url.to_json</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="97">
           
           
+          <code class="ruby">        @file_shortened_url = $file_srt_url.to_json</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="98">
+          
+          
           <code class="ruby">        render json: @file_shortened_url</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="98">
+        <li class="never" data-hits="" data-linenumber="99">
           
           
           <code class="ruby">  </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="99">
+        <li class="missed" data-hits="0" data-linenumber="100">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="100">
+        <li class="never" data-hits="" data-linenumber="101">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="101">
+        <li class="missed" data-hits="0" data-linenumber="102">
           
           
           <code class="ruby">      private</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="102">
+        <li class="never" data-hits="" data-linenumber="103">
           
           
           <code class="ruby">      </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="103">
+        <li class="missed" data-hits="0" data-linenumber="104">
           
           
           <code class="ruby">      def file_params</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="104">
+        <li class="missed" data-hits="0" data-linenumber="105">
           
           
           <code class="ruby">        params.permit(:file)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="105">
+        <li class="missed" data-hits="0" data-linenumber="106">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="106">
+        <li class="never" data-hits="" data-linenumber="107">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="107">
+        <li class="missed" data-hits="0" data-linenumber="108">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="108">
+        <li class="never" data-hits="" data-linenumber="109">
           
           
           <code class="ruby">    </code>

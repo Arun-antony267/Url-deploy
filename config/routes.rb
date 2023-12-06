@@ -42,7 +42,6 @@ Rails.application.routes.draw do
      post 'home/new'
      post 'home/file'
      get 'home/file'
-     get 'pdf/index'
      get 'pdf/next_line'
      get'pdf/new'
      get '/redirect', to: 'webhook#redirect'

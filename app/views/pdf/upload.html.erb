@@ -1,8 +1,30 @@
 <div id="header2"></div>
+<body>
+  <%= render "layouts/flash" %>
 <h4>Your new url is given below</h4>
-<div class = 'container'>
 
-     <div id="file_show"></div>
+<div class='container'>
+<%# <div id="copy"></div> %>
+ <div class ='p-1 '>
+            <div class ='box-1'>
+      <div class ='container'>
+        The Original URL is:<input type="text" name="name" placeholder= "Invalid Url" value= "<%= @original_url%>" />
+          The Shortened URL is :<input type="text" name="name" id= "short" value="<%= @shortened_url %>"/>
+          <button class="btn btn-outline-primary" onclick="handleCopy()">Copy</button>
+          <a href="/pdf/new_line">
+              <button class="btn btn-outline-primary" type="button">Next</button>
+              </a>
+      </div>
+      </div>
+      </div>
+      <script>
+        function handleCopy(){
+  var copyText = document.getElementById("short");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(copyText.value);
+  
+}
+      </script>
+ </body>
 
- <p><%= link_to 'Back', {:action => 'new'} %>
-      
