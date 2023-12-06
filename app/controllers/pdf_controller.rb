@@ -14,47 +14,20 @@ class PdfController < ApplicationController
           $file_s = $file_strip .each do |row|
 
             if $line_count.present?
-                if  $element.present?
                      $size_pdf = $line_count
                      puts ("value present")
                      puts ($element)
-                   else
-                     puts ("value not present")
-                 end
            
             else
               puts("Line count not present")
             end
         end
-        # redirect_to controller: :home, action: :new
         redirect_to :action => 'new_line'
         else 
           puts ("File not saved")
           redirect_to controller: :home, action: :new
-        # redirect_to :action => 'next_line'
         end
      end
-     
-
-    #  def next_line
-    #   $size_pdf = $line_count 
-    #   $size_pdf = $size_pdf -1
-    #   $element = $csv_data [$size_pdf]
-    #   @val1 = $element 
-    #   if @val1 .present?
-    #     if @val1 =~ /\A#{URI::regexp([ 'http', 'https'])}\z/
-    #      $file_url = @val1
-    #       redirect_to :action => 'shorten'
-    #     else
-    #       puts ( $file_url )
-    #       flash[:message] = 'Invalid url'
-    #       # redirect_to controller: :home, action: :new
-    #   end
-    #   else
-    #     flash[:message] =  "End of file"
-    #     redirect_to controller: :home, action: :new
-    # end
-    # end
 
     def new_line
       if $size_pdf.present?
@@ -66,7 +39,6 @@ class PdfController < ApplicationController
         redirect_to :action => 'shorten'
         else
           flash[:message] = "Invalid url"
-        # redirect_to controller: :home, action: :new
            render "upload"
         end 
       else 
@@ -89,7 +61,6 @@ class PdfController < ApplicationController
          $file_srt_url = @display+@string 
          flash[:message] = 'Valid url'
          redirect_to :action => 'display'
-        # redirect_to controller: :home, action: :new
       
        end
 
@@ -102,9 +73,6 @@ class PdfController < ApplicationController
            @original_url = $file_og_url
            @shortened_url = $file_srt_url
            flash[:message] ="created succesfully."
-          #  puts (@original_url)
-          #   puts(@shortened_url )
-          #  redirect_to controller: :home, action: :new
 
            render 'upload'
 
