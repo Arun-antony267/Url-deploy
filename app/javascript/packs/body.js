@@ -8,8 +8,8 @@ function Component() {
         <h1>URL Shortener</h1>
        
         <div class="dropdown">
-        <a href="/">
-            <button class="btn btn-outline-primary" type="button">Logout</button>
+        <a href="/home/index">
+            <button class="btn btn-outline-primary" type="button">Home</button>
           </a>
         </div>
       </div>

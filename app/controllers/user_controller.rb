@@ -26,7 +26,7 @@ class UserController < ApplicationController
 
   if @user.save
     flash[:message] = "Your Account was Created Successfully"
-    redirect_to controller: :home, action: :index
+    render 'login'
   else 
     flash[:message] = 'ERROR !!! Invalid input'
    
@@ -41,8 +41,9 @@ pass = params[:password]
 
 if @user && @user.authenticate(pass)
   $name =@user.name
+  $id = @user.id
    flash[:message] = "Logged In Succesfully"
-  redirect_to controller: :home, action: :new
+  redirect_to controller: :home, action: :index
 else
   flash[:message] = "!!!OOPS not going anywhere"
   render 'login'
