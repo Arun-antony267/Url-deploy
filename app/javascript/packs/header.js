@@ -3,19 +3,19 @@ import React from 'react';
 
 function Header() {
     return (
-      <><div className="navbar" >
+      <><div className="topnav" >
 
-        <li><h1>URL Shortener</h1></li>
+        <h1>URL Shortener</h1>
         
         <div >
           <a href="/">
-            <button class="btn btn-outline-primary" type="button">Home</button>
+            <button class="dropbtn dropbtn-outline-primary" type="button">Home</button>
           </a>
           <a href="/user/login">
-            <button class="btn btn-outline-primary" type="button">Login</button>
+            <button class="dropbtn dropbtn-outline-primary" type="button">Login</button>
           </a>
           <a href="/user/signup">
-            <button class="btn btn-outline-primary" type="button">Signup</button>
+            <button class="dropbtn dropbtn-outline-primary" type="button">Signup</button>
           </a>
         </div>
        

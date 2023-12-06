@@ -1,12 +1,26 @@
 class PdfController < ApplicationController
+  require 'csv'
   
   def new
     redirect_to controller: :home, action: :new
   end
 
      def uploadFile
-        post = DataFile.save($file)
-        redirect_to :action => 'next_line'
+        @post = UrlFile.new( file_params )
+        if @post.save   
+          
+          $csv = File.new($file, "r")
+          CSV.foreach($file.path) do |row|
+         
+         puts(CSV.read($file.path))
+        end
+        puts ("File saved")
+        redirect_to controller: :home, action: :new
+        else 
+          puts ("File not saved")
+          redirect_to controller: :home, action: :new
+        # redirect_to :action => 'next_line'
+        end
      end
      
      def next_line
@@ -17,7 +31,6 @@ class PdfController < ApplicationController
       if @val1.present?
          @@file_url =@val1
           redirect_to :action => 'shorten'
-
       else
 
          @a ='no elements left'
@@ -33,7 +46,7 @@ class PdfController < ApplicationController
         redirect_to :action => 'shorten'
 
       else 
-        $error101 = 'End of file'
+        flash[:message] = "End of file"
         redirect_to controller: :home, action: :new
 
       end     
@@ -73,18 +86,23 @@ class PdfController < ApplicationController
      
       def fileOgUrl
 
-        @original_url = @@file_url.to_json
-        render json: @original_url
+        @file_original_url = @@file_url.to_json
+        render json: @file_original_url
           
       end
   
       def fileSrtUrl
       
-        @shortened_url = @@file_srt_url.to_json
-        render json: @shortened_url
+        @file_shortened_url = @@file_srt_url.to_json
+        render json: @file_shortened_url
   
       end
-  
+
+      private
+      
+      def file_params
+        params.permit(:file)
+      end
 
 end
     

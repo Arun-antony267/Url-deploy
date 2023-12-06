@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.1.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.0.8"
+gem 'rails', '~> 7.0.8'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -74,9 +74,15 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
-  gem "selenium-webdriver"
+  gem 'selenium-webdriver', '~> 4.15'
 
 end
+
+group :production do
+  # Add gems that are specific to the production environment here
+  gem 'rails_12factor'
+end
+
 
 gem 'shortener', '~> 0.5.5'
 
@@ -96,8 +102,13 @@ gem 'react-rails', '~> 2.6', '>= 2.6.1'
 
 gem 'simplecov', '~> 0.15.0'
 
-gem 'sqlite3', group: :development
-
-gem 'rails_12factor', group: :production
-
 gem 'rails-helper', '~> 0.1.0'
+
+gem 'devise', '~> 4.7', '>= 4.7.3'
+
+gem 'factory_bot_rails', '~> 6.2'
+
+gem 'activesupport', '~> 7.0.8'
+gem 'actionpack', '~> 7.0.8'
+
+gem "matrix", "~> 0.4.2"

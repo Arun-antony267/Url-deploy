@@ -1,22 +1,31 @@
-
+<div id="header2"></div>
 <body>
-    <ul>
-  <li><h1>URL Shortener</h1></li>
-  <li style="float:right"><a href="/">
-            <button class="btn btn-outline-primary" type="button">Logout </button>
-          </a></li>
-</ul>
-
+  <%= render "layouts/flash" %>
 <h4>Your new url is given below</h4>
 
 <div class='container'>
-  <%= render "layouts/flash" %>
-<div id="copy"></div>
- <p><%= @reply  %> 
- <p><%= @notice %> 
- <p><%= @dis1%>
-
- <p><%= link_to 'Back', {:action => 'new'} %>
+<%# <div id="copy"></div> %>
+ <div class ='p-1 '>
+            <div class ='box-1'>
+      <div class ='container'>
+        The Original URL is:<input type="text" name="name" value=<%= $original_url%>/>
+          The Shortened URL is :<input type="text" name="name" value=<%= $shortened_url%> id= "short"/>
+          <button class="btn btn-outline-primary" onclick="handleCopy()">Copy</button>
+          <a href="/home/next">
+              <button class="btn btn-outline-primary" type="button">Next</button>
+              </a>
+      </div>
+      </div>
+      </div>
+      <script>
+        function handleCopy(){
+  var copyText = document.getElementById("short");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(copyText.value);
+  
+}
+      </script>
  </body>
  </div>
 

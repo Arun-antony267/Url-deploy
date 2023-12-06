@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 function MyComponent(){
   
-  const url= "http://127.0.0.1:3000/urlCount";
+  const url= "/urlCount";
   const [data, setData] = useState();
   
   const fetchInfo = () => {

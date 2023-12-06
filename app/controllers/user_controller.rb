@@ -21,13 +21,14 @@ class UserController < ApplicationController
 
 
  def create
-  @user = User.new(user_params)
-  if @user.save
-    flash[:message] = "Your Account was Created Successfully!"
 
+  @user = User.new(user_params)
+
+  if @user.save
+    flash[:message] = "Your Account was Created Successfully"
     redirect_to controller: :home, action: :index
-  else
-      @dis = 'ERROR !!! Invalid input'
+  else 
+    flash[:message] = 'ERROR !!! Invalid input'
    
       render :signup
   end
@@ -36,14 +37,14 @@ end
 def check_login
 email = params[:email]
 pass = params[:password]
-
 @user = User.find_by(email: email)
+
 if @user && @user.authenticate(pass)
   $name =@user.name
-  # $dis = 'password is correct'
+   flash[:message] = "Logged In Succesfully"
   redirect_to controller: :home, action: :new
 else
-  @dis = '!!!OOPS not going anywhere'
+  flash[:message] = "!!!OOPS not going anywhere"
   render 'login'
 end
 

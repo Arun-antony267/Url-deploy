@@ -6,10 +6,10 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 function Display(){
 //  const text="Hi this is react body"
 
-const url="http://127.0.0.1:3000/pdf/filesrturl"
+const url="/filesrturl"
 const [text, setText]= useState('')
 
-const url2="http://127.0.0.1:3000/pdf/fileogurl"
+const url2="/fileogurl"
 const [text2, setText2]= useState('')
 
 const fetchInfo = () => {
@@ -43,7 +43,7 @@ return (
   The Original URL is:<input type="text" name="name" value={text2} />
     The Shortened URL is :<input type="text" name="name" value={text} />
     <button class="btn btn-outline-primary" onClick={handleCopy}>Copy</button>
-    <a href="/home/next">
+    <a href="/pdf/new_line">
         <button class="btn btn-outline-primary" type="button">Next</button>
         </a>
 </div>

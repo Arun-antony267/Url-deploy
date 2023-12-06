@@ -1,18 +1,34 @@
  <div id="content"></div> 
-   <div class="container">
- <h1> Login  </h1>
- 
+  <%= render "layouts/flash"%>
+   
+   <div class="p-1">
+ <center>
+  <h1> Login  </h1>
  <%= form_tag :action => 'check_login' do %>
  
-        <label for="email"></label><br>
-        Email: <input class="shortInput" name="email"  type="text"><br>
+        <label for="email">  </label><br>
+        <input class="shortInput" name="email" placeholder="Email"  type="text" style="width: 500px;"><br>
 
-        <label for="password"></label><br>
-        Password: <input class="shortInput" name="password" type="text"><br>
-          <p><%= submit_tag "login"  %>
+         <label for="password"></label><br>
+        <div class = "password">
+        <input class="pass-field" name="password" placeholder="Password"  type="password" id="password">
+        <input class="pass-icon" type="checkbox" onclick="myFunction()">
+        </div><br>
+        <button class="btn btn-outline-primary" >Login</button>
           <%= @error%>
           <% end%>
           <p><%= @dis%>
-   
-        <p> <%= link_to 'Back', controller: :home, action: :index  %>
+           </center>
           </div>
+          <script>
+function myFunction() {
+  var x = document.getElementById("password");
+
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
+         

@@ -22,7 +22,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
             border-radius: 5px;
         }
 
-/* Full-width input fields */
+
 input[type=text], input[type=password] {
   width: 100%;
   padding: 15px;
@@ -41,8 +41,9 @@ hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 25px;
 }
-        /* Set a style for all buttons */
+  
 button {
+  background-color: white;
   color: black;
   border: none;
 }
@@ -52,26 +53,49 @@ button:hover {
 }
 .signupbtn {
  padding: 1px 1px;
-  background-color: #f44336;
+  background-color: #fff;
 }
-/* Extra styles for the cancel button */
+
 .loginbtn {
   padding: 1px 1px;
   background-color: #f44336;
 }
-/* Float cancel and signup buttons and add an equal width */
+
 .loginbtn, .signupbtn {
   float: center;
   width: 15%;
 }
 
 .dropbtn {
+  text-align: center;
   background-color: transparent;
-  color: #46bff7;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
+  border-radius:10px;
+  padding: 5px;
+  margin: 0px;
   cursor: pointer;
+  transition: all 0.5s  ease;
+}
+
+.dropbtn:hover{
+
+    color: var(--bs-dropbtn-hover-color);
+    background-color: var(--bs-dropbtn-hover-bg);
+    border-color: var(--bs-dropbtn-hover-border-color);
+  
+}
+
+
+.dropbtn-outline-primary {
+ --bs-dropbtn-color: #000000;
+  --bs-dropbtn-border-color: transparent;
+  --bs-dropbtn-hover-color: #fff;
+  --bs-dropbtn-hover-bg: #56dadf;
+  --bs-dropbtn-hover-border-color: black;
+  --bs-dropbtn-focus-shadow-rgb: 25, 135, 84;
+  --bs-dropbtn-active-color: #fff;
+  --bs-dropbtn-active-bg: #46bff7;
+  --bs-dropbtn-active-border-color: transparent;
+  --bs-dropbtn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 
 .dropdown {
@@ -105,6 +129,17 @@ button:hover {
 .dropdown:hover .dropbtn {
   background-color: white;
 }
+
+.topnav {
+  position: relative;
+ background-color:#eeeda5;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
+}
+
 .p {
   font-family: verdana;
   font-size: 30px;
@@ -121,8 +156,32 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  height :60vh;
+  height :70vh;
+}
 
+.p-2{
+  font-family: verdana;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height :40vh;
+}
+
+.p-3{
+ font-family: verdana;
+  font-size: 20px;
+  /* display: flex; */
+  align-items: left;
+
+}
+
+.p-4{
+  font-family: verdana;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
 }
 
 .box-1{
@@ -149,7 +208,7 @@ button:hover {
     color: var(--bs-box-hover-color);
     background-color: var(--bs-box-hover-bg);
     border-color: var(--bs-box-hover-border-color);
-  
+    box-shadow:0 0 10px 5px #46bff7;
 }
 
 .box-outline{
@@ -167,7 +226,6 @@ button:hover {
 
 ul {
   list-style-type: none;
-  margin: 0;
   padding:0.5rem;
   overflow: hidden;
   background-color: transparent;
@@ -181,6 +239,31 @@ li a {
    padding:0.5rem;
 }
 
+.password{
+  padding: 0px 10px;
+  display: inline-block;
+  position: relative;
+  border: transparent;
+  width: 520px;
+}
+
+.pass-field{
+  padding: 15px 5px;
+  outline: none;
+  border: 0;
+  width: 250px;
+}
+
+
+.pass-icon{
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+
+}
 
  </style>
 
@@ -189,12 +272,13 @@ li a {
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!-- Following will make the react components availabe to our layout -->
-    <%= javascript_pack_tag 'application' %> 
-      <%= javascript_pack_tag "hello_react"%>
+      <%= javascript_pack_tag 'application' %>
+      <%= javascript_pack_tag "hello_react" %>
       <%= javascript_pack_tag "count" %>  
       <%= javascript_pack_tag "copy_url" %>  
       <%= javascript_pack_tag "show"%> 
-      <%# <%= javascript_pack_tag "logout" %>
+      <%= javascript_pack_tag "Header3" %>
+
     <body >
 
        <%= yield %>

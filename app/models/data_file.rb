@@ -1,7 +1,14 @@
 class DataFile < ActiveRecord::Base
-    
+    require 'csv'
+
     def self.save(upload)
 
+        # $csv = File.new($file, "r")
+        # $parsed_data = CSV.parse($csv)
+        # $parsed_data.each do |row|
+        #   $f_url = row[1]     
+        # end
+       
         @pdf = $file
         name = upload[@pdf]
         directory = "/home/arun/Downloads"

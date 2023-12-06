@@ -1,5 +1,17 @@
 image: ruby:3.1.2
 
+services:
+  - name: postgres
+ 
+variables:
+  POSTGRES_DB: url_shortner_production
+  POSTGRES_HOST: localhost
+  POSTGRES_PORT: 5432
+  POSTGRES_USER: arun
+  POSTGRES_PASSWORD: qwer
+
+
+
 stages: 
     - build
     - test
@@ -7,6 +19,7 @@ stages:
 
 before_script:
   - apt-get update -qy
+  - apt-get install -y postgresql-client
   - apt-get install -y nodejs
   - gem install bundler
   - bundle install
@@ -20,7 +33,7 @@ build-job:
 test:
   stage: test 
   script:
-       - bundle exec rspec
+    - bundle exec rspec
 
 deploy:
   stage: deploy
