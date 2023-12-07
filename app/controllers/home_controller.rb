@@ -29,7 +29,7 @@ class HomeController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        pdf = ShortUrlPdf.new(@short_url)
+        pdf = ShortUrlPdf.new(@short_url, @user_details)
         send_data pdf.render, filename: 'shorturl.pdf', type: 'application/pdfs',disposition: "inline"
         end
       end 

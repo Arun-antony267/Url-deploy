@@ -1,30 +1,39 @@
  <div id="header3"></div> 
+   <%= render "layouts/flash" %>
+  <div class="container">
+    <div calss="row">
+      <div calss= "col-sm-6">
    <div class="block">
      <%= image_tag "bg-2.jpg" %>
    </div>
-    <%= render "layouts/flash" %>
-    <div class= "block-2">
-    <div class="p-1">
-       <center>
-      <h1> Sign Up </h1>
+   </div>
+   <div calss="col-sm-6">
+     <div class= "block-2">
+      <div class="p-1">
+         <center>
+         <h1> Sign Up </h1>
      
  <%= form_tag :action => 'create' do %>
- <label for="name"></label><br>
-      <input class="shortInput" name="name" placeholder="User Name"   type="text" style="width: 500px">
+        <label for="name"></label><br>
+        <input class="shortInput" name="name" placeholder="User Name"   type="text" style="width: 500px">
  
         <label for="email"></label><br>
-       <input class="shortInput" name="email" placeholder="Email" type="text" style="width: 500px">
+        <input class="shortInput" name="email" placeholder="Email" type="text" style="width: 500px">
 
         <label for="password"></label><br>
-      <input class="shortInput" name="password" placeholder="Password" type="password" id="password" style="width: 500px">
+        <input class="shortInput" name="password" placeholder="Password" type="password" id="password" style="width: 500px">
 
         <label for="confirmPassword"></label><br>
-      <input class="shortInput" name="password_confirmation" placeholder="Confirm password" type="password" id="pass2" style="width: 500px"><p><input type="checkbox" onclick="myFunction()">Show Password<br>
+        <input class="shortInput" name="password_confirmation" placeholder="Confirm password" type="password" id="pass2" style="width: 500px"><p>
+        <input type="checkbox" onclick="myFunction()">Show Password<br>
 
- <button class="btn btn-outline-primary"  >Signup</button>
+        <button class="btn btn-outline-primary"  >Signup</button>
  <% end %>
- </center>
- </div>
+       </center>
+       </div>
+     </div>
+    </div>
+</div>
 </div>
 <script>
 function myFunction() {
