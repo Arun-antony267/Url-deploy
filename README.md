@@ -26,7 +26,6 @@ Make sure you have the following installed:
 - [Rails](https://guides.rubyonrails.org/getting_started.html#installing-rails)
 - [Node.js](https://nodejs.org/en/download/)
 - [Yarn](https://yarnpkg.com/getting-started/install)
-<<<<<<< README.md
 
 
 ### To View
