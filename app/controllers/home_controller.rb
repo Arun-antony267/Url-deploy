@@ -25,6 +25,7 @@ class HomeController < ApplicationController
   
   def view   
     @short_url = ShortUrl.where(user_id: $id)
+    @user_details = User.find_by(id: $id)
     respond_to do |format|
       format.html
       format.pdf do
