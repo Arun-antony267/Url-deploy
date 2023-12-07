@@ -70,12 +70,13 @@ class HomeController < ApplicationController
   
       @input = params[:multi_url]
       $after = @input.split(",")
-      $size= $after.size 
+      $size = $after.size 
       redirect_to :action => 'next'
     end 
   
   
     def next
+      if $size.present?
       $size = $size - 1;
       $original_url = $after[$size]
         if $size!= -1 
@@ -97,6 +98,10 @@ class HomeController < ApplicationController
              render 'new'
          
         end
+      else
+        flash[:message] = 'No More url'
+        render 'new'
+      end
       end
   
   

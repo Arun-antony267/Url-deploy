@@ -5,8 +5,8 @@
          <%= form_tag :action => 'multi_line' do %> 
               <textarea  rows="2" cols="70" name="multi_url" placeholder="Use for single and multiple urls shortening" ></textarea><br>
         <button type="submit" class= "button" >create</button>
-         <% end %> 
-         <br><p>note: Use comma ( , ) to seperate between multiple url's.</p>
+         <% end %>
+         <p>note: Use comma ( , ) to seperate between multiple url's.</p>
           </div>
     <div class="container">
       <div class= "p-3">
@@ -21,5 +21,6 @@
   <%= form.file_field :file, direct_upload: true %>
   <%= form.submit %>
 <% end %>
+<p>note: Use CSV file </p>
   </div>
   </body>
