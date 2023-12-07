@@ -4,7 +4,6 @@ class HomeController < ApplicationController
     user= ShortUrl.where(user_id: $id).count
     puts($id)
     $short_count = user
-  
   end
   
   def redirect_to_original
