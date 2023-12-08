@@ -6,6 +6,11 @@
   margin: 50px 50px;
 }
 
+ .filter-form {
+  width:20%;
+  float: right;
+  }
+
 .l {
   border-collapse: collapse;
   width:100%;
@@ -31,10 +36,22 @@ overflow: hidden;
 </style>
 <div id="header2"></div>
 <body>
-        <%= link_to "Download PDF file", home_view_path(format: 'pdf') %>
+        
 
 
-      <div class="con">
+      <div class="filter-form">
+          <p><form action="<%= home_view_path %>" method="get">
+      <label for="order">Order:</label>
+      <select name="order" id="order">
+        <option>-select-</option>
+         <option value="desc">Latest</option>
+        <option value="asc">Oldest</option>
+      </select>
+      <input type="submit" value="Apply Filter">
+    </form></p>
+    <p><%= link_to "Download PDF file", home_view_path(format: 'pdf') %></p>
+    </div>
+    <div class="con">
 <table class= "l">    
   <thead> 
    <p> User Name:<%= @user_details.name%></p>
@@ -49,8 +66,8 @@ overflow: hidden;
       </thead>
          <% count= 0 %>
       <tbody> 
-      <% @short_url.each do |short_url| %>   
-      
+      <%# <% @short_url.each do |short_url| %>  
+       <% @short_url.order(created_at: params[:order] || 'desc').each do |short_url| %>
           <tr>   
             <td><%= count+=1%></td>
             <td><%= short_url.original_url %></td>   
