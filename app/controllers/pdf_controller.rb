@@ -55,7 +55,7 @@ class PdfController < ApplicationController
       
    
       def shorten
-         @display = "https://url-shortner-e2w9.onrender.com/i?q="
+         @display = "https://url-shortner-s7ah.onrender.com/i?q="
          @string = SecureRandom.uuid[0..6]
          $file_og_url = $element 
          $file_srt_url = @display+@string 

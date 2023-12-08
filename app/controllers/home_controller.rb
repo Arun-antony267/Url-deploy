@@ -8,7 +8,7 @@ class HomeController < ApplicationController
   
   def redirect_to_original
     short_url = params[:q]
-    full_url = "https://url-shortner-e2w9.onrender.com/i?q="+short_url
+    full_url = "https://url-shortner-s7ah.onrender.com/i?q="+short_url
     user = ShortUrl.find_by(shortened_url: full_url )
     url_og = user.original_url
     redirect_to url_og, allow_other_host: true
