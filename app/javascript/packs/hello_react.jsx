@@ -27,7 +27,7 @@ function Logout(){
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <App/>,
-    document.getElementById('content'),
+    document.getElementById('header1'),
   )
 })
 
