@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  Error: ENOSPC: no space left on device, write
+  Error: ENOSPC: no space left on device, copyfile '/home/arun/.cache/yarn/v6/npm-@babel-helper-string-parser-7.23.4-9478c707febcbbe1ddb38a3d91a2e054ae622d83-integrity/node_modules/@babel/helper-string-parser/lib/index.js' -> '/home/arun/Documents/Url-deploy/node_modules/@babel/core/node_modules/@babel/helper-string-parser/lib/index.js'
 
 npm manifest: 
   {
