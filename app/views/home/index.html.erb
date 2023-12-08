@@ -1,8 +1,16 @@
+      <style>
+     body {
+      background-image: url(<%=  asset_path"bg-4.jpg" %>); 
+      background-size: cover;
+      background-position: center center;
+      height: 100vh;
+    }
+</style>
     <div id="header4"></div> 
+ <body>
  <%= render "layouts/flash" %>
     <center>
     <div class = "partition">
-<%# <%= image_tag "bg-1.jpg"%>
     </div>
       
      <div class = "partition">
@@ -13,11 +21,11 @@
       </div>
        </div>
            <div class = "partition">
-            <div class ='p'>
+            <div class ='p-4'>
    <p>Create a Short Url  <a href="/home/new">
            here.
           </a>
           </div>
     </div>
        </center>
-   
+   </body>

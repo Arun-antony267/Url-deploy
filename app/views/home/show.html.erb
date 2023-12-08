@@ -1,15 +1,24 @@
+
+  <style>
+     body {
+      background-image: url(<%=  asset_path"bg-5.jpg" %>); 
+      background-size: cover;
+      background-position: center center;
+      height: 100vh;
+    }
+</style>
 <div id="header2"></div>
 <body>
   <%= render "layouts/flash" %>
-<h4>Your new url is given below</h4>
+<%# <h4>Your new url is given below</h4> %>
 
 <div class='container'>
 <%# <div id="copy"></div> %>
  <div class ='p-1 '>
             <div class ='box-1'>
       <div class ='container'>
-        The Original URL is:<input type="text" name="name" value=<%= $original_url%>/>
-          The Shortened URL is :<input type="text" name="name" value=<%= $shortened_url%> id= "short"/>
+          The Original URL is:<input type="text" name="name" placeholder= "Invalid Url" value= "<%= @original_url%>" />
+          The Shortened URL is :<input type="text" name="name" id= "short" value="<%= @shortened_url %>"/>
           <button class="btn btn-outline-primary" onclick="handleCopy()">Copy</button>
           <a href="/home/next">
               <button class="btn btn-outline-primary" type="button">Next</button>
