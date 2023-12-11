@@ -7,7 +7,7 @@ class HomeController < ApplicationController
       $short_count = user
     else
       flash[:message] = "session expired please log in again "
-      redirect_to controller: :user, action: :check_login
+      redirect_to controller: :user, action: :login
     end
   end
 
