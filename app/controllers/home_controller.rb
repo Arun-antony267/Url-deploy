@@ -37,7 +37,7 @@ class HomeController < ApplicationController
       $file_content = $file.read
       $file_name = $file.original_filename
       if is_csv_file?($file)
-        redirect_to controller: :pdf, action: :uploadFile
+        redirect_to controller: :file, action: :uploadFile
       else
         flash[:message] = "Invalid File"
         render "new"
@@ -108,17 +108,5 @@ class HomeController < ApplicationController
     else
       redirect_to root_path, notice: "!!!!ERROR!!!!"
     end
-  end
-
-  def ogurl
-
-    # @original_url = $original_url.to_json
-    render json: $original_url.to_json
-  end
-
-  def srtUrl
-
-    # @shortened_url = $shortened_url.to_json
-    render json: $shortened_url.to_json
   end
 end

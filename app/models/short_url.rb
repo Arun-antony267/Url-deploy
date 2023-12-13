@@ -1,9 +1,4 @@
 class ShortUrl < ApplicationRecord
-
-    def lookup
-        code.to_s = SecureRandom.uuid[0..6]
-        srt_url =  "https://test.tin.ee/"
-        return(srt_url+ code)    
-    end
-
+  validates_presence_of :shortened_url, :original_url, :user_id
+  validates_uniqueness_of :shortened_url
 end

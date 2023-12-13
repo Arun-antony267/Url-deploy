@@ -5,7 +5,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Header from './header';
-import Component from './body';
+import Component from './header1';
 
 function App() {
   return (

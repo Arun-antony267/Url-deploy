@@ -7,6 +7,9 @@ function Header() {
         <h1>URL Shortener</h1>
 
         <div>
+        <a href="/home/next">
+              <button class="btn btn-outline-primary" type="button">Next Short Url</button>
+              </a>
           <a href="/home/new">
             <button class="dropbtn dropbtn-outline-primary" type="button">
               Create a new Link

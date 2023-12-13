@@ -24,8 +24,29 @@ Make sure you have the following installed:
 
 - [Ruby](https://www.ruby-lang.org/en/documentation/installation/)
 - [Rails](https://guides.rubyonrails.org/getting_started.html#installing-rails)
+- [Postgresql](https://www.postgresql.org/download/)
 - [Node.js](https://nodejs.org/en/download/)
 - [Yarn](https://yarnpkg.com/getting-started/install)
+
+### How to set up
+
+Make sure you have the following installed in your system. 
+
+- Ruby -v 3.1.2
+- Rails -v 7.0.8
+- psql (postgreSQl) --version 16.1
+- Nodejs -v 18.13.0
+- Yarn -v 1.22.19
+
+After that clone the repository and run following commands
+
+- bundle install
+- rails assets:precompile
+- rails db:migrate
+ 
+ after these commands you are good to go you can launch the website localy by running 
+
+- rails s 
 
 
 ### To View

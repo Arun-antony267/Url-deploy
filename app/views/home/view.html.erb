@@ -66,7 +66,6 @@ overflow: hidden;
       </thead>
          <% count= 0 %>
       <tbody> 
-      <%# <% @short_url.each do |short_url| %>  
        <% @short_url.order(created_at: params[:order] || 'desc').each do |short_url| %>
           <tr>   
             <td><%= count+=1%></td>
