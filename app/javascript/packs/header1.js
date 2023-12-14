@@ -12,6 +12,13 @@ function Component() {
         </a>
       </h1>
 
+      <div>
+        <a href="/home/new">
+          <button class="dropbtn dropbtn-outline-primary" type="button">
+            Create a new Link
+          </button>
+        </a>
+      </div>
       <div class="dropdown">
         <button class="dropbtn">Reports</button>
         <div class="dropdown-content">

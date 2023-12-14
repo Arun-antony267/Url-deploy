@@ -13,31 +13,63 @@ class FileController < ApplicationController
           flash[:message] = "Line count not present"
         end
       end
-      redirect_to :action => "new_line"
+      # redirect_to :action => "new_line"
+      # redirect_to :action => "full"
+      time = Time.now.utc
+      while $size_pdf != -1
+        $size_pdf = $size_pdf - 1
+        $element = $file_s[$size_pdf]
+        $element =~ /\A#{URI::regexp(["http", "https"])}\z/
+        @display = "https://url-shortner-s7ah.onrender.com/i?q="
+        @string = SecureRandom.uuid[0..6]
+        $file_og_url = $element
+        $file_srt_url = @display + @string
+        flash[:message] = "Valid url"
+        @save_url = ShortUrl.new(user_id: $id, original_url: $file_og_url, shortened_url: $file_srt_url)
+        if @save_url.save
+          @short_url = ShortUrl.where("created_at > ?", time)
+        end
+      end
+      # render "full"
+      @user_details = User.find_by(id: $id)
+      respond_to do |format|
+        format.html
+        format.pdf do
+          pdf = ShortUrlPdf.new(@short_url, @user_details)
+          send_data pdf.render, filename: "shorturl.pdf", type: "application/pdfs", disposition: "inline"
+        end
+      end
     else
       flash[:message] = "File not saved"
       redirect_to controller: :home, action: :new
     end
   end
 
-  def new_line
-    if $size_pdf.present?
+  # def new_line
+  def full
+    time = Time.now.utc
+    while $size_pdf != -1
       $size_pdf = $size_pdf - 1
-      if $size_pdf != -1
-        $element = $file_s[$size_pdf]
-        if $element =~ /\A#{URI::regexp(["http", "https"])}\z/
-          redirect_to :action => "shorten"
-        else
-          flash[:message] = "Invalid url"
-          render "upload"
-        end
-      else
-        flash[:message] = "End of file"
-        redirect_to controller: :home, action: :new
+      $element = $file_s[$size_pdf]
+      $element =~ /\A#{URI::regexp(["http", "https"])}\z/
+      @display = "https://url-shortner-s7ah.onrender.com/i?q="
+      @string = SecureRandom.uuid[0..6]
+      $file_og_url = $element
+      $file_srt_url = @display + @string
+      flash[:message] = "Valid url"
+      @save_url = ShortUrl.new(user_id: $id, original_url: $file_og_url, shortened_url: $file_srt_url)
+      if @save_url.save
+        @short_url = ShortUrl.where("created_at > ?", time)
       end
-    else
-      flash[:message] = "End of file"
-      redirect_to controller: :home, action: :new
+    end
+    render "full"
+    @user_details = User.find_by(id: $id)
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = ShortUrlPdf.new(@short_url, @user_details)
+        send_data pdf.render, filename: "shorturl.pdf", type: "application/pdfs", disposition: "inline"
+      end
     end
   end
 
@@ -58,7 +90,8 @@ class FileController < ApplicationController
       @shortened_url = $file_srt_url
       flash[:message] = "created succesfully."
 
-      render "upload"
+      # render "upload"
+      render "full"
     else
       redirect_to root_path, notice: "!!!!ERROR!!!!"
     end

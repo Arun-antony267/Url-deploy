@@ -6,6 +6,17 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Header from './header';
 import Component from './header1';
+import Loading from './loading';
+
+
+function Page(){
+  return(
+    <div className='loading'>
+      <Loading/>
+    </div>
+  )
+}
+
 
 function App() {
   return (
@@ -22,6 +33,14 @@ function Logout(){
     </div>
   )
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  ReactDOM.render(
+    <Page/>,
+    document.getElementById('loading'),
+  )
+})
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
