@@ -16,7 +16,7 @@ class FileController < ApplicationController
       # redirect_to :action => "new_line"
       # redirect_to :action => "full"
       time = Time.now.utc
-      while $size_pdf != -1
+      while $size_pdf != 0
         $size_pdf = $size_pdf - 1
         $element = $file_s[$size_pdf]
         $element =~ /\A#{URI::regexp(["http", "https"])}\z/

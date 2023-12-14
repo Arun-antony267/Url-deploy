@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-12-13T11:14:10+05:30">2023-12-13T11:14:10+05:30</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-12-14T13:02:23+05:30">2023-12-14T13:02:23+05:30</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -32,9 +32,9 @@
   <a name="AllFiles"></a>
   <div>
     <b>17</b> files in total.
-    <b>307</b> relevant lines. 
+    <b>335</b> relevant lines. 
     <span class="green"><b>0</b> lines covered</span> and
-    <span class="red"><b>307</b> lines missed </span>
+    <span class="red"><b>335</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -73,10 +73,10 @@
       <tr>
         <td class="strong"><a href="#66c339b8a37b18875001e6dac18f047162268370" class="src_link" title="app/controllers/file_controller.rb">app/controllers/file_controller.rb</a></td>
         <td class="red strong">0.0 %</td>
-        <td>82</td>
-        <td>72</td>
+        <td>115</td>
+        <td>100</td>
         <td>0</td>
-        <td>72</td>
+        <td>100</td>
         <td>0.0</td>
       </tr>
       
@@ -240,9 +240,9 @@
   <a name="Controllers"></a>
   <div>
     <b>5</b> files in total.
-    <b>235</b> relevant lines. 
+    <b>263</b> relevant lines. 
     <span class="green"><b>0</b> lines covered</span> and
-    <span class="red"><b>235</b> lines missed </span>
+    <span class="red"><b>263</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -281,10 +281,10 @@
       <tr>
         <td class="strong"><a href="#66c339b8a37b18875001e6dac18f047162268370" class="src_link" title="app/controllers/file_controller.rb">app/controllers/file_controller.rb</a></td>
         <td class="red strong">0.0 %</td>
-        <td>82</td>
-        <td>72</td>
+        <td>115</td>
+        <td>100</td>
         <td>0</td>
-        <td>72</td>
+        <td>100</td>
         <td>0.0</td>
       </tr>
       
@@ -901,9 +901,9 @@
     <h3>app/controllers/file_controller.rb</h3>
     <h4><span class="red">0.0 %</span> covered</h4>
     <div>
-      <b>72</b> relevant lines. 
+      <b>100</b> relevant lines. 
       <span class="green"><b>0</b> lines covered</span> and
-      <span class="red"><b>72</b> lines missed.</span>
+      <span class="red"><b>100</b> lines missed.</span>
     </div>
   </div>
   
@@ -1000,292 +1000,292 @@
           <code class="ruby">      end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="16">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
-          <code class="ruby">      redirect_to :action =&gt; &quot;new_line&quot;</code>
+          <code class="ruby">      # redirect_to :action =&gt; &quot;new_line&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="17">
+        <li class="never" data-hits="" data-linenumber="17">
           
           
-          <code class="ruby">    else</code>
+          <code class="ruby">      # redirect_to :action =&gt; &quot;full&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="18">
           
           
-          <code class="ruby">      flash[:message] = &quot;File not saved&quot;</code>
+          <code class="ruby">      time = Time.now.utc</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="19">
           
           
-          <code class="ruby">      redirect_to controller: :home, action: :new</code>
+          <code class="ruby">      while $size_pdf != -1</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="20">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">        $size_pdf = $size_pdf - 1</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="21">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">        $element = $file_s[$size_pdf]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="22">
+        <li class="missed" data-hits="0" data-linenumber="22">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        $element =~ /\A#{URI::regexp([&quot;http&quot;, &quot;https&quot;])}\z/</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="23">
           
           
-          <code class="ruby">  def new_line</code>
+          <code class="ruby">        @display = &quot;https://url-shortner-s7ah.onrender.com/i?q=&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="24">
           
           
-          <code class="ruby">    if $size_pdf.present?</code>
+          <code class="ruby">        @string = SecureRandom.uuid[0..6]</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="25">
           
           
-          <code class="ruby">      $size_pdf = $size_pdf - 1</code>
+          <code class="ruby">        $file_og_url = $element</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="26">
           
           
-          <code class="ruby">      if $size_pdf != -1</code>
+          <code class="ruby">        $file_srt_url = @display + @string</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="27">
           
           
-          <code class="ruby">        $element = $file_s[$size_pdf]</code>
+          <code class="ruby">        flash[:message] = &quot;Valid url&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="28">
           
           
-          <code class="ruby">        if $element =~ /\A#{URI::regexp([&quot;http&quot;, &quot;https&quot;])}\z/</code>
+          <code class="ruby">        @save_url = ShortUrl.new(user_id: $id, original_url: $file_og_url, shortened_url: $file_srt_url)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="29">
           
           
-          <code class="ruby">          redirect_to :action =&gt; &quot;shorten&quot;</code>
+          <code class="ruby">        if @save_url.save</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="30">
           
           
-          <code class="ruby">        else</code>
+          <code class="ruby">          @short_url = ShortUrl.where(&quot;created_at &gt; ?&quot;, time)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="31">
           
           
-          <code class="ruby">          flash[:message] = &quot;Invalid url&quot;</code>
+          <code class="ruby">        end</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="32">
           
           
-          <code class="ruby">          render &quot;upload&quot;</code>
+          <code class="ruby">      end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="33">
+        <li class="never" data-hits="" data-linenumber="33">
           
           
-          <code class="ruby">        end</code>
+          <code class="ruby">      # render &quot;full&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="34">
           
           
-          <code class="ruby">      else</code>
+          <code class="ruby">      @user_details = User.find_by(id: $id)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="35">
           
           
-          <code class="ruby">        flash[:message] = &quot;End of file&quot;</code>
+          <code class="ruby">      respond_to do |format|</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="36">
           
           
-          <code class="ruby">        redirect_to controller: :home, action: :new</code>
+          <code class="ruby">        format.html</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="37">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby">        format.pdf do</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="38">
           
           
-          <code class="ruby">    else</code>
+          <code class="ruby">          pdf = ShortUrlPdf.new(@short_url, @user_details)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="39">
           
           
-          <code class="ruby">      flash[:message] = &quot;End of file&quot;</code>
+          <code class="ruby">          send_data pdf.render, filename: &quot;shorturl.pdf&quot;, type: &quot;application/pdfs&quot;, disposition: &quot;inline&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="40">
           
           
-          <code class="ruby">      redirect_to controller: :home, action: :new</code>
+          <code class="ruby">        end</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="41">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      end</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="42">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    else</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="43">
+        <li class="missed" data-hits="0" data-linenumber="43">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">      flash[:message] = &quot;File not saved&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="44">
           
           
-          <code class="ruby">  def shorten</code>
+          <code class="ruby">      redirect_to controller: :home, action: :new</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="45">
           
           
-          <code class="ruby">    @display = &quot;https://url-shortner-s7ah.onrender.com/i?q=&quot;</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="46">
           
           
-          <code class="ruby">    @string = SecureRandom.uuid[0..6]</code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="47">
+        <li class="never" data-hits="" data-linenumber="47">
           
           
-          <code class="ruby">    $file_og_url = $element</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="48">
+        <li class="never" data-hits="" data-linenumber="48">
           
           
-          <code class="ruby">    $file_srt_url = @display + @string</code>
+          <code class="ruby">  # def new_line</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="49">
           
           
-          <code class="ruby">    flash[:message] = &quot;Valid url&quot;</code>
+          <code class="ruby">  def full</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="50">
           
           
-          <code class="ruby">    redirect_to :action =&gt; &quot;display&quot;</code>
+          <code class="ruby">    time = Time.now.utc</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="51">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    while $size_pdf != -1</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="52">
+        <li class="missed" data-hits="0" data-linenumber="52">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">      $size_pdf = $size_pdf - 1</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="53">
           
           
-          <code class="ruby">  def display</code>
+          <code class="ruby">      $element = $file_s[$size_pdf]</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="54">
           
           
-          <code class="ruby">    @Short_url = ShortUrl.new(user_id: $id, original_url: $file_og_url, shortened_url: $file_srt_url)</code>
+          <code class="ruby">      $element =~ /\A#{URI::regexp([&quot;http&quot;, &quot;https&quot;])}\z/</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="55">
+        <li class="missed" data-hits="0" data-linenumber="55">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">      @display = &quot;https://url-shortner-s7ah.onrender.com/i?q=&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="56">
           
           
-          <code class="ruby">    if @Short_url.save</code>
+          <code class="ruby">      @string = SecureRandom.uuid[0..6]</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="57">
           
           
-          <code class="ruby">      @original_url = $file_og_url</code>
+          <code class="ruby">      $file_og_url = $element</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="58">
           
           
-          <code class="ruby">      @shortened_url = $file_srt_url</code>
+          <code class="ruby">      $file_srt_url = @display + @string</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="59">
           
           
-          <code class="ruby">      flash[:message] = &quot;created succesfully.&quot;</code>
+          <code class="ruby">      flash[:message] = &quot;Valid url&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="60">
+        <li class="missed" data-hits="0" data-linenumber="60">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">      @save_url = ShortUrl.new(user_id: $id, original_url: $file_og_url, shortened_url: $file_srt_url)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="61">
           
           
-          <code class="ruby">      render &quot;upload&quot;</code>
+          <code class="ruby">      if @save_url.save</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="62">
           
           
-          <code class="ruby">    else</code>
+          <code class="ruby">        @short_url = ShortUrl.where(&quot;created_at &gt; ?&quot;, time)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="63">
           
           
-          <code class="ruby">      redirect_to root_path, notice: &quot;!!!!ERROR!!!!&quot;</code>
+          <code class="ruby">      end</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="64">
@@ -1297,106 +1297,304 @@
         <li class="missed" data-hits="0" data-linenumber="65">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    render &quot;full&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="66">
+        <li class="missed" data-hits="0" data-linenumber="66">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    @user_details = User.find_by(id: $id)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="67">
           
           
-          <code class="ruby">  def fileOgUrl</code>
+          <code class="ruby">    respond_to do |format|</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="68">
           
           
-          <code class="ruby">    @file_original_url = $file_og_url.to_json</code>
+          <code class="ruby">      format.html</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="69">
           
           
-          <code class="ruby">    render json: @file_original_url</code>
+          <code class="ruby">      format.pdf do</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="70">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">        pdf = ShortUrlPdf.new(@short_url, @user_details)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="71">
+        <li class="missed" data-hits="0" data-linenumber="71">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        send_data pdf.render, filename: &quot;shorturl.pdf&quot;, type: &quot;application/pdfs&quot;, disposition: &quot;inline&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="72">
           
           
-          <code class="ruby">  def fileSrtUrl</code>
+          <code class="ruby">      end</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="73">
           
           
-          <code class="ruby">    @file_shortened_url = $file_srt_url.to_json</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="74">
           
           
-          <code class="ruby">    render json: @file_shortened_url</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="75">
-          
-          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="76">
+        <li class="never" data-hits="" data-linenumber="75">
           
           
           <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="76">
+          
+          
+          <code class="ruby">  def shorten</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="77">
           
           
-          <code class="ruby">  private</code>
+          <code class="ruby">    @display = &quot;https://url-shortner-s7ah.onrender.com/i?q=&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="78">
+        <li class="missed" data-hits="0" data-linenumber="78">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    @string = SecureRandom.uuid[0..6]</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="79">
           
           
-          <code class="ruby">  def file_params</code>
+          <code class="ruby">    $file_og_url = $element</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="80">
           
           
-          <code class="ruby">    params.permit(:file)</code>
+          <code class="ruby">    $file_srt_url = @display + @string</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="81">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    flash[:message] = &quot;Valid url&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="82">
+          
+          
+          <code class="ruby">    redirect_to :action =&gt; &quot;display&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="83">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="84">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="85">
+          
+          
+          <code class="ruby">  def display</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="86">
+          
+          
+          <code class="ruby">    @Short_url = ShortUrl.new(user_id: $id, original_url: $file_og_url, shortened_url: $file_srt_url)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="87">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="88">
+          
+          
+          <code class="ruby">    if @Short_url.save</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="89">
+          
+          
+          <code class="ruby">      @original_url = $file_og_url</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="90">
+          
+          
+          <code class="ruby">      @shortened_url = $file_srt_url</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="91">
+          
+          
+          <code class="ruby">      flash[:message] = &quot;created succesfully.&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="92">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="93">
+          
+          
+          <code class="ruby">      # render &quot;upload&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="94">
+          
+          
+          <code class="ruby">      render &quot;full&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="95">
+          
+          
+          <code class="ruby">    else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="96">
+          
+          
+          <code class="ruby">      redirect_to root_path, notice: &quot;!!!!ERROR!!!!&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="97">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="98">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="99">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="100">
+          
+          
+          <code class="ruby">  def fileOgUrl</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="101">
+          
+          
+          <code class="ruby">    @file_original_url = $file_og_url.to_json</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="102">
+          
+          
+          <code class="ruby">    render json: @file_original_url</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="103">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="104">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="105">
+          
+          
+          <code class="ruby">  def fileSrtUrl</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="106">
+          
+          
+          <code class="ruby">    @file_shortened_url = $file_srt_url.to_json</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="107">
+          
+          
+          <code class="ruby">    render json: @file_shortened_url</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="108">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="109">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="110">
+          
+          
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="111">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="112">
+          
+          
+          <code class="ruby">  def file_params</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="113">
+          
+          
+          <code class="ruby">    params.permit(:file)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="114">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="115">
           
           
           <code class="ruby">end</code>
