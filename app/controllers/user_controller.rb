@@ -47,12 +47,11 @@ class UserController < ApplicationController
     end
   end
 
-  def forgot
-    email = params[:email]
-    password = params[:password]
-    user = User.find_by(email: email)
+  def reset_password
+    user = User.find_by(email: params[:email])
     if user.present?
-      user = User.update(password_digest: password)
+      # new_password = params[:password]
+      user.update(password: params[:password])
       redirect_to root_path, notice: "Password Changed"
     else
       flash[:message] = "User not present"

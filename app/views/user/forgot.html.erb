@@ -8,14 +8,14 @@
           <div class= "login-container">
                <div><h1>Change Password</h1></div>
   
-                   <%= form_tag :action => 'forgot' do %>
+                   <%= form_tag :action => 'reset_password' do %>
                      <div class = "password">
                      <label for="email">  </label><br> 
                      <input class="shortInput form-control" name="email" placeholder="Email"  type="text" ><br>
                      </div>
-                     <label for="New Password"></label><br>
+                     <label for="password"></label><br>
                      <div class = "password">
-                     <input class="pass-field form-control" name="password" placeholder="Password"  type="password" id="password">
+                     <input class="pass-field form-control" name="password" placeholder="New Password"  type="password" id="password">
                      <input class="pass-icon" type="checkbox" onclick="myFunction()">
                      </div><br>
                              <button class="btn btn-outline-primary" >Change Password</button>

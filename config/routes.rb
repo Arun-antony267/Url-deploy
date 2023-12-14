@@ -42,4 +42,7 @@ Rails.application.routes.draw do
   get "/redirect", to: "webhook#redirect"
 
   get "/home/loading", to: "file#full"
+
+  get "/user/forgot"
+  post "user/reset_password"
 end
