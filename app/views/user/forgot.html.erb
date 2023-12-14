@@ -1,0 +1,39 @@
+ <div id="header3"></div> 
+  <%= render "layouts/flash"%>
+  <div class= "container">
+    <div class="block">
+      <%= image_tag "bg-2.jpg" %>
+    </div>
+      <div class= "block-2">
+          <div class= "login-container">
+               <div><h1>Change Password</h1></div>
+  
+                   <%= form_tag :action => 'forgot' do %>
+                     <div class = "password">
+                     <label for="email">  </label><br> 
+                     <input class="shortInput form-control" name="email" placeholder="Email"  type="text" ><br>
+                     </div>
+                     <label for="New Password"></label><br>
+                     <div class = "password">
+                     <input class="pass-field form-control" name="password" placeholder="Password"  type="password" id="password">
+                     <input class="pass-icon" type="checkbox" onclick="myFunction()">
+                     </div><br>
+                             <button class="btn btn-outline-primary" >Change Password</button>
+                    <% end%>
+               </div>
+            </div>
+        </div> 
+<script>
+
+function myFunction() { 
+ var x = document.getElementById("password"); 
+
+   if (x.type === "password") { 
+     x.type = "text"; 
+   } else {
+    x.type = "password";
+  } 
+ } 
+ 
+ </script> 
+        
