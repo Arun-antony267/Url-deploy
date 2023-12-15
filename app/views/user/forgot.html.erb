@@ -1,12 +1,12 @@
  <div id="header3"></div> 
   <%= render "layouts/flash"%>
   <div class= "container">
+    <div style="text-align: center;"><h1 style= "font-family: sans-serif;" >Change Password</h1></div>
     <div class="block">
       <%= image_tag "bg-2.jpg" %>
     </div>
       <div class= "block-2">
           <div class= "login-container">
-               <div><h1>Change Password</h1></div>
   
                    <%= form_tag :action => 'reset_password' do %>
                      <div class = "password">
@@ -19,7 +19,8 @@
                      <input class="pass-icon" type="checkbox" onclick="myFunction()">
                      </div><br>
                              <button class="btn btn-outline-primary" >Change Password</button>
-                    <% end%>
+                    <% end%><br>
+                        <a href="/" style="text-decoration: none; color: red;">GO BACK</a>
                </div>
             </div>
         </div> 

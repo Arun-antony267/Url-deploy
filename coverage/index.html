@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-12-14T15:12:19+05:30">2023-12-14T15:12:19+05:30</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-12-14T17:11:58+05:30">2023-12-14T17:11:58+05:30</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -32,9 +32,9 @@
   <a name="AllFiles"></a>
   <div>
     <b>17</b> files in total.
-    <b>346</b> relevant lines. 
+    <b>344</b> relevant lines. 
     <span class="green"><b>0</b> lines covered</span> and
-    <span class="red"><b>346</b> lines missed </span>
+    <span class="red"><b>344</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -93,10 +93,10 @@
       <tr>
         <td class="strong"><a href="#d5cbed401dfe8ff8a5c4a01f66433310f1ed1015" class="src_link" title="app/controllers/user_controller.rb">app/controllers/user_controller.rb</a></td>
         <td class="red strong">0.0 %</td>
-        <td>67</td>
-        <td>57</td>
+        <td>66</td>
+        <td>55</td>
         <td>0</td>
-        <td>57</td>
+        <td>55</td>
         <td>0.0</td>
       </tr>
       
@@ -240,9 +240,9 @@
   <a name="Controllers"></a>
   <div>
     <b>5</b> files in total.
-    <b>274</b> relevant lines. 
+    <b>272</b> relevant lines. 
     <span class="green"><b>0</b> lines covered</span> and
-    <span class="red"><b>274</b> lines missed </span>
+    <span class="red"><b>272</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -301,10 +301,10 @@
       <tr>
         <td class="strong"><a href="#d5cbed401dfe8ff8a5c4a01f66433310f1ed1015" class="src_link" title="app/controllers/user_controller.rb">app/controllers/user_controller.rb</a></td>
         <td class="red strong">0.0 %</td>
-        <td>67</td>
-        <td>57</td>
+        <td>66</td>
+        <td>55</td>
         <td>0</td>
-        <td>57</td>
+        <td>55</td>
         <td>0.0</td>
       </tr>
       
@@ -2301,9 +2301,9 @@
     <h3>app/controllers/user_controller.rb</h3>
     <h4><span class="red">0.0 %</span> covered</h4>
     <div>
-      <b>57</b> relevant lines. 
+      <b>55</b> relevant lines. 
       <span class="green"><b>0</b> lines covered</span> and
-      <span class="red"><b>57</b> lines missed.</span>
+      <span class="red"><b>55</b> lines missed.</span>
     </div>
   </div>
   
@@ -2607,106 +2607,100 @@
         <li class="missed" data-hits="0" data-linenumber="50">
           
           
-          <code class="ruby">  def forgot</code>
+          <code class="ruby">  def reset_password</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="51">
           
           
-          <code class="ruby">    email = params[:email]</code>
+          <code class="ruby">    user = User.find_by(email: params[:email])</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="52">
           
           
-          <code class="ruby">    password = params[:password]</code>
+          <code class="ruby">    if user.present?</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="53">
+        <li class="never" data-hits="" data-linenumber="53">
           
           
-          <code class="ruby">    user = User.find_by(email: email)</code>
+          <code class="ruby">      # new_password = params[:password]</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="54">
           
           
-          <code class="ruby">    if user.present?</code>
+          <code class="ruby">      user.update(password: params[:password])</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="55">
           
           
-          <code class="ruby">      user = User.update(password_digest: password)</code>
+          <code class="ruby">      redirect_to root_path, notice: &quot;Password Changed&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="56">
           
           
-          <code class="ruby">      redirect_to root_path, notice: &quot;Password Changed&quot;</code>
+          <code class="ruby">    else</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="57">
           
           
-          <code class="ruby">    else</code>
+          <code class="ruby">      flash[:message] = &quot;User not present&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="58">
           
           
-          <code class="ruby">      flash[:message] = &quot;User not present&quot;</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="59">
           
           
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="60">
-          
-          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="61">
+        <li class="never" data-hits="" data-linenumber="60">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="62">
+        <li class="missed" data-hits="0" data-linenumber="61">
           
           
           <code class="ruby">  private</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="63">
+        <li class="never" data-hits="" data-linenumber="62">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="64">
+        <li class="missed" data-hits="0" data-linenumber="63">
           
           
           <code class="ruby">  def user_params</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="65">
+        <li class="missed" data-hits="0" data-linenumber="64">
           
           
           <code class="ruby">    params.permit(:name, :email, :password, :password_confirmation)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="66">
+        <li class="missed" data-hits="0" data-linenumber="65">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="67">
+        <li class="missed" data-hits="0" data-linenumber="66">
           
           
           <code class="ruby">end</code>
