@@ -19,17 +19,22 @@ class FileController < ApplicationController
       while $size_pdf != 0
         $size_pdf = $size_pdf - 1
         $element = $file_s[$size_pdf]
-        $element =~ /\A#{URI::regexp(["http", "https"])}\z/
-        @display = "https://url-shortner-s7ah.onrender.com/i?q="
-        @string = SecureRandom.uuid[0..6]
-        $file_og_url = $element
-        $file_srt_url = @display + @string
-        flash[:message] = "Valid url"
-        @save_url = ShortUrl.new(user_id: $id, original_url: $file_og_url, shortened_url: $file_srt_url)
-        if @save_url.save
-          @short_url = ShortUrl.where("created_at > ?", time)
+        if $element =~ /\A#{URI::regexp(["http", "https"])}\z/
+          @display = "https://url-shortner-s7ah.onrender.com/i?q="
+          @string = SecureRandom.uuid[0..6]
+          $file_og_url = $element
+          $file_srt_url = @display + @string
+          flash[:message] = "Valid url"
+          @save_url = ShortUrl.new(user_id: $id, original_url: $file_og_url, shortened_url: $file_srt_url)
+          if @save_url.save
+            @short_url = ShortUrl.where("created_at > ?", time)
+          end
+        else
+          flash[:message] = "File Contains Invalid url"
+          break
         end
       end
+      redirect_to controller: :home, action: :new
       # render "full"
       @user_details = User.find_by(id: $id)
       respond_to do |format|
