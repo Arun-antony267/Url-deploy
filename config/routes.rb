@@ -43,6 +43,14 @@ Rails.application.routes.draw do
 
   get "/home/loading", to: "file#full"
 
-  get "/user/forgot"
+  # get "/user/forgot"
   post "user/reset_password"
+
+  get "reset_password/email_check"
+  post "reset_password/reset"
+  get "reset_password/token"
+  # get "reset_password/token_verify"
+  post "reset_password/token_verify"
+  get "reset_password/change_password"
+  post "reset_password/reset_password"
 end

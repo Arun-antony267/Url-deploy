@@ -64,6 +64,11 @@
         0,
         0,
         0,
+        0,
+        0,
+        0,
+        0,
+        0,
         null,
         0,
         0,
@@ -262,6 +267,46 @@
         0,
         0
       ],
+      "/home/arun/Documents/Url-deploy/app/controllers/reset_password_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
       "/home/arun/Documents/Url-deploy/app/controllers/user_controller.rb": [
         0,
         0,
@@ -312,16 +357,16 @@
         0,
         0,
         null,
-        0,
-        0,
-        0,
         null,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         0,
         null,
@@ -335,6 +380,10 @@
         0
       ],
       "/home/arun/Documents/Url-deploy/app/helpers/registration_helper.rb": [
+        0,
+        0
+      ],
+      "/home/arun/Documents/Url-deploy/app/helpers/reset_password_helper.rb": [
         0,
         0
       ],
@@ -356,6 +405,18 @@
         0
       ],
       "/home/arun/Documents/Url-deploy/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/arun/Documents/Url-deploy/app/mailers/user_mailer.rb": [
+        0,
+        null,
+        null,
+        0,
+        0,
+        0,
         0,
         0,
         0,
@@ -439,7 +500,7 @@
         0
       ]
     },
-    "timestamp": 1702554118
+    "timestamp": 1702964685
   },
   "RSpec": {
     "coverage": {
