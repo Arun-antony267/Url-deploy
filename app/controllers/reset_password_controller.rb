@@ -33,6 +33,7 @@ class ResetPasswordController < ApplicationController
       redirect_to root_path, notice: "Password Changed"
     else
       flash[:message] = "User not present"
+      render "change_password"
     end
   end
 end
