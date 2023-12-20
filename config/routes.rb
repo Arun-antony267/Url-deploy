@@ -43,7 +43,7 @@ Rails.application.routes.draw do
 
   get "/home/loading", to: "file#full"
 
-  # get "/user/forgot"
+  get "/user/forgot"
   post "user/reset_password"
 
   get "reset_password/email_check"
