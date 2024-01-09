@@ -3,6 +3,7 @@
   <head>
   </head>
     <title>URL Shortener</title>
+     <link rel="icon" type="image/x-icon" href= <%= asset_path "bg-4.jpg" %>>
        <style>
 
 body {
@@ -42,8 +43,18 @@ hr {
   margin-bottom: 25px;
 }
 
+
+
 button {
   background-color: #e8e8e8;
+  color: black;
+   border: none;
+}
+
+.button-2{
+    background-color: #e8e8e8;
+    border-radius:10px;
+padding: 5px;
   color: black;
    border: none;
 }
@@ -99,8 +110,13 @@ button:hover {
   --bs-dropbtn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 
+.dropdown-1{
+  position: center;
+  display: inline-block;
+   text-align: center;
+}
 .dropdown {
-  position: relative;
+  position: auto;
   display: inline-block;
    float:right;
 }
@@ -143,43 +159,69 @@ button:hover {
 }
 
 .partition {
-            width: 50%;
+            width: auto;
             height: 20vh; 
             padding:20px;
             
         }
 
 .partition2{
-            width: 50%;
+            width: auto;
     height: 20vh;
     padding: 20px;
     margin: 0 auto;
     text-align: center;
 }
+
+.center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+ background-color: red;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+
 .block{
   width: 40%;
   height: 500px;
-  margin: 0 auto;
+  margin:20px auto;
   /* background-image: url(<%= asset_path 'bg-1.jpg' %>); */
   float:left;
 }
 
 
 .block-2{
-   width: auto;
+   width: 40%;
   height: 600px;
-   margin: 0 auto;;
+  margin: 20px;
   float:right;
 }
-
-
 .block-3{
-   width: 600px;
-  height: 600px;
-   margin: 0 auto;;
-  float:right;
+  width: auto;
+  height: auto;
+  margin: 20px auto;
+  float:left;
 }
-
 
 .form-container {
       margin: 20px auto;
@@ -245,6 +287,25 @@ button:hover {
   height :auto;
   width:auto;
 
+}
+
+.p-5{
+    font-family: verdana;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height :70vh;
+  width:auto;
+}
+
+.a{
+  margin: 20px;
+      max-width: 600px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .box-1{

@@ -103,4 +103,6 @@ Rails.application.configure do
   }
 
   config.action_mailer.default_url_options = { host: "url-shortner-s7ah.onrender.com", protocol: "https" }
+
+  config.active_job.queue_adapter = :sidekiq
 end

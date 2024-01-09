@@ -1,31 +1,159 @@
 class FileController < ApplicationController
   require "csv"
+  @@jobs = Array.new
+  @@name_array = Array.new
 
-  def uploadFile
-    @post = UrlFile.new(name: $file_name, attachment: $file)
-    if @post.save
-      $file_strip = $file_content.split
-      $line_count = $file_strip.count
-      $file_s = $file_strip.each do |row|
-        if $line_count.present?
-          $size_pdf = $line_count
-        else
-          flash[:message] = "Line count not present"
+  def upload
+    if $id.present?
+      $jobs_array = @@jobs
+      puts "File Job array is : #{@@jobs}"
+    else
+      redirect_to root_path, notice: "Please Login First"
+    end
+  end
+
+  def files
+    if $id.present?
+      $name_array = @@name_array
+      puts "File Job array is : #{@@jobs}"
+      count = UrlFile.count
+      $file_id = UrlFile.all.ids
+      0.upto(count - 1) do
+        $file_name = UrlFile.find_by(id: $file_id[count = count - 1])
+        a = @@name_array.push($file_name.name)
+        puts "Files are: #{$file_name.name}"
+      end
+      puts "Ids are: #{$file_id}"
+      puts "File names array is : #{$name_array}"
+    else
+      redirect_to root_path, notice: "Please Login First"
+    end
+  end
+
+  def check
+    file_name = params[:file_name]
+    name = file_name + ".csv"
+    file = UrlFile.find_by(name: name)
+    if file.present?
+      job_id = file.job_id
+      @short_url = ShortUrl.where(job_id: job_id)
+      puts " job id is: #{job_id}"
+      render "file_result"
+    else
+      flash[:message] = "File not present. Don't Need Extension in file name"
+      render "upload"
+    end
+  end
+
+  def search
+    if $id.present?
+      file_name = params[:name]
+      file = UrlFile.find_by(name: file_name)
+      puts "?????#{file_name}//////"
+      puts "//////#{file}??????"
+      if file.present?
+        job_id = file.job_id
+        @short_url = ShortUrl.where(job_id: job_id)
+        puts " job id is: #{job_id}"
+        @user_details = User.find_by(id: $id)
+        respond_to do |format|
+          format.html
+          format.pdf do
+            pdf = ShortUrlPdf.new(@short_url, @user_details)
+            send_data pdf.render, filename: "shorturl.pdf", type: "application/pdfs", disposition: "inline"
+          end
+        end
+      else
+        flash[:message] = "File not present. Don't Need Extension in file name"
+      end
+    else
+      redirect_to root_path, notice: "Please Login First"
+    end
+  end
+
+  def file_result
+    if $id.present?
+      @@job_id = params[:jobs]
+      puts "Job id is :#{@@job_id}"
+      @short_url = ShortUrl.where(job_id: @@job_id)
+      urls = ShortUrl.where(job_id: @@job_id)
+      @user_details = User.find_by(id: $id)
+      respond_to do |format|
+        format.html
+        format.pdf do
+          pdf = ShortUrlPdf.new(url, @user_details)
+          send_data pdf.render, filename: "shorturl.pdf", type: "application/pdfs", disposition: "inline"
         end
       end
-      # redirect_to :action => "new_line"
-      # redirect_to :action => "full"
-      time = Time.now.utc
-      while $size_pdf != 0
-        $size_pdf = $size_pdf - 1
-        $element = $file_s[$size_pdf]
-        if $element =~ /\A#{URI::regexp(["http", "https"])}\z/
-          @display = "https://url-shortner-s7ah.onrender.com/i?q="
-          @string = SecureRandom.uuid[0..6]
-          $file_og_url = $element
-          $file_srt_url = @display + @string
-          flash[:message] = "Valid url"
-          @save_url = ShortUrl.new(user_id: $id, original_url: $file_og_url, shortened_url: $file_srt_url)
+    else
+      redirect_to root_path, notice: "Please Login First"
+    end
+  end
+
+  def uploadJob
+    file = params[:file]
+    $file_name = file.original_filename
+    if is_csv_file?($file_name)
+      file_content = file.read
+      file_size = file.size
+      num = SecureRandom.hex(4)
+      @post = UrlFile.new(name: file.original_filename, attachment: file, job_id: num)
+      if @post.save
+        file_strip = file_content.split
+        line_count = file_strip.count
+        $job_id = FileHandleJob.perform_async(file.original_filename, file_strip, line_count, $id, num)
+        a = @@jobs.push(num)
+        puts "#{}"
+        render "upload"
+      else
+        flash[:message] = "File Not uploaded"
+        render "upload"
+      end
+    else
+      flash[:message] = "Invalid File"
+      render "upload"
+    end
+  end
+
+  def is_csv_file?(file)
+    extension = File.extname(file)
+    return extension.downcase == ".csv"
+  end
+
+  def uploadFile
+    if $id.present?
+      @post = UrlFile.new(name: $file_name, attachment: $file)
+      if @post.save
+        $file_strip = $file_content.split
+        $line_count = $file_strip.count
+        $file_s = $file_strip.each do |row|
+          if $line_count.present?
+            $size_pdf = $line_count
+          else
+            flash[:message] = "Line count not present"
+          end
+        end
+        redirect_to :action => "full"
+      else
+        flash[:message] = "File not saved"
+        redirect_to controller: :home, action: :new
+      end
+    else
+      redirect_to root_path, notice: "Please Login First"
+    end
+  end
+
+  def full
+    time = Time.now.utc
+    if $line_count.present?
+      puts "line count is: #{$line_count}"
+      0.upto($line_count) do |n|
+        if $file_strip[n] =~ /\A#{URI::regexp(["http", "https"])}\z/
+          display = "https://url-shortner-s7ah.onrender.com/i?q="
+          string = SecureRandom.uuid[0..6]
+          file_srt_url = display + string
+          file_og_url = $file_strip[n]
+          @save_url = ShortUrl.new(user_id: $id, original_url: file_og_url, shortened_url: file_srt_url)
           if @save_url.save
             @short_url = ShortUrl.where("created_at > ?", time)
           end
@@ -34,40 +162,7 @@ class FileController < ApplicationController
           break
         end
       end
-      redirect_to controller: :home, action: :new
-      # render "full"
-      @user_details = User.find_by(id: $id)
-      respond_to do |format|
-        format.html
-        format.pdf do
-          pdf = ShortUrlPdf.new(@short_url, @user_details)
-          send_data pdf.render, filename: "shorturl.pdf", type: "application/pdfs", disposition: "inline"
-        end
-      end
-    else
-      flash[:message] = "File not saved"
-      redirect_to controller: :home, action: :new
     end
-  end
-
-  # def new_line
-  def full
-    time = Time.now.utc
-    while $size_pdf != -1
-      $size_pdf = $size_pdf - 1
-      $element = $file_s[$size_pdf]
-      $element =~ /\A#{URI::regexp(["http", "https"])}\z/
-      @display = "https://url-shortner-s7ah.onrender.com/i?q="
-      @string = SecureRandom.uuid[0..6]
-      $file_og_url = $element
-      $file_srt_url = @display + @string
-      flash[:message] = "Valid url"
-      @save_url = ShortUrl.new(user_id: $id, original_url: $file_og_url, shortened_url: $file_srt_url)
-      if @save_url.save
-        @short_url = ShortUrl.where("created_at > ?", time)
-      end
-    end
-    render "full"
     @user_details = User.find_by(id: $id)
     respond_to do |format|
       format.html
@@ -76,40 +171,7 @@ class FileController < ApplicationController
         send_data pdf.render, filename: "shorturl.pdf", type: "application/pdfs", disposition: "inline"
       end
     end
-  end
-
-  def shorten
-    @display = "https://url-shortner-s7ah.onrender.com/i?q="
-    @string = SecureRandom.uuid[0..6]
-    $file_og_url = $element
-    $file_srt_url = @display + @string
-    flash[:message] = "Valid url"
-    redirect_to :action => "display"
-  end
-
-  def display
-    @Short_url = ShortUrl.new(user_id: $id, original_url: $file_og_url, shortened_url: $file_srt_url)
-
-    if @Short_url.save
-      @original_url = $file_og_url
-      @shortened_url = $file_srt_url
-      flash[:message] = "created succesfully."
-
-      # render "upload"
-      render "full"
-    else
-      redirect_to root_path, notice: "!!!!ERROR!!!!"
-    end
-  end
-
-  def fileOgUrl
-    @file_original_url = $file_og_url.to_json
-    render json: @file_original_url
-  end
-
-  def fileSrtUrl
-    @file_shortened_url = $file_srt_url.to_json
-    render json: @file_shortened_url
+    render "uploadFile"
   end
 
   private

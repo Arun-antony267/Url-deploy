@@ -5,6 +5,6 @@ class UserMailer < ApplicationMailer
     @user = user
     @token = token
     @url = "reset_password/token"
-    mail(to: @user.email, subject: "PASSWORD RESET URL SHORTNER")
+    mail(to: @user.email, subject: "Welcome to My Awesome Site")
   end
 end

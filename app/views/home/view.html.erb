@@ -34,7 +34,7 @@ overflow: hidden;
   color: black;
 }
 </style>
-<div id="header1"></div>
+<div id="header2"></div>
 <body>
         
 
@@ -51,7 +51,14 @@ overflow: hidden;
     </form></p>
     <p><%= link_to "Download PDF file", home_view_path(format: 'pdf') %></p>
     </div>
+      <% if @short_url.present? %>
     <div class="con">
+         <div class="pagination">
+     <% if @page != 0 %>
+  <a href="<%= home_view_path(page: @page - 1) %>">Previous</a>
+    <% end%>
+  <a href="<%= home_view_path(page: @page+ 1) %>">Next</a>
+</div>
 <table class= "l">    
   <thead> 
    <p> User Name:<%= @user_details.name%></p>
@@ -70,7 +77,11 @@ overflow: hidden;
           <tr>   
             <td><%= count+=1%></td>
             <td><%= short_url.original_url %></td>   
-            <td><%= short_url.shortened_url %></td>   
+            <td id = "copy" value = <%= short_url.shortened_url %> >
+            <a href=<%= short_url.shortened_url%> target="_blank" rel="noopener noreferrer" >
+            <%= short_url.shortened_url %></a>
+            <button class="button-2" onclick="handleCopy()">copy</button>
+            </td>   
             <td><%= short_url.created_at%></td>                 
            </tr>   
       <% end %>   
@@ -78,5 +89,21 @@ overflow: hidden;
 
       </table>
       </div>
+      <% else %>
+      <div class= "center" >
+      <p>No Urls</p>
+      </div>
+      <%end%>
       </body>
+       <script>
+        function handleCopy()
+        {
+          var copyText = document.getElementById("short_url");
+          copyText.select();
+          copyText.setSelectionRange(0, 99999);
+          navigator.clipboard.writeText(copyText.value);
+  
+        }
+      </script>
 </html>
+

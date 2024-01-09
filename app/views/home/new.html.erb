@@ -1,5 +1,4 @@
-
-  <style>
+ <style>
      body {
       background-image: url(<%=  asset_path"bg-3.jpg" %>); 
       background-size: cover;
@@ -12,9 +11,9 @@
 <div id="header2"></div>
 
     <%= render "layouts/flash"%>
+    <div class = "p-5">
     <div class='p-2'>
     <div class="form-container">
-        
          <%= form_tag :action => 'multi_line' do %> 
               <textarea  rows="2" cols= "50" name="multi_url" placeholder="Use for single and multiple urls shortening" ></textarea><br>
         <button type="submit" class= "button" >create</button>
@@ -22,16 +21,7 @@
          <p>note: Use comma ( , ) to seperate between multiple url's.</p>
           </div>
           </div>
-      <div class= "p-3">
-        <div class="form-container">
-    <br><p>File Upload</p>
- <%= form_with url: "file" do |form| %>
- <%= form.label :query, "Upload File:" %>
-  <%= form.file_field :file, direct_upload: true %>
-  <%= form.submit %>
-<% end %>
-<p>note: Use CSV file </p>
-  </div>
-  </div>
+</div>
   </body>
+
  

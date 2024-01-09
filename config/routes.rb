@@ -1,4 +1,7 @@
+require "sidekiq/web"
+
 Rails.application.routes.draw do
+  mount Sidekiq::Web => "/sidekiq"
   get "home/index"
   get "/i", to: "home#redirect_to_original"
   root "user#login"
@@ -43,7 +46,7 @@ Rails.application.routes.draw do
 
   get "/home/loading", to: "file#full"
 
-  get "/user/forgot"
+  # get "/user/forgot"
   post "user/reset_password"
 
   get "reset_password/email_check"
@@ -53,4 +56,15 @@ Rails.application.routes.draw do
   post "reset_password/token_verify"
   get "reset_password/change_password"
   post "reset_password/reset_password"
+
+  get "file/upload"
+  post "file/uploadJob"
+  post "file/file_result"
+  get "file/file_result"
+  post "file/submit"
+  post "file/upload"
+  post "file/check"
+  get "file/files"
+  post "file/search"
+  get "file/search"
 end

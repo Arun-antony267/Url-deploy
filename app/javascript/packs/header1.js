@@ -11,15 +11,22 @@ function Component() {
           URL Shortener
         </a>
       </h1>
-
-      <div>
-        <a href="/home/new">
-          <button class="dropbtn dropbtn-outline-primary" type="button">
-            Create a new Link
-          </button>
-        </a>
-      </div>
-      <div class="dropdown">
+        <div class="dropdown">
+          Create a new Link
+          <div class="dropdown-content">
+            <a href="/home/new">
+              <button class="btn btn-outline-primary" type="button">
+                Single OR Multiple Url
+              </button>
+            </a>
+            <a href="/file/upload">
+              <button class="btn btn-outline-primary" type="button">
+                File Upload
+              </button>
+            </a>
+          </div>
+        </div>
+    <div class="dropdown">
         <button class="dropbtn">Reports</button>
         <div class="dropdown-content">
           <a href="/home/view">
@@ -33,15 +40,15 @@ function Component() {
             </button>
           </a>
         </div>
-      </div>
-      <div class="dropdown">
+      </div><div class="dropdown">
         <a href="/home/index">
           <button class="btn btn-outline-primary" type="button">
             Home
           </button>
         </a>
       </div>
-    </div>
+      </div>
+
   );
 }
 

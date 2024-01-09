@@ -6,6 +6,21 @@ function Header() {
       <div className="topnav">
         <h1>URL Shortener</h1>
 
+        <div class="dropdown">
+        <button class="dropbtn">Reports</button>
+        <div class="dropdown-content">
+          <a href="/home/view">
+            <button class="btn btn-outline-primary" type="button">
+              List Of URL's Shortened
+            </button>
+          </a>
+          <a href="/user/users">
+            <button class="btn btn-outline-primary" type="button">
+              List Of Users
+            </button>
+          </a>
+        </div>
+      </div>
         <div>
         <a href="/home/next">
               <button class="btn btn-outline-primary" type="button">Next Short Url</button>

@@ -1,0 +1,54 @@
+<style>
+  body {
+    background-image: url(<%= asset_path("bg-3.jpg") %>); 
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+  }
+
+</style>
+<body>
+<div id="header2"></div>
+
+<%= render "layouts/flash"%>
+
+<% if $jobs_array.present? %><br>
+ <div class = "p-5">
+    <div class='p-2'>
+         <div class="form-container">
+           <h5>List of Jobs:</h5>
+            <ul>
+               <% $jobs_array.each_with_index do |jobs, index| %>
+                <% file_name = UrlFile.find_by(job_id: $jobs_array[index]) %>
+                        <%= form_tag({ action: :file_result }) do  %>
+                        <%= hidden_field_tag 'jobs', jobs %>
+                        <p>You can see the result of the file <%= file_name.name %> </p>
+                        <%= submit_tag 'check' %>
+                        <% end %>
+                  <br>
+                 <% end %>
+            </ul>
+          </div>
+      </div>
+  </div>
+<% else %>
+<div class = "a">
+         <p>If the file Not found below. Please Search it with the name<p>
+           <%= form_tag({ action: :check }) do %>
+             <input class="shortInput form-control" name="file_name" placeholder="File Name"  type="text" >
+             <%= submit_tag 'check' %>
+           <% end %>
+           <br>
+           <% $file_id.each_with_index do |names, index| %>
+              <%= form_tag({ action: :search }) do %>
+                  <% file_name = UrlFile.find_by(id: $file_id[index]) %>
+                  <%= hidden_field_tag name="name" , file_name.name %>
+                  <p>You can see the file</p>
+                  <%= file_name.name %>
+                  <%= submit_tag 'Show' %>
+              <% end %>
+             <br>
+           <% end %>
+         </div>
+<% end %>
+</body>

@@ -4,6 +4,7 @@ class UserController < ApplicationController
   end
 
   def login
+    $id = nil
     render "login"
   end
 
@@ -46,17 +47,6 @@ class UserController < ApplicationController
       render "login"
     end
   end
-
-  # def reset_password
-  #   user = User.find_by(email: params[:email])
-  #   if user.present?
-  #     # new_password = params[:password]
-  #     user.update(password: params[:password])
-  #     redirect_to root_path, notice: "Password Changed"
-  #   else
-  #     flash[:message] = "User not present"
-  #   end
-  # end
 
   private
 
