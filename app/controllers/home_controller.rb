@@ -5,6 +5,7 @@ class HomeController < ApplicationController
       puts($id)
       puts(user)
       $short_count = user
+      puts "#{($short_count / 24) - 1}"
     else
       flash[:message] = "session expired please log in again "
       redirect_to controller: :user, action: :login
@@ -35,8 +36,10 @@ class HomeController < ApplicationController
 
   def view
     if $id.present?
+      @last = ($short_count / 24) - 1
       @page = params.fetch(:page, 0).to_i
-      @short_url = ShortUrl.where(user_id: $id).offset(@page * 24).limit(25)
+      # @short_url = ShortUrl.where(user_id: $id).offset(@page * 24).limit(25)
+      @short_url = ShortUrl.where(user_id: $id).paginate(page: params[:page], per_page: 15)
       urls = ShortUrl.where(user_id: $id)
       @user_details = User.find_by(id: $id)
       respond_to do |format|

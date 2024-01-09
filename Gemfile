@@ -114,3 +114,5 @@ gem "matrix", "~> 0.4.2"
 gem "sidekiq", "~> 7.1", ">= 7.1.2"
 
 gem "sidekiq-status"
+
+gem 'will_paginate', '~> 3.3'

@@ -1,109 +1,164 @@
 <!DOCTYPE html>
 <html>
+
 <style>
-
-.con {
-  margin: 50px 50px;
-}
-
- .filter-form {
-  width:20%;
-  float: right;
+  .con {
+    margin: 50px 50px;
   }
 
-.l {
-  border-collapse: collapse;
-  width:100%;
-}
+  .filter-form {
+    width: 20%;
+    float: right;
+  }
 
-.l th{
-   border: 2px solid #ddd;
-  padding: 10px;
-  text-align:center;
-}
+  .l {
+    border-collapse: collapse;
+    width: 100%;
+  }
 
-.l td{
-  border: 2px solid #ddd;
-  padding:30px;
-max-width: 50px;
-overflow: hidden;
-}
+  .l th {
+    border: 2px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
 
-.l tr{
-  background-color: #ffffcc;
-  color: black;
-}
+  .l td {
+    border: 2px solid #ddd;
+    padding: 30px;
+    max-width: 50px;
+    overflow: hidden;
+  }
+
+  .l tr {
+    background-color: #ffffcc;
+    color: black;
+  }
+
+  .digg_pagination {
+    background: white;
+    cursor: default;
+    /* self-clearing method: */
+  }
+
+  .digg_pagination a,
+  .digg_pagination span,
+  .digg_pagination em {
+    padding: 0.2em 0.5em;
+    display: block;
+    float: left;
+    margin-right: 1px;
+  }
+
+  .digg_pagination .disabled {
+    color: #999999;
+    border: 1px solid #dddddd;
+  }
+
+  .digg_pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    background: #2e6ab1;
+    color: white;
+    border: 1px solid #2e6ab1;
+  }
+
+  .digg_pagination a {
+    text-decoration: none;
+    color: #105cb6;
+    border: 1px solid #9aafe5;
+  }
+
+  .digg_pagination a:hover,
+  .digg_pagination a:focus {
+    color: #000033;
+    border-color: #000033;
+  }
+
+  .digg_pagination .page_info {
+    background: #2e6ab1;
+    color: white;
+    padding: 0.4em 0.6em;
+    width: 22em;
+    margin-bottom: 0.3em;
+    text-align: center;
+  }
+
+  .digg_pagination .page_info b {
+    color: #000033;
+    background: #6aa6ed;
+    padding: 0.1em 0.25em;
+  }
+
+  .digg_pagination:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+
+  * html .digg_pagination {
+    height: 1%;
+  }
+
+  *:first-child+html .digg_pagination {
+    overflow: hidden;
+  }
 </style>
+
 <div id="header2"></div>
+
 <body>
-        
-
-
-      <div class="filter-form">
-          <p><form action="<%= home_view_path %>" method="get">
-      <label for="order">Order:</label>
-      <select name="order" id="order">
-        <option>-select-</option>
-         <option value="desc">Latest</option>
-        <option value="asc">Oldest</option>
-      </select>
-      <input type="submit" value="Apply Filter">
-    </form></p>
+  <div class="filter-form">
+    <p>
+      <form action="<%= home_view_path %>" method="get">
+        <label for="order">Order:</label>
+        <select name="order" id="order">
+          <option>-select-</option>
+          <option value="desc">Latest</option>
+          <option value="asc">Oldest</option>
+        </select>
+        <input type="submit" value="Apply Filter">
+      </form>
+    </p>
     <p><%= link_to "Download PDF file", home_view_path(format: 'pdf') %></p>
+  </div>
+
+  <% if @short_url.present? %>
+  <div class="con">
+    <div class="digg_pagination">
+      <%= will_paginate @short_url, renderer: WillPaginate::ActionView::LinkRenderer %>
     </div>
-      <% if @short_url.present? %>
-    <div class="con">
-         <div class="pagination">
-     <% if @page != 0 %>
-  <a href="<%= home_view_path(page: @page - 1) %>">Previous</a>
-    <% end%>
-  <a href="<%= home_view_path(page: @page+ 1) %>">Next</a>
-</div>
-<table class= "l">    
-  <thead> 
-   <p> User Name:<%= @user_details.name%></p>
-   <p> User ID: <%= @user_details.id%></p>
-  <tr>   
-        <th>Sl.no</th>
-        <th>Original Url</th>   
-        <th>Shortened Url</th>   
-        <th>Created Date</th>   
-          
-      </tr>   
+    <table class="l">
+      <thead>
+        <p>User Name:<%= @user_details.name%></p>
+        <p>User ID: <%= @user_details.id%></p>
+        <tr>
+          <th>Sl.no</th>
+          <th>Original Url</th>
+          <th>Shortened Url</th>
+          <th>Created Date</th>
+        </tr>
       </thead>
-         <% count= 0 %>
-      <tbody> 
-       <% @short_url.order(created_at: params[:order] || 'desc').each do |short_url| %>
-          <tr>   
-            <td><%= count+=1%></td>
-            <td><%= short_url.original_url %></td>   
-            <td id = "copy" value = <%= short_url.shortened_url %> >
-            <a href=<%= short_url.shortened_url%> target="_blank" rel="noopener noreferrer" >
-            <%= short_url.shortened_url %></a>
-            <button class="button-2" onclick="handleCopy()">copy</button>
-            </td>   
-            <td><%= short_url.created_at%></td>                 
-           </tr>   
-      <% end %>   
-            </tbody>
+      <% count= 0 %>
+      <tbody>
+        <% @short_url.order(created_at: params[:order] || 'desc').each do |short_url| %>
+        <tr>
+          <td><%= count+=1%></td>
+          <td><%= short_url.original_url %></td>
+          <td id="copy" value=<%= short_url.shortened_url %>><a href=<%= short_url.shortened_url%>
+              target="_blank" rel="noopener noreferrer"><%= short_url.shortened_url %></a></td>
+          <td><%= short_url.created_at%></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <% else %>
+  <div class="center">
+    <p>No Urls</p>
+  </div>
+  <% end %>
+</body>
 
-      </table>
-      </div>
-      <% else %>
-      <div class= "center" >
-      <p>No Urls</p>
-      </div>
-      <%end%>
-      </body>
-       <script>
-        function handleCopy()
-        {
-          var copyText = document.getElementById("short_url");
-          copyText.select();
-          copyText.setSelectionRange(0, 99999);
-          navigator.clipboard.writeText(copyText.value);
-  
-        }
-      </script>
 </html>
-
