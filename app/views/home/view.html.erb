@@ -2,6 +2,9 @@
 <html>
 
 <style>
+ body {
+    height: auto;
+  }
   .con {
     margin: 50px 50px;
   }
@@ -147,7 +150,7 @@
           <td><%= count+=1%></td>
           <td><%= short_url.original_url %></td>
           <td id="copy" value=<%= short_url.shortened_url %>><a href=<%= short_url.shortened_url%>
-              target="_blank" rel="noopener noreferrer"><%= short_url.shortened_url %></a></td>
+              target="_blank" onclick="copyText('<%= short_url.shortened_url %>')"><%= short_url.shortened_url %></a></td>
           <td><%= short_url.created_at%></td>
         </tr>
         <% end %>
@@ -160,5 +163,15 @@
   </div>
   <% end %>
 </body>
-
+ <script>
+    function copyText(shortenedUrl) {
+      var inputField = document.createElement("input");
+      document.body.appendChild(inputField);
+      inputField.setAttribute('value', shortenedUrl);
+      inputField.select();
+      document.execCommand('copy');
+      document.body.removeChild(inputField);
+      alert("Copied the text: " + shortenedUrl);
+    }
+  </script>
 </html>

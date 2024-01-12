@@ -1,0 +1,91 @@
+<style>
+  body {
+    background-image: url(<%= asset_path "bg-4.jpg" %>);
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+  }
+  .loader {
+  width: 48px;
+  height: 12px;
+  background: #56dadf;
+  margin-top: 40px;
+  display: inline-block;
+  position: relative;
+}
+.loader::after {
+  content: '';  
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 0);
+  position: absolute;
+  border: 15px solid transparent;
+  border-top-color: #56dadf;
+  box-sizing: border-box;
+  animation: bump 0.4s ease-in-out infinite alternate;
+}
+.loader::before {
+  content: '';  
+  left: 50%;
+  bottom: 25px;
+  transform: translate(-50%, 0);
+  position: absolute;
+  width: 15px;
+  height: 20px;
+  background: #56dadf;
+  box-sizing: border-box;
+  animation: bump 0.4s ease-in-out infinite alternate;
+}
+
+@keyframes bump {
+  0% {
+    transform: translate(-50%, 5px);
+  }
+  100% {
+    transform: translate(-50%, -5px);
+  }
+}
+    
+</style>
+
+<body>
+  <div id="header2"></div>
+  <div class="p-3">
+    <h1 align="center">QR code generator</h1>
+  </div>
+
+  <div class="block">
+    <div class="form-container">
+      <%= form_tag :action => 'qr_code' do %>
+        <%= label_tag 'Enter the URL' %>
+        <%= text_field_tag name="url" %>
+
+        <div class="actions">
+          <%= submit_tag 'Generate QR code' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <% if $url.present? %>
+    <div class="block-2">
+    <div class= "con-qr">
+      <%= raw @svg.html_safe  %>
+      <div class="download-button">
+        <%= form_tag :action => 'qr_code_download' do %>
+          <div class="field">
+            <%= hidden_field_tag name="url" %>
+          </div>
+          <a href= "/qr_code_download" <span class="loader"></span></a>
+        <% end %>
+      </div>
+      </div>
+    </div>
+  <% else %>
+   <div class="block-2">
+   <div class= "con-qr p-3">
+    <p>The QR code will appear here. You can download it from here.</p>
+    </div>
+    </div>
+  <% end %>
+</body>

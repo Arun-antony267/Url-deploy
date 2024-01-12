@@ -12,16 +12,16 @@ function Header() {
 
 function Header4() {
   return (
-    <div className="topnav">
+    <div className="topnav ">
       <h1>
-        <a href='/home/index' style={{ textDecoration: 'none', color: 'black' }}>
+        <a href='/home/index' style={{ textDecoration: 'none', color: 'white' }} >
           URL Shortener
         </a>
       </h1>
 
 
       <div class="dropdown">
-        <button class="dropbtn">Reports</button>
+        <button class="btn btn-outline-primary">Reports</button>
         <div class="dropdown-content">
           <a href="/home/view">
             <button class="btn btn-outline-primary" type="button">

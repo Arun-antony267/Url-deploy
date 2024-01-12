@@ -4,7 +4,7 @@ function Header3() {
   return (
     <div className="topnav">
       <h1>
-        <a href='/' style={{ textDecoration: 'none', color: 'black' }}>
+        <a href='/' style={{ textDecoration: 'none', color: 'white' }}>
           URL Shortener
         </a>
       </h1>

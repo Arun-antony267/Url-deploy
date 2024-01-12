@@ -116,3 +116,5 @@ gem "sidekiq", "~> 7.1", ">= 7.1.2"
 gem "sidekiq-status"
 
 gem 'will_paginate', '~> 3.3'
+
+gem "rqrcode", "~> 2.0"

@@ -115,6 +115,24 @@ class HomeController < ApplicationController
     end
   end
 
+  def qr_code
+    $url = params[:url].to_s
+    qrcode = RQRCode::QRCode.new($url)
+
+    # NOTE: showing with default options specified explicitly
+    @svg = qrcode.as_svg(
+      color: "000",
+      shape_rendering: "crispEdges",
+      module_size: 6,
+      standalone: true,
+      use_path: true,
+    )
+  end
+
+  def qr_code_download
+    send_data RQRCode::QRCode.new($url).as_png(size: 300), type: "image/png", disposition: "attachment"
+  end
+
   # def lookup_code
   #   @display = "https://url-shortner-s7ah.onrender.com/i?q="
   #   $string = SecureRandom.uuid[0..6]

@@ -67,4 +67,7 @@ Rails.application.routes.draw do
   get "file/files"
   post "file/search"
   get "file/search"
+    get "home/qr_code"
+    post "home/qr_code"
+    get "/qr_code_download", to: "home#qr_code_download"
 end
