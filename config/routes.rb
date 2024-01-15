@@ -3,7 +3,7 @@ require "sidekiq/web"
 Rails.application.routes.draw do
   mount Sidekiq::Web => "/sidekiq"
   get "home/index"
-  get "/i", to: "home#redirect_to_original"
+  get "/:i", to: "home#redirect_to_original"
   root "user#login"
 
   get "home/new"
@@ -73,4 +73,5 @@ Rails.application.routes.draw do
   get "file/url_download"
 
   get "user/details"
+
 end

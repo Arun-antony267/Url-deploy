@@ -26,8 +26,10 @@ class HomeController < ApplicationController
   end
 
   def redirect_to_original
-    short_url = params[:q]
-    full_url = "https://url-shortner-s7ah.onrender.com/i?q=" + short_url
+    short_url = params[:i]
+    full_url = "https://url-shortner-s7ah.onrender.com/#{short_url}"
+    puts short_url
+    puts full_url
     user = ShortUrl.find_by(shortened_url: full_url)
     url_og = user.original_url
     redirect_to url_og, allow_other_host: true
@@ -35,7 +37,6 @@ class HomeController < ApplicationController
 
   def view
     if $id.present?
-      @last = ($short_count / 24) - 1
       @page = params.fetch(:page, 0).to_i
       @short_url = ShortUrl.where(user_id: $id).paginate(page: params[:page], per_page: 15)
       urls = ShortUrl.where(user_id: $id)
@@ -86,12 +87,15 @@ class HomeController < ApplicationController
     if $size.present?
       job_id = SecureRandom.uuid[0..2]
       0.upto($size - 1) do |n|
+        # unless $original_url.start_with?("https://", "http://")&& $original_url = -/\Ahttps:\/\/.+/
         $original_url = $multi_url[n]
         puts $multi_url[n]
 
-        if $multi_url[n] =~ /\A#{URI::regexp(["http", "https"])}\z/
+        if $multi_url[n] =~ /\A#{URI::regexp(["http", "https"])}\z/&& ($original_url =~ /\Ahttps:\/\/.+\z/)
+
+
           @array = $original_url
-          @display = "https://url-shortner-s7ah.onrender.com/i?q="
+          @display = "https://url-shortner-s7ah.onrender.com/"
           $string = SecureRandom.uuid[0..6]
           $original_url = $original_url
           $shortened_url = @display + $string
@@ -144,7 +148,7 @@ class HomeController < ApplicationController
   end
 
   def lookup_code
-    @display = "https://url-shortner-s7ah.onrender.com/i?q="
+    @display = "https://url-shortner-s7ah.onrender.com/"
     string = SecureRandom.uuid[0..6]
     $original_url_qr = $url
     $shortened_url_qr = @display + string
