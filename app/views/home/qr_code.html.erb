@@ -5,6 +5,14 @@
     background-position: center center;
     height: 100vh;
   }
+    .white-box {
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
   .loader {
   width: 48px;
   height: 12px;
@@ -47,9 +55,9 @@
 }
     
 </style>
-
+ <div id="header2"></div>
 <body>
-  <div id="header2"></div>
+    <%= render "layouts/flash" %>
   <div class="p-3">
     <h1 align="center">QR code generator</h1>
   </div>
@@ -68,24 +76,53 @@
   </div>
 
   <% if $url.present? %>
-    <div class="block-2">
-    <div class= "con-qr">
-      <%= raw @svg.html_safe  %>
-      <div class="download-button">
-        <%= form_tag :action => 'qr_code_download' do %>
-          <div class="field">
-            <%= hidden_field_tag name="url" %>
-          </div>
-          <a href= "/qr_code_download" <span class="loader"></span></a>
-        <% end %>
-      </div>
+    <% if @flag != false %>
+     <div class="qr-block">
+     <div class= "con-qr">
+       <%= raw (@svg) %>
+       <br>
+       <br>
+        <h4>The Shortened URL is:</h4>
+            <div class="row white-box" id="short" value="<%= $shortened_url_qr %>">
+              <%= $shortened_url_qr %>
+            </div>
+             <br>
+            <button class="btn btn-outline-primary" onclick="copyText('<%= $shortened_url_qr %>')">Copy The Link</button>
+            <br>
+            <br>
+        <div class="download-button">
+         <%= form_tag :action => 'qr_code_download' do %>
+           <div class="field">
+             <%= hidden_field_tag name="url" %>
+           </div>
+           <a href= "/qr_code_download" <span class="loader"></span></a>
+          <% end %>
+           <% else %>
+           <div class="block-2">
+               <div class= "con-qr p-3">
+                   <p>Couldn't Generate QR code For the given Input.</p>
+              </div>
+           </div>
+          <% end %>
       </div>
     </div>
+  </div>
   <% else %>
    <div class="block-2">
-   <div class= "con-qr p-3">
-    <p>The QR code will appear here. You can download it from here.</p>
-    </div>
-    </div>
+     <div class= "con-qr p-3">
+       <p>The QR code will appear here. You can download it from here.</p>
+     </div>
+   </div>
   <% end %>
 </body>
+<script>
+    function copyText(shortenedUrl) {
+      var inputField = document.createElement("input");
+      document.body.appendChild(inputField);
+      inputField.setAttribute('value', shortenedUrl);
+      inputField.select();
+      document.execCommand('copy');
+      document.body.removeChild(inputField);
+      alert("Copied the text: " + shortenedUrl);
+    }
+  </script>

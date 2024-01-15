@@ -5,9 +5,8 @@ class HomeController < ApplicationController
       puts($id)
       puts(user)
       $short_count = user
-      puts "#{($short_count / 24) - 1}"
     else
-      flash[:message] = "session expired please log in again "
+      flash[:alert] = "session expired please log in again "
       redirect_to controller: :user, action: :login
     end
   end
@@ -38,7 +37,6 @@ class HomeController < ApplicationController
     if $id.present?
       @last = ($short_count / 24) - 1
       @page = params.fetch(:page, 0).to_i
-      # @short_url = ShortUrl.where(user_id: $id).offset(@page * 24).limit(25)
       @short_url = ShortUrl.where(user_id: $id).paginate(page: params[:page], per_page: 15)
       urls = ShortUrl.where(user_id: $id)
       @user_details = User.find_by(id: $id)
@@ -116,43 +114,62 @@ class HomeController < ApplicationController
   end
 
   def qr_code
-    $url = params[:url].to_s
-    qrcode = RQRCode::QRCode.new($url)
+    if $id.present?
+      $url = params[:url].to_s
+      if $url =~ /\A#{URI::regexp(["http", "https"])}\z/
+        @flag = true
+        # qrcode = RQRCode::QRCode.new(@url)
 
-    # NOTE: showing with default options specified explicitly
-    @svg = qrcode.as_svg(
-      color: "000",
-      shape_rendering: "crispEdges",
-      module_size: 6,
-      standalone: true,
-      use_path: true,
-    )
+        # NOTE: showing with default options specified explicitly
+        # @svg = qrcode.as_svg(
+        #   color: "000",
+        #   shape_rendering: "crispEdges",
+        #   module_size: 6,
+        #   standalone: true,
+        #   use_path: true,
+        # )
+        redirect_to :action => "lookup_code"
+      else
+        @flag = false
+        flash[:message] = "Enter a valid Url"
+      end
+      puts "????????#{@flag}///////////"
+    else
+      redirect_to root_path, notice: "Please Login"
+    end
   end
 
   def qr_code_download
-    send_data RQRCode::QRCode.new($url).as_png(size: 300), type: "image/png", disposition: "attachment"
+    send_data RQRCode::QRCode.new($shortened_url_qr).as_png(size: 300), type: "image/png", disposition: "attachment"
   end
 
-  # def lookup_code
-  #   @display = "https://url-shortner-s7ah.onrender.com/i?q="
-  #   $string = SecureRandom.uuid[0..6]
-  #   $original_url = $original_url
-  #   $shortened_url = @display + $string
-  #   redirect_to :action => "create"
-  # end
+  def lookup_code
+    @display = "https://url-shortner-s7ah.onrender.com/i?q="
+    string = SecureRandom.uuid[0..6]
+    $original_url_qr = $url
+    $shortened_url_qr = @display + string
+    redirect_to :action => "create"
+  end
 
-  # def create
-  #   short_url = ShortUrl.new(user_id: $id, original_url: $original_url, shortened_url: $shortened_url)
+  def create
+    short_url = ShortUrl.new(user_id: $id, original_url: $original_url_qr, shortened_url: $shortened_url_qr)
 
-  #   if short_url.save
-  #     @short_url = short_url
-  #     @original_url = $original_url
-  #     @shortened_url = $shortened_url
-  #     flash[:message] = "created succesfully."
-  #     render "show"
-  #   else
-  #     redirect_to root_path, notice: "!!!!ERROR!!!!"
-  #   end
-  # end
+    if short_url.save
+      qrcode = RQRCode::QRCode.new($shortened_url_qr)
 
+      # NOTE: showing with default options specified explicitly
+      @svg = qrcode.as_svg(
+        color: "000",
+        shape_rendering: "crispEdges",
+        module_size: 6,
+        standalone: true,
+        use_path: true,
+      )
+      flash[:message] = "created succesfully."
+      render "qr_code"
+    else
+      flash[:message] = "Not created"
+      render "qr_code"
+    end
+  end
 end
