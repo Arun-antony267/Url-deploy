@@ -62,22 +62,12 @@
   </div>
 <% else %>
 <div class = "a">
-         <p>If the file Not found below. Please Search it with the name<p>
+         <h6>If the file Not found below. Please Search it with the name</h6>
            <%= form_tag({ action: :check }) do %>
              <input class="shortInput form-control" name="file_name" placeholder="File Name"  type="text" >
              <%= submit_tag 'check' %>
            <% end %>
            <br>
-           <% $file_id.each_with_index do |names, index| %>
-              <%= form_tag({ action: :search }) do %>
-                  <% file_name = UrlFile.find_by(id: $file_id[index]) %>
-                  <%= hidden_field_tag name="name" , file_name.name %>
-                  <p>You can see the file</p>
-                  <%= file_name.name %>
-                  <%= submit_tag 'Show' %>
-              <% end %>
-             <br>
-           <% end %>
          </div>
 <% end %>
 </body>
