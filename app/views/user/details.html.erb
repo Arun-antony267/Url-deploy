@@ -5,7 +5,7 @@
   <style>
     body {
       background-image: url(<%= asset_path "bg-4.jpg" %>);
-      background-size: cover;
+      background-size: auto;
       background-position: center center;
       height: auto;
     }
@@ -93,10 +93,9 @@
       <%= link_to "Download", user_details_path(format: 'pdf') %>
     </div>
   </p>
-
   <div class="con">
     <center>
-      <% if @most_repeated_data != nil %>
+      <% if @most_repeated_data.present? && @last_url.present? && @repeated_url_list.present? && @dates_grp.present? %>
         <table class="l">
           <tr>
             <th>User ID</th>
@@ -176,26 +175,36 @@
           </span>
         </div>
         <div>
-        <table class="l-1">
-          <tr>
-            <th>Sl No</th>
-            <th>Original Url</th>
-            <th>Shortened Url</th>
-            <th>Created At</th>
-          </tr>
+        <div class="form-container" style="background-color: #0582ca">
+        <span style="text-align: center">
+            <h4>Dates You Shortened Urls</h4>
+         </span>
+         </div>
           <% count = 0 %>
-          <tbody>
-            <% @group_by_date.order(created_at: params[:order] || 'desc').each do |short_url| %>
-              <tr>
-                <td><%= count += 1 %></td>
-                <td><%= short_url.original_url %></td>
-                <td id="copy" value=<%= short_url.shortened_url %>><a href=<%= short_url.shortened_url %>
-                    target="_blank" onclick="copyText('<%= short_url.shortened_url %>')"><%= short_url.shortened_url %></a></td>
-                <td><%= short_url.created_at %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
+          <div class="form-container">
+              <% @dates_grp.each do |dates| %>
+                   <%= form_tag :action => 'history' do %>  
+                        <input class="white-box" id="date" name="date" value= " <%= dates %>" readonly>
+                           <button class="btn btn-outline-primary" type= "submit">Show Details</button>
+                       <br>
+                    <% end %>
+               <% end %>
+          </div>
+          <div class="form-container">
+            <span style="text-align: center">
+              <p>
+                <h3>Delete All The Records </h3>
+              </p>
+            </span>
+          </div>
+          <div class="form-container">
+          <%= form_tag :action => 'delete_urls' do %>  
+                         <%= hidden_field_tag id="id" , @user_details.id %>
+                             <button class= "btn btn-outline-primary" type= "submit">Delete</button>
+                    <% end %>
+        
+           </div>
+        <br>
       <% else %>
         <table class="l">
           <tr>

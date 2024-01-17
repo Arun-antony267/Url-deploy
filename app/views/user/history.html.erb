@@ -1,1 +1,100 @@
-<p>history page</p>
+<style>
+    body {
+      background-image: url(<%= asset_path "bg-4.jpg" %>);
+      background-size: cover;
+      background-position: center center;
+      height: auto;
+    }
+     .white-box {
+    background-color: white;
+    width: 150px;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+   .l-1 {
+      border-collapse: collapse;
+      width: auto;
+      margin-left: 50px;
+    }
+
+    .l-1 th {
+      background-color: #0582ca;
+      border: 2px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .l-1 td {
+      border: 2px solid #ddd;
+      padding: 30px;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .l-1 tr {
+      background-color: #00a6fb;
+      color: black;
+    }
+</style>
+<body>
+<div id="header2"></div>
+         <div class="form-container" style="background-color: #0582ca">
+            <span style="text-align: center">
+                <h4>Files You have Shortened in <%= @date %> </h4>
+             </span>
+        </div>
+        <% if @file.present? %>  
+        <div class="form-container"> 
+               <% @file.each do |file| %>   
+               <input class="row white-box" id="date" name="date" value= " <%= file.name %>" readonly >
+               <br>
+                <% end %>
+                 </div>
+                  <% else %>
+        <div class="form-container"> 
+                <p>No Files Have been processed in this day.</p>
+                 </div>
+         <%end%>
+          <% if @group_by_date.present? %>  
+          <center>
+                <table class="l-1">
+          <tr>
+            <th>Sl No</th>
+            <th>Original Url</th>
+            <th>Shortened Url</th>
+          </tr>
+          <% count = 0 %>
+          <tbody>
+            <% @group_by_date.order(created_at: params[:order] || 'desc').each do |short_url| %>
+              <tr>
+                <td><%= count += 1 %></td>
+                <td><%= short_url.original_url %></td>
+                <td id="copy" value=<%= short_url.shortened_url %>><a href=<%= short_url.shortened_url %>
+                    target="_blank" onclick="copyText('<%= short_url.shortened_url %>')"><%= short_url.shortened_url %></a></td>
+              </tr>
+            <% end %>
+          </tbody>
+                  </table>
+                  </center>
+          <% else %>
+          <div class="form-container"> 
+                <p>No Single or multiple Urls have been processed in this day.</p>
+                 </div>
+          <% end %>
+       
+</body>
+<script>
+    function copyText(shortenedUrl) {
+      var inputField = document.createElement("input");
+      document.body.appendChild(inputField);
+      inputField.setAttribute('value', shortenedUrl);
+      inputField.select();
+      document.execCommand('copy');
+      document.body.removeChild(inputField);
+      alert("Copied the text: " + shortenedUrl);
+    }
+  </script>
