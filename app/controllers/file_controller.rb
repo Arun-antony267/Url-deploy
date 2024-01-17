@@ -124,7 +124,7 @@ class FileController < ApplicationController
       $file_size = file.size.to_s
       $animation_duration = $file_size[0]
       num = SecureRandom.hex(4)
-      @post = UrlFile.new(name: file.original_filename, attachment: file, job_id: num)
+      @post = UrlFile.new(name: file.original_filename, attachment: file, job_id: num, user_id: $id)
       if @post.save
         file_strip = file_content.split
         line_count = file_strip.count

@@ -73,8 +73,9 @@ class UserController < ApplicationController
   def history
     @date = params[:date].to_date
     @file_all = UrlFile.all
+    urls = ShortUrl.where(user_id: $id)
     @file = UrlFile.where(created_at: @date.beginning_of_day..@date.end_of_day)
-    @group_by_date = ShortUrl.where(created_at: @date.beginning_of_day..@date.end_of_day)
+    @group_by_date = urls.where(created_at: @date.beginning_of_day..@date.end_of_day)
     puts "///////////////////"
     puts @file
     puts "/////////////////////"
@@ -86,6 +87,8 @@ class UserController < ApplicationController
   def delete_urls
     user = User.find_by(id: params[:id])
     delete_urls = ShortUrl.where(user_id: user.id)
+    delete_files = UrlFile.where(user_id: user.id)
+    delete_files.delete_all
     delete_urls.delete_all
     puts user.name
     puts delete_urls.count

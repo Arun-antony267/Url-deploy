@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2024-01-17T15:27:37+05:30">2024-01-17T15:27:37+05:30</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2024-01-17T15:50:56+05:30">2024-01-17T15:50:56+05:30</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -32,9 +32,9 @@
   <a name="AllFiles"></a>
   <div>
     <b>22</b> files in total.
-    <b>615</b> relevant lines. 
+    <b>618</b> relevant lines. 
     <span class="green"><b>0</b> lines covered</span> and
-    <span class="red"><b>615</b> lines missed </span>
+    <span class="red"><b>618</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -103,10 +103,10 @@
       <tr>
         <td class="strong"><a href="#d5cbed401dfe8ff8a5c4a01f66433310f1ed1015" class="src_link" title="app/controllers/user_controller.rb">app/controllers/user_controller.rb</a></td>
         <td class="red strong">0.0 %</td>
-        <td>100</td>
-        <td>88</td>
+        <td>103</td>
+        <td>91</td>
         <td>0</td>
-        <td>88</td>
+        <td>91</td>
         <td>0.0</td>
       </tr>
       
@@ -290,9 +290,9 @@
   <a name="Controllers"></a>
   <div>
     <b>6</b> files in total.
-    <b>482</b> relevant lines. 
+    <b>485</b> relevant lines. 
     <span class="green"><b>0</b> lines covered</span> and
-    <span class="red"><b>482</b> lines missed </span>
+    <span class="red"><b>485</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -361,10 +361,10 @@
       <tr>
         <td class="strong"><a href="#d5cbed401dfe8ff8a5c4a01f66433310f1ed1015" class="src_link" title="app/controllers/user_controller.rb">app/controllers/user_controller.rb</a></td>
         <td class="red strong">0.0 %</td>
-        <td>100</td>
-        <td>88</td>
+        <td>103</td>
+        <td>91</td>
         <td>0</td>
-        <td>88</td>
+        <td>91</td>
         <td>0.0</td>
       </tr>
       
@@ -1769,7 +1769,7 @@
         <li class="missed" data-hits="0" data-linenumber="127">
           
           
-          <code class="ruby">      @post = UrlFile.new(name: file.original_filename, attachment: file, job_id: num)</code>
+          <code class="ruby">      @post = UrlFile.new(name: file.original_filename, attachment: file, job_id: num, user_id: $id)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="128">
@@ -3554,9 +3554,9 @@
     <h3>app/controllers/user_controller.rb</h3>
     <h4><span class="red">0.0 %</span> covered</h4>
     <div>
-      <b>88</b> relevant lines. 
+      <b>91</b> relevant lines. 
       <span class="green"><b>0</b> lines covered</span> and
-      <span class="red"><b>88</b> lines missed.</span>
+      <span class="red"><b>91</b> lines missed.</span>
     </div>
   </div>
   
@@ -4016,148 +4016,166 @@
         <li class="missed" data-hits="0" data-linenumber="76">
           
           
-          <code class="ruby">    @file = UrlFile.where(created_at: @date.beginning_of_day..@date.end_of_day)</code>
+          <code class="ruby">    urls = ShortUrl.where(user_id: $id)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="77">
           
           
-          <code class="ruby">    @group_by_date = ShortUrl.where(created_at: @date.beginning_of_day..@date.end_of_day)</code>
+          <code class="ruby">    @file = UrlFile.where(created_at: @date.beginning_of_day..@date.end_of_day)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="78">
           
           
-          <code class="ruby">    puts &quot;///////////////////&quot;</code>
+          <code class="ruby">    @group_by_date = urls.where(created_at: @date.beginning_of_day..@date.end_of_day)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="79">
           
           
-          <code class="ruby">    puts @file</code>
+          <code class="ruby">    puts &quot;///////////////////&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="80">
           
           
-          <code class="ruby">    puts &quot;/////////////////////&quot;</code>
+          <code class="ruby">    puts @file</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="81">
           
           
-          <code class="ruby">    puts @file_all</code>
+          <code class="ruby">    puts &quot;/////////////////////&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="82">
           
           
-          <code class="ruby">    puts &quot;/////////////////&quot;</code>
+          <code class="ruby">    puts @file_all</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="83">
           
           
-          <code class="ruby">    puts @group_by_date</code>
+          <code class="ruby">    puts &quot;/////////////////&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="84">
           
           
+          <code class="ruby">    puts @group_by_date</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="85">
+          
+          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="85">
+        <li class="never" data-hits="" data-linenumber="86">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="86">
-          
-          
-          <code class="ruby">  def delete_urls</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="87">
           
           
-          <code class="ruby">    user = User.find_by(id: params[:id])</code>
+          <code class="ruby">  def delete_urls</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="88">
           
           
-          <code class="ruby">    delete_urls = ShortUrl.where(user_id: user.id)</code>
+          <code class="ruby">    user = User.find_by(id: params[:id])</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="89">
           
           
-          <code class="ruby">    delete_urls.delete_all</code>
+          <code class="ruby">    delete_urls = ShortUrl.where(user_id: user.id)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="90">
           
           
-          <code class="ruby">    puts user.name</code>
+          <code class="ruby">    delete_files = UrlFile.where(user_id: user.id)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="91">
           
           
-          <code class="ruby">    puts delete_urls.count</code>
+          <code class="ruby">    delete_files.delete_all</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="92">
           
           
-          <code class="ruby">    redirect_to &quot;/home/index&quot;, notice: &quot;Deletd Urls&quot;</code>
+          <code class="ruby">    delete_urls.delete_all</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="93">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    puts user.name</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="94">
+        <li class="missed" data-hits="0" data-linenumber="94">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    puts delete_urls.count</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="95">
           
           
-          <code class="ruby">  private</code>
+          <code class="ruby">    redirect_to &quot;/home/index&quot;, notice: &quot;Deletd Urls&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="96">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="97">
-          
-          
-          <code class="ruby">  def user_params</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="98">
-          
-          
-          <code class="ruby">    params.permit(:name, :email, :password, :password_confirmation)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="99">
+        <li class="missed" data-hits="0" data-linenumber="96">
           
           
           <code class="ruby">  end</code>
         </li>
       
+        <li class="never" data-hits="" data-linenumber="97">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="98">
+          
+          
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="99">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
         <li class="missed" data-hits="0" data-linenumber="100">
+          
+          
+          <code class="ruby">  def user_params</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="101">
+          
+          
+          <code class="ruby">    params.permit(:name, :email, :password, :password_confirmation)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="102">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="103">
           
           
           <code class="ruby">end</code>
