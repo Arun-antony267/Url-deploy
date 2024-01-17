@@ -4,6 +4,7 @@
 <style>
  body {
     height: auto;
+        background-image: url(<%= asset_path "bg-4.jpg" %>);
   }
   .con {
     margin: 50px 50px;
@@ -38,7 +39,7 @@
   }
 
   .digg_pagination {
-    background: white;
+    background: transparent;
     cursor: default;
     /* self-clearing method: */
   }
@@ -124,7 +125,9 @@
         <input type="submit" value="Apply Filter">
       </form>
     </p>
-    <p><%= link_to "Download PDF file", home_view_path(format: 'pdf') %></p>
+    <div class= "file-download">
+    <p><%= link_to "Download", home_view_path(format: 'pdf') %></p>
+    </div>
   </div>
 
   <% if @short_url.present? %>

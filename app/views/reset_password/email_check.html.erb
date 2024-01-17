@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+             background-image: url(<%= asset_path "bg-4.jpg" %>);
+             background-size: cover;
+             background-position: center center;
+             height: 100vh;
+             margin: 0;
+             padding: 0;
+             font-family: Arial, sans-serif;
+             background-color: #f0f0f0;
         }
-
         .reset_password {
             width: 80%;
-            /* height: 70vh; */
             max-width: 500px;
             margin: 0 auto; /* Center the container */
             background-color: #fff;
@@ -22,13 +24,13 @@
             margin-top: 30vh; /* Adjust as needed */
         }
     </style>
-    <title>Centered Container Example</title>
 </head>
  <div id="header3"></div> 
 <body>
  <%= render "layouts/flash"%>
+
 <div class="reset_password">
-<h4>Password resetting form here</h4>
+<h4>Generate An OTP to your Registered Email</h4>
 <%= form_tag :action => 'reset' do %>
                      <label for="email">  </label><br> 
                      <input class="shortInput form-control" name="email" placeholder="Email"  type="text" ><br>

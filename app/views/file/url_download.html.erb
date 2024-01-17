@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+
+.con {
+  margin: 50px 50px;
+}
+
+ .filter-form {
+  width:20%;
+  float: right;
+  }
+
+.l {
+  border-collapse: collapse;
+  width:100%;
+}
+
+.l th{
+   border: 2px solid #ddd;
+  padding: 10px;
+  text-align:center;
+}
+
+.l td{
+  border: 2px solid #ddd;
+  padding:30px;
+max-width: 50px;
+overflow: hidden;
+}
+
+.l tr{
+  background-color: #ffffcc;
+  color: black;
+}
+</style>
+<div id="header2"></div>
+<body>
+
+        <p><%= link_to "Download PDF file",  file_uploadFile_path(format: 'pdf') %></p>
+    <div class="con">
+<table class= "l">    
+  <thead> 
+  <tr>   
+        <th>Sl.no</th>
+        <th>Original Url</th>   
+        <th>Shortened Url</th>   
+        <th>Created Date</th>   
+          
+      </tr>   
+      </thead>
+         <% count= 0 %>
+      <tbody> 
+       <% @short_url.each do |short_url| %>
+             <tr>   
+            <td><%= count+=1%></td>
+            <td><%= short_url.original_url %></td>   
+            <td><a href=<%= short_url.shortened_url%> target="_blank" rel="noopener noreferrer" ><%= short_url.shortened_url %></a></td>   
+            <td><%= short_url.created_at%></td>                 
+           </tr>  
+      <% end %>   
+            </tbody>
+
+      </table>
+      </div>
+      </body>
+      </html>

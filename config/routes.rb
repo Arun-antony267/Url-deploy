@@ -73,5 +73,6 @@ Rails.application.routes.draw do
   get "file/url_download"
 
   get "user/details"
+  post "user/history"
 
 end

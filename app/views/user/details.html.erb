@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    body {
+      background-image: url(<%= asset_path "bg-4.jpg" %>);
+      background-size: cover;
+      background-position: center center;
+      height: auto;
+    }
+     .white-box {
+    background-color: white;
+    width: 150px;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+    .con {
+      margin: 50px 50px;
+    }
+
+    .con1 {
+      padding: 30px;
+    }
+
+    .filter-form {
+      width: 20%;
+      float: right;
+    }
+
+    .l {
+      border-collapse: collapse;
+      width: 80%;
+      margin-left: 50px;
+    }
+
+    .l th {
+      background-color: #0582ca;
+      border: 2px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .l td {
+      border: 2px solid #ddd;
+      padding: 30px;
+      width: auto;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .l tr {
+      background-color: #00a6fb;
+      color: black;
+    }
+
+    .l-1 {
+      border-collapse: collapse;
+      width: 80%;
+      margin-left: 50px;
+    }
+
+    .l-1 th {
+      background-color: #0582ca;
+      border: 2px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .l-1 td {
+      border: 2px solid #ddd;
+      padding: 30px;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .l-1 tr {
+      background-color: #00a6fb;
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="header2"></div>
+
+  <p>
+    <div class="file-download">
+      <%= link_to "Download", user_details_path(format: 'pdf') %>
+    </div>
+  </p>
+
+  <div class="con">
+    <center>
+      <% if @most_repeated_data != nil %>
+        <table class="l">
+          <tr>
+            <th>User ID</th>
+            <td><%= @user_details.id %></td>
+          </tr>
+          <tr>
+            <th>User Name</th>
+            <td><%= @user_details.name %></td>
+          </tr>
+          <tr>
+            <th>User Email</th>
+            <td><%= @user_details.email %></td>
+          </tr>
+          <tr>
+            <th>Most Shortened Url</th>
+            <td><%= @most_repeated_data.first %></td>
+          </tr>
+          <tr>
+            <th>Most Shortened Url Count</th>
+            <td><%= @most_repeated_data.last %></td>
+          </tr>
+          <tr>
+            <th>Total Number of Urls Shortened</th>
+            <td><%= @count %></td>
+          </tr>
+        </table>
+        <br>
+        <div class="form-container">
+          <span style="text-align: center">
+            <p>
+              <h3>Last Shortened Url</h3>
+            </p>
+          </span>
+        </div>
+        <table class="l">
+          <tr>
+            <th>original Url</th>
+            <td><%= @last_url.original_url %></td>
+          </tr>
+          <tr>
+            <th>Shortened Url</th>
+            <td><%= @last_url.shortened_url %></td>
+          </tr>
+        </table>
+        <div class="form-container">
+          <span style="text-align: center">
+            <p>
+              <h3>List of Most Shortened Urls</h3>
+            </p>
+          </span>
+        </div>
+        <table class="l-1">
+          <tr>
+            <th>Sl No</th>
+            <th>Original Url</th>
+            <th>Shortened Url</th>
+            <th>Created At</th>
+          </tr>
+          <% count = 0 %>
+          <tbody>
+            <% @repeated_url_list.order(created_at: params[:order] || 'desc').each do |short_url| %>
+              <tr>
+                <td><%= count += 1 %></td>
+                <td><%= short_url.original_url %></td>
+                <td id="copy" value=<%= short_url.shortened_url %>><a href=<%= short_url.shortened_url %>
+                    target="_blank" onclick="copyText('<%= short_url.shortened_url %>')"><%= short_url.shortened_url %></a></td>
+                <td><%= short_url.created_at %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <div class="form-container">
+          <span style="text-align: center">
+            <p>
+              <h3>History</h3>
+            </p>
+          </span>
+        </div>
+        <div>
+        <table class="l-1">
+          <tr>
+            <th>Sl No</th>
+            <th>Original Url</th>
+            <th>Shortened Url</th>
+            <th>Created At</th>
+          </tr>
+          <% count = 0 %>
+          <tbody>
+            <% @group_by_date.order(created_at: params[:order] || 'desc').each do |short_url| %>
+              <tr>
+                <td><%= count += 1 %></td>
+                <td><%= short_url.original_url %></td>
+                <td id="copy" value=<%= short_url.shortened_url %>><a href=<%= short_url.shortened_url %>
+                    target="_blank" onclick="copyText('<%= short_url.shortened_url %>')"><%= short_url.shortened_url %></a></td>
+                <td><%= short_url.created_at %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% else %>
+        <table class="l">
+          <tr>
+            <th>User ID</th>
+            <td><%= @user_details.id %></td>
+          </tr>
+          <tr>
+            <th>User Name</th>
+            <td><%= @user_details.name %></td>
+          </tr>
+          <tr>
+            <th>User Email</th>
+            <td><%= @user_details.email %></td>
+          </tr>
+        </table>
+        <div class="form-container">
+          <span style="text-align: center">
+            <p>
+              <h3>The User has no Shortened Url in the database.</h3>
+            </p>
+          </span>
+        </div>
+      <% end %>
+    </center>
+  </div>
+</body>
+
+</html>

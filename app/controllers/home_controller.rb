@@ -87,11 +87,10 @@ class HomeController < ApplicationController
     if $size.present?
       job_id = SecureRandom.uuid[0..2]
       0.upto($size - 1) do |n|
-        # unless $original_url.start_with?("https://", "http://")&& $original_url = -/\Ahttps:\/\/.+/
         $original_url = $multi_url[n]
         puts $multi_url[n]
 
-        if $multi_url[n] =~ /\A#{URI::regexp(["http", "https"])}\z/&& ($original_url =~ /\Ahttps:\/\/.+\z/)
+        if $multi_url[n] =~ /\A#{URI::regexp(["http", "https"])}\z/&& ($multi_url[n] =~ /\A(?:http|https):\/\/.+\z/)
 
 
           @array = $original_url
@@ -120,18 +119,8 @@ class HomeController < ApplicationController
   def qr_code
     if $id.present?
       $url = params[:url].to_s
-      if $url =~ /\A#{URI::regexp(["http", "https"])}\z/
+      if $url =~ /\A#{URI::regexp(["http", "https"])}\z/&& ($url  =~ /\Ahttps:\/\/.+\z/)
         @flag = true
-        # qrcode = RQRCode::QRCode.new(@url)
-
-        # NOTE: showing with default options specified explicitly
-        # @svg = qrcode.as_svg(
-        #   color: "000",
-        #   shape_rendering: "crispEdges",
-        #   module_size: 6,
-        #   standalone: true,
-        #   use_path: true,
-        # )
         redirect_to :action => "lookup_code"
       else
         @flag = false

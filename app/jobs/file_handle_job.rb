@@ -5,8 +5,8 @@ class FileHandleJob
   def perform(file_name, file_strip, line_count, id, job_id)
     if line_count.present?
       0.upto(line_count) do |n|
-        if file_strip[n] =~ /\A#{URI::regexp(["http", "https"])}\z/
-          display = "https://url-shortner-s7ah.onrender.com/i?q="
+        if file_strip[n] =~  /\A#{URI::regexp(["http", "https"])}\z/&& (file_strip[n]  =~ /\A(?:http|https):\/\/.+\z/)
+          display = "https://url-shortner-s7ah.onrender.com/"
           string = SecureRandom.uuid[0..6]
           file_srt_url = display + string
           file_og_url = file_strip[n]
