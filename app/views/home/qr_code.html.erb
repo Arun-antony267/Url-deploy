@@ -94,8 +94,8 @@
          <%= form_tag :action => 'qr_code_download' do %>
            <div class="field">
              <%= hidden_field_tag name="url" %>
+              <button style = "background-color: transparent"type= "submit"><span class="loader"></span></button>
            </div>
-           <a href= "/qr_code_download" <span class="loader"></span></a>
           <% end %>
            <% else %>
            <div class="block-2">
