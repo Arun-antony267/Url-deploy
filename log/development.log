@@ -1,0 +1,286 @@
+Started GET "/" for 127.0.0.1 at 2024-01-18 13:26:55 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UserController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/login.html.erb within layouts/application
+  Rendered layouts/_flash.html.erb (Duration: 1.8ms | Allocations: 930)
+  Rendered user/login.html.erb within layouts/application (Duration: 4.9ms | Allocations: 3300)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 79.9ms | Allocations: 47886)
+Completed 200 OK in 121ms (Views: 87.7ms | ActiveRecord: 0.0ms | Allocations: 55485)
+
+
+Started POST "/user/check_login" for 127.0.0.1 at 2024-01-18 13:27:05 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UserController#check_login as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"arunantony9567@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "arunantony9567@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:38:in `check_login'
+Redirected to http://127.0.0.1:3000/home/index
+Completed 302 Found in 230ms (ActiveRecord: 3.1ms | Allocations: 21472)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-01-18 13:27:06 +0530
+Processing by HomeController#index as HTML
+  [1m[36mShortUrl Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "short_urls" WHERE "short_urls"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/controllers/home_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered layouts/_flash.html.erb (Duration: 0.7ms | Allocations: 848)
+  Rendered home/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1789)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 59.5ms | Allocations: 46260)
+Completed 200 OK in 71ms (Views: 61.5ms | ActiveRecord: 1.5ms | Allocations: 52943)
+
+
+Started GET "/home/new" for 127.0.0.1 at 2024-01-18 13:27:08 +0530
+Processing by HomeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/new.html.erb within layouts/application
+  Rendered layouts/_flash.html.erb (Duration: 0.3ms | Allocations: 199)
+  Rendered home/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 967)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 6058)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.0ms | Allocations: 6413)
+
+
+Started POST "/home/multi_line" for 127.0.0.1 at 2024-01-18 13:27:13 +0530
+Processing by HomeController#multi_line as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "multi_url"=>"https://google.com"}
+Redirected to http://127.0.0.1:3000/home/show
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 241)
+
+
+Started GET "/home/show" for 127.0.0.1 at 2024-01-18 13:27:13 +0530
+Processing by HomeController#show as HTML
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/home_controller.rb:103:in `block in show'
+  [1m[36mShortUrl Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "short_urls" WHERE "short_urls"."shortened_url" = $1 LIMIT $2[0m  [["shortened_url", "https://url-shortner-s7ah.onrender.com/f600d3b"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:103:in `block in show'
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO "short_urls" ("original_url", "shortened_url", "created_at", "updated_at", "user_id", "job_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["original_url", "https://google.com"], ["shortened_url", "https://url-shortner-s7ah.onrender.com/f600d3b"], ["created_at", "2024-01-18 07:57:13.675987"], ["updated_at", "2024-01-18 07:57:13.675987"], ["user_id", 29], ["job_id", "70f"]]
+  ↳ app/controllers/home_controller.rb:103:in `block in show'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/home_controller.rb:103:in `block in show'
+  Rendering layout layouts/application.html.erb
+  Rendering home/show.html.erb within layouts/application
+  Rendered layouts/_flash.html.erb (Duration: 0.0ms | Allocations: 21)
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT "short_urls".* FROM "short_urls" WHERE "short_urls"."job_id" = $1[0m  [["job_id", "70f"]]
+  ↳ app/views/home/show.html.erb:27
+  Rendered home/show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1351)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 6357)
+Completed 200 OK in 23ms (Views: 9.2ms | ActiveRecord: 3.0ms | Allocations: 21982)
+
+
+Started GET "/home/new" for 127.0.0.1 at 2024-01-18 13:27:15 +0530
+Processing by HomeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/new.html.erb within layouts/application
+  Rendered layouts/_flash.html.erb (Duration: 0.5ms | Allocations: 196)
+  Rendered home/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 498)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 5587)
+Completed 200 OK in 9ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 5853)
+
+
+Started POST "/home/multi_line" for 127.0.0.1 at 2024-01-18 13:27:19 +0530
+Processing by HomeController#multi_line as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "multi_url"=>"https://google.com,https://youtube.com,https://facebook.com,https://amazon.in"}
+Redirected to http://127.0.0.1:3000/home/show
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 208)
+
+
+Started GET "/home/show" for 127.0.0.1 at 2024-01-18 13:27:19 +0530
+Processing by HomeController#show as HTML
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/home_controller.rb:103:in `block in show'
+  [1m[36mShortUrl Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "short_urls" WHERE "short_urls"."shortened_url" = $1 LIMIT $2[0m  [["shortened_url", "https://url-shortner-s7ah.onrender.com/ae988a6"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:103:in `block in show'
+  [1m[36mShortUrl Create (0.3ms)[0m  [1m[32mINSERT INTO "short_urls" ("original_url", "shortened_url", "created_at", "updated_at", "user_id", "job_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["original_url", "https://google.com"], ["shortened_url", "https://url-shortner-s7ah.onrender.com/ae988a6"], ["created_at", "2024-01-18 07:57:19.803673"], ["updated_at", "2024-01-18 07:57:19.803673"], ["user_id", 29], ["job_id", "076"]]
+  ↳ app/controllers/home_controller.rb:103:in `block in show'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/home_controller.rb:103:in `block in show'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/home_controller.rb:103:in `block in show'
+  [1m[36mShortUrl Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "short_urls" WHERE "short_urls"."shortened_url" = $1 LIMIT $2[0m  [["shortened_url", "https://url-shortner-s7ah.onrender.com/9610cb4"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:103:in `block in show'
+  [1m[36mShortUrl Create (0.3ms)[0m  [1m[32mINSERT INTO "short_urls" ("original_url", "shortened_url", "created_at", "updated_at", "user_id", "job_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["original_url", "https://youtube.com"], ["shortened_url", "https://url-shortner-s7ah.onrender.com/9610cb4"], ["created_at", "2024-01-18 07:57:19.809424"], ["updated_at", "2024-01-18 07:57:19.809424"], ["user_id", 29], ["job_id", "076"]]
+  ↳ app/controllers/home_controller.rb:103:in `block in show'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/home_controller.rb:103:in `block in show'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/home_controller.rb:103:in `block in show'
+  [1m[36mShortUrl Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "short_urls" WHERE "short_urls"."shortened_url" = $1 LIMIT $2[0m  [["shortened_url", "https://url-shortner-s7ah.onrender.com/a653077"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:103:in `block in show'
+  [1m[36mShortUrl Create (0.2ms)[0m  [1m[32mINSERT INTO "short_urls" ("original_url", "shortened_url", "created_at", "updated_at", "user_id", "job_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["original_url", "https://facebook.com"], ["shortened_url", "https://url-shortner-s7ah.onrender.com/a653077"], ["created_at", "2024-01-18 07:57:19.814439"], ["updated_at", "2024-01-18 07:57:19.814439"], ["user_id", 29], ["job_id", "076"]]
+  ↳ app/controllers/home_controller.rb:103:in `block in show'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/home_controller.rb:103:in `block in show'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/home_controller.rb:103:in `block in show'
+  [1m[36mShortUrl Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "short_urls" WHERE "short_urls"."shortened_url" = $1 LIMIT $2[0m  [["shortened_url", "https://url-shortner-s7ah.onrender.com/93dc758"], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:103:in `block in show'
+  [1m[36mShortUrl Create (0.3ms)[0m  [1m[32mINSERT INTO "short_urls" ("original_url", "shortened_url", "created_at", "updated_at", "user_id", "job_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["original_url", "https://amazon.in"], ["shortened_url", "https://url-shortner-s7ah.onrender.com/93dc758"], ["created_at", "2024-01-18 07:57:19.819288"], ["updated_at", "2024-01-18 07:57:19.819288"], ["user_id", 29], ["job_id", "076"]]
+  ↳ app/controllers/home_controller.rb:103:in `block in show'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/home_controller.rb:103:in `block in show'
+  Rendering layout layouts/application.html.erb
+  Rendering home/show.html.erb within layouts/application
+  Rendered layouts/_flash.html.erb (Duration: 0.0ms | Allocations: 21)
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT "short_urls".* FROM "short_urls" WHERE "short_urls"."job_id" = $1[0m  [["job_id", "076"]]
+  ↳ app/views/home/show.html.erb:27
+  Rendered home/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 787)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 5876)
+Completed 200 OK in 31ms (Views: 8.3ms | ActiveRecord: 6.0ms | Allocations: 17506)
+
+
+Started GET "/user/details" for 127.0.0.1 at 2024-01-18 13:27:21 +0530
+Processing by UserController#details as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:53:in `details'
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT "short_urls".* FROM "short_urls" WHERE "short_urls"."user_id" = $1 ORDER BY "short_urls"."id" DESC LIMIT $2[0m  [["user_id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:55:in `details'
+  [1m[36mShortUrl Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "short_urls" WHERE "short_urls"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/controllers/user_controller.rb:56:in `details'
+  [1m[36mShortUrl Count (1.0ms)[0m  [1m[34mSELECT COUNT(*) AS "count_all", "short_urls"."original_url" AS "short_urls_original_url" FROM "short_urls" WHERE "short_urls"."user_id" = $1 GROUP BY "short_urls"."original_url"[0m  [["user_id", 29]]
+  ↳ app/controllers/user_controller.rb:57:in `details'
+  [1m[36mShortUrl Pluck (0.5ms)[0m  [1m[34mSELECT DATE(created_at) FROM "short_urls" WHERE "short_urls"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/controllers/user_controller.rb:60:in `details'
+  Rendering layout layouts/application.html.erb
+  Rendering user/details.html.erb within layouts/application
+  Rendered layouts/_flash.html.erb (Duration: 0.3ms | Allocations: 259)
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT "short_urls".* FROM "short_urls" WHERE "short_urls"."user_id" = $1 AND "short_urls"."original_url" = $2[0m  [["user_id", 29], ["original_url", "https://google.com"]]
+  ↳ app/views/user/details.html.erb:98
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT "short_urls".* FROM "short_urls" WHERE "short_urls"."user_id" = $1 AND "short_urls"."original_url" = $2 ORDER BY "short_urls"."created_at" DESC[0m  [["user_id", 29], ["original_url", "https://google.com"]]
+  ↳ app/views/user/details.html.erb:159
+  Rendered user/details.html.erb within layouts/application (Duration: 7.8ms | Allocations: 4390)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 9542)
+Completed 200 OK in 40ms (Views: 15.7ms | ActiveRecord: 4.0ms | Allocations: 23445)
+
+
+Started POST "/user/delete_urls_confirm" for 127.0.0.1 at 2024-01-18 13:27:27 +0530
+Processing by UserController#delete_urls_confirm as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"29"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:103:in `delete_urls_confirm'
+  [1m[36mUrlFile Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "url_files" WHERE "url_files"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/controllers/user_controller.rb:106:in `delete_urls_confirm'
+  [1m[36mShortUrl Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "short_urls" WHERE "short_urls"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/controllers/user_controller.rb:106:in `delete_urls_confirm'
+Redirected to http://127.0.0.1:3000/user/details
+Completed 302 Found in 13ms (ActiveRecord: 2.4ms | Allocations: 5778)
+
+
+Started GET "/user/details" for 127.0.0.1 at 2024-01-18 13:27:27 +0530
+Processing by UserController#details as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:53:in `details'
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT "short_urls".* FROM "short_urls" WHERE "short_urls"."user_id" = $1 ORDER BY "short_urls"."id" DESC LIMIT $2[0m  [["user_id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:55:in `details'
+  [1m[36mShortUrl Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "short_urls" WHERE "short_urls"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/controllers/user_controller.rb:56:in `details'
+  [1m[36mShortUrl Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) AS "count_all", "short_urls"."original_url" AS "short_urls_original_url" FROM "short_urls" WHERE "short_urls"."user_id" = $1 GROUP BY "short_urls"."original_url"[0m  [["user_id", 29]]
+  ↳ app/controllers/user_controller.rb:57:in `details'
+  [1m[36mShortUrl Pluck (0.4ms)[0m  [1m[34mSELECT DATE(created_at) FROM "short_urls" WHERE "short_urls"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/controllers/user_controller.rb:60:in `details'
+  Rendering layout layouts/application.html.erb
+  Rendering user/details.html.erb within layouts/application
+  Rendered layouts/_flash.html.erb (Duration: 0.9ms | Allocations: 511)
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT "short_urls".* FROM "short_urls" WHERE "short_urls"."user_id" = $1 AND "short_urls"."original_url" = $2[0m  [["user_id", 29], ["original_url", "https://google.com"]]
+  ↳ app/views/user/details.html.erb:98
+  [1m[36mShortUrl Load (0.3ms)[0m  [1m[34mSELECT "short_urls".* FROM "short_urls" WHERE "short_urls"."user_id" = $1 AND "short_urls"."original_url" = $2 ORDER BY "short_urls"."created_at" DESC[0m  [["user_id", 29], ["original_url", "https://google.com"]]
+  ↳ app/views/user/details.html.erb:159
+  Rendered user/details.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2506)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 7684)
+Completed 200 OK in 20ms (Views: 11.8ms | ActiveRecord: 3.0ms | Allocations: 11032)
+
+
+Started POST "/user/delete_urls" for 127.0.0.1 at 2024-01-18 13:27:29 +0530
+Processing by UserController#delete_urls as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"29"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:92:in `delete_urls'
+  [1m[36mUrlFile Delete All (0.2ms)[0m  [1m[31mDELETE FROM "url_files" WHERE "url_files"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/controllers/user_controller.rb:95:in `delete_urls'
+  [1m[36mShortUrl Delete All (0.7ms)[0m  [1m[31mDELETE FROM "short_urls" WHERE "short_urls"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/controllers/user_controller.rb:96:in `delete_urls'
+  [1m[36mShortUrl Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "short_urls" WHERE "short_urls"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/controllers/user_controller.rb:98:in `delete_urls'
+Redirected to http://127.0.0.1:3000/home/index
+Completed 302 Found in 7ms (ActiveRecord: 2.6ms | Allocations: 2357)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-01-18 13:27:29 +0530
+Processing by HomeController#index as HTML
+  [1m[36mShortUrl Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "short_urls" WHERE "short_urls"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/controllers/home_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered layouts/_flash.html.erb (Duration: 0.3ms | Allocations: 219)
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 320)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 5409)
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.4ms | Allocations: 6232)
+
+
+Started GET "/user/details" for 127.0.0.1 at 2024-01-18 13:27:33 +0530
+Processing by UserController#details as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:53:in `details'
+  [1m[36mShortUrl Load (0.3ms)[0m  [1m[34mSELECT "short_urls".* FROM "short_urls" WHERE "short_urls"."user_id" = $1 ORDER BY "short_urls"."id" DESC LIMIT $2[0m  [["user_id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:55:in `details'
+  [1m[36mShortUrl Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "short_urls" WHERE "short_urls"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/controllers/user_controller.rb:56:in `details'
+  [1m[36mShortUrl Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) AS "count_all", "short_urls"."original_url" AS "short_urls_original_url" FROM "short_urls" WHERE "short_urls"."user_id" = $1 GROUP BY "short_urls"."original_url"[0m  [["user_id", 29]]
+  ↳ app/controllers/user_controller.rb:57:in `details'
+  Rendering layout layouts/application.html.erb
+  Rendering user/details.html.erb within layouts/application
+  Rendered layouts/_flash.html.erb (Duration: 0.3ms | Allocations: 184)
+  Rendered user/details.html.erb within layouts/application (Duration: 0.7ms | Allocations: 346)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 5434)
+Completed 200 OK in 15ms (Views: 10.6ms | ActiveRecord: 1.3ms | Allocations: 7960)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-01-18 13:28:09 +0530
+Processing by HomeController#index as HTML
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 593)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-18 13:28:09 +0530
+Processing by UserController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/login.html.erb within layouts/application
+  Rendered layouts/_flash.html.erb (Duration: 0.3ms | Allocations: 211)
+  Rendered user/login.html.erb within layouts/application (Duration: 1.0ms | Allocations: 582)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 5778)
+Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 6074)
+
+

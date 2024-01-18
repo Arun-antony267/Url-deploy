@@ -165,4 +165,11 @@ class HomeController < ApplicationController
       render "qr_code"
     end
   end
+
+  def delete
+   url = ShortUrl.find_by(shortened_url: params[:url])
+   puts "//////////////////#{url.original_url}?????????????????"
+   url.delete
+   redirect_to "/home/view"
+  end
 end

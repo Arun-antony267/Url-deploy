@@ -3,8 +3,10 @@
 
 <style>
  body {
+     background-size: auto;
+    background-position: center center;
     height: auto;
-        background-image: url(<%= asset_path "bg-4.jpg" %>);
+    background-image: url(<%= asset_path "bg-4.jpg" %>);
   }
   .con {
     margin: 50px 50px;
@@ -152,8 +154,16 @@
         <tr>
           <td><%= count+=1%></td>
           <td><%= short_url.original_url %></td>
-          <td id="copy" value=<%= short_url.shortened_url %>><a href=<%= short_url.shortened_url%>
-              target="_blank" onclick="copyText('<%= short_url.shortened_url %>')"><%= short_url.shortened_url %></a></td>
+          <td id="copy" value=<%= short_url.shortened_url %>>
+          <a href=<%= short_url.shortened_url%>
+              target="_blank" onclick="copyText('<%= short_url.shortened_url %>')">
+              <%= short_url.shortened_url %>
+          </a>
+          <%= form_tag action: "delete" do %>
+          <%= hidden_field_tag name= "url", short_url.shortened_url %>
+          <button type= "submit" class= "btn btn-outline-primary">Delete</button>
+          <%end%>
+          </td>
           <td><%= short_url.created_at%></td>
         </tr>
         <% end %>
