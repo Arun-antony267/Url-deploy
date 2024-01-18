@@ -10,9 +10,7 @@
 <div id="header1"></div>
 
 <body>
-  <% if flash[:notice].present? %>
-  <h5 class = "alert alert-success"><%= flash[:notice]%></h5>
-  <% end %>
+   <%= render "layouts/flash"%>
   <center>
     <div class="partition"></div>
 

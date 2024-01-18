@@ -37,7 +37,7 @@ class UserController < ApplicationController
     pass = params[:password]
     @user = User.find_by(email: email)
 
-  if @user && @user.authenticate(pass)
+    if @user && @user.authenticate(pass)
       $name = @user.name
       $id = @user.id
       flash[:message] = "Logged In Succesfully"
@@ -49,24 +49,28 @@ class UserController < ApplicationController
   end
 
   def details
-    @user_details = User.find_by(id: $id)
-    urls = ShortUrl.where(user_id: $id)
-    @last_url = urls.last
-    @count = urls.count
-    @most_repeated_data = urls.group(:original_url).count.max_by { |_, count| count }
-    if @most_repeated_data != nil
-      @repeated_url_list = urls.where(original_url: @most_repeated_data.first)
-      @dates = urls.pluck("DATE(created_at)")
-      @dates_grp = @dates.uniq
-      respond_to do |format|
-        format.html
-        format.pdf do
-          pdf = UserDetailsPdf.new(@user_details, @last_url)
-          send_data pdf.render, filename: "user.pdf", type: "application/pdfs", disposition: "inline"
+    if $id.present?
+      @user_details = User.find_by(id: $id)
+      urls = ShortUrl.where(user_id: $id)
+      @last_url = urls.last
+      @count = urls.count
+      @most_repeated_data = urls.group(:original_url).count.max_by { |_, count| count }
+      if @most_repeated_data != nil
+        @repeated_url_list = urls.where(original_url: @most_repeated_data.first)
+        @dates = urls.pluck("DATE(created_at)")
+        @dates_grp = @dates.uniq
+        respond_to do |format|
+          format.html
+          format.pdf do
+            pdf = UserDetailsPdf.new(@user_details, @last_url)
+            send_data pdf.render, filename: "user.pdf", type: "application/pdfs", disposition: "inline"
+          end
         end
+        puts @dates_grp
+        puts "//////////////#{@dates}//////////"
       end
-      puts @dates_grp
-      puts "//////////////#{@dates}//////////"
+    else
+      redirect_to root_path, notice: "Please Login First"
     end
   end
 
@@ -92,7 +96,14 @@ class UserController < ApplicationController
     delete_urls.delete_all
     puts user.name
     puts delete_urls.count
-    redirect_to "/home/index", notice: "Deletd Urls"
+    redirect_to "/home/index", notice: "All files and ShortUrl is deleted"
+  end
+
+  def delete_urls_confirm
+    user = User.find_by(id: params[:id])
+    delete_urls = ShortUrl.where(user_id: user.id)
+    delete_files = UrlFile.where(user_id: user.id)
+    redirect_to "/user/details", confirm: "This will delete #{delete_files.count} Files and #{delete_urls.count} urls"
   end
 
   private

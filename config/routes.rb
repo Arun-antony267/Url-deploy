@@ -75,4 +75,5 @@ Rails.application.routes.draw do
   get "user/details"
   post "user/history"
   post "user/delete_urls"
+  post "user/delete_urls_confirm"
 end

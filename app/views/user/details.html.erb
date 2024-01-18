@@ -87,7 +87,7 @@
 
 <body>
   <div id="header2"></div>
-
+  <%= render "layouts/flash"%>
   <p>
     <div class="file-download">
       <%= link_to "Download", user_details_path(format: 'pdf') %>
@@ -188,7 +188,8 @@
                            <button class="btn btn-outline-primary" type= "submit">Show Details</button>
                        <br>
                     <% end %>
-               <% end %>
+               <% end %><div class="modal" style="display:none;">
+</div>
           </div>
           <div class="form-container">
             <span style="text-align: center">
@@ -198,7 +199,7 @@
             </span>
           </div>
           <div class="form-container">
-          <%= form_tag :action => 'delete_urls' do %>  
+          <%= form_tag :action => 'delete_urls_confirm' do %>  
                          <%= hidden_field_tag id="id" , @user_details.id %>
                              <button class= "btn btn-outline-primary" type= "submit">Delete</button>
                     <% end %>
