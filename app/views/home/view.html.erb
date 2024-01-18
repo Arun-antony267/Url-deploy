@@ -110,6 +110,50 @@
   *:first-child+html .digg_pagination {
     overflow: hidden;
   }
+   .gg-trash {
+ box-sizing: border-box;
+ position: relative;
+ display: block;
+ transform: scale(var(--ggs,1));
+ width: 10px;
+ height: 12px;
+ border: 2px solid transparent;
+ box-shadow:
+ 0 0 0 2px,
+ inset -2px 0 0,
+ inset 2px 0 0;
+ border-bottom-left-radius: 1px;
+ border-bottom-right-radius: 1px;
+ margin-top: 4px
+}
+
+.gg-trash::after,
+.gg-trash::before {
+ content: "";
+ display: block;
+ box-sizing: border-box;
+ position: absolute
+}
+
+.gg-trash::after {
+ background: currentColor;
+ border-radius: 3px;
+ width: 16px;
+ height: 2px;
+ top: -4px;
+ left: -5px
+}
+
+.gg-trash::before {
+ width: 10px;
+ height: 4px;
+ border: 2px solid;
+ border-bottom: transparent;
+ border-top-left-radius: 2px;
+ border-top-right-radius: 2px;
+ top: -7px;
+ left: -2px
+} 
 </style>
 
 <div id="header2"></div>
@@ -155,13 +199,13 @@
           <td><%= count+=1%></td>
           <td><%= short_url.original_url %></td>
           <td id="copy" value=<%= short_url.shortened_url %>>
+          <%= form_tag action: "delete" do %>
+          <%= hidden_field_tag name= "url", short_url.shortened_url %>
           <a href=<%= short_url.shortened_url%>
               target="_blank" onclick="copyText('<%= short_url.shortened_url %>')">
               <%= short_url.shortened_url %>
           </a>
-          <%= form_tag action: "delete" do %>
-          <%= hidden_field_tag name= "url", short_url.shortened_url %>
-          <button type= "submit" class= "btn btn-outline-primary">Delete</button>
+          <button type= "submit" class= "btn"><i class="gg-trash"></i></button>
           <%end%>
           </td>
           <td><%= short_url.created_at%></td>
