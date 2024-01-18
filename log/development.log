@@ -284,3 +284,453 @@ Processing by UserController#login as HTML
 Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 6074)
 
 
+Started GET "/home/about" for 127.0.0.1 at 2024-01-18 16:35:14 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/about.html.erb within layouts/application
+  Rendered home/about.html.erb within layouts/application (Duration: 5.7ms | Allocations: 677)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/arun/Documents/Url-deploy/public/packs
+[Webpacker] warning ../../package.json: No license field
+
+[Webpacker] Hash: d652a47308c3f25d9999
+Version: webpack 4.47.0
+Time: 1390ms
+Built at: 01/18/2024 4:35:17 PM
+                                          Asset      Size            Chunks                         Chunk Names
+             js/Header3-cdc679ec228eb4490682.js  1.21 MiB           Header3  [emitted] [immutable]  Header3
+         js/Header3-cdc679ec228eb4490682.js.map  1.37 MiB           Header3  [emitted] [dev]        Header3
+         js/application-fd7abb2932b9b9f50567.js  1.74 MiB       application  [emitted] [immutable]  application
+     js/application-fd7abb2932b9b9f50567.js.map  1.97 MiB       application  [emitted] [dev]        application
+              js/header-a650d52b16c7d89c0bb9.js   107 KiB            header  [emitted] [immutable]  header
+          js/header-a650d52b16c7d89c0bb9.js.map   116 KiB            header  [emitted] [dev]        header
+             js/header1-5e3d7d61ee74bb695cb5.js   106 KiB           header1  [emitted] [immutable]  header1
+         js/header1-5e3d7d61ee74bb695cb5.js.map   116 KiB           header1  [emitted] [dev]        header1
+             js/header3-7592c9356547d55181b8.js   101 KiB           header3  [emitted] [immutable]  header3
+         js/header3-7592c9356547d55181b8.js.map   113 KiB           header3  [emitted] [dev]        header3
+         js/hello_react-96390e1a46672efa1bae.js  1.22 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-96390e1a46672efa1bae.js.map  1.37 MiB       hello_react  [emitted] [dev]        hello_react
+             js/loading-e8c0d6c5f9d55028a992.js   100 KiB           loading  [emitted] [immutable]  loading
+         js/loading-e8c0d6c5f9d55028a992.js.map   113 KiB           loading  [emitted] [dev]        loading
+    js/server_rendering-d388a9db769711ff2da1.js  1.78 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-d388a9db769711ff2da1.js.map  2.01 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  2.56 KiB                    [emitted]              
+Entrypoint application = js/application-fd7abb2932b9b9f50567.js js/application-fd7abb2932b9b9f50567.js.map
+Entrypoint header = js/header-a650d52b16c7d89c0bb9.js js/header-a650d52b16c7d89c0bb9.js.map
+Entrypoint header1 = js/header1-5e3d7d61ee74bb695cb5.js js/header1-5e3d7d61ee74bb695cb5.js.map
+Entrypoint header3 = js/header3-7592c9356547d55181b8.js js/header3-7592c9356547d55181b8.js.map
+Entrypoint Header3 = js/Header3-cdc679ec228eb4490682.js js/Header3-cdc679ec228eb4490682.js.map
+Entrypoint hello_react = js/hello_react-96390e1a46672efa1bae.js js/hello_react-96390e1a46672efa1bae.js.map
+Entrypoint loading = js/loading-e8c0d6c5f9d55028a992.js js/loading-e8c0d6c5f9d55028a992.js.map
+Entrypoint server_rendering = js/server_rendering-d388a9db769711ff2da1.js js/server_rendering-d388a9db769711ff2da1.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 197 bytes {server_rendering} [built]
+[./app/javascript/packs/Header3.jsx] 4.18 KiB {Header3} [built]
+[./app/javascript/packs/application.js] 777 bytes {application} [built]
+[./app/javascript/packs/header.js] 5.53 KiB {header} {hello_react} [built]
+[./app/javascript/packs/header1.js] 5.48 KiB {header1} {hello_react} [built]
+[./app/javascript/packs/header3.js] 776 bytes {header3} {Header3} [built]
+[./app/javascript/packs/hello_react.jsx] 2.42 KiB {hello_react} [built]
+[./app/javascript/packs/loading.js] 355 bytes {loading} {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {Header3} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {header} {header1} {header3} {Header3} {hello_react} {loading} {server_rendering} [built]
+    + 36 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 2863.0ms | Allocations: 70364)
+Completed 200 OK in 2907ms (Views: 2877.1ms | ActiveRecord: 0.0ms | Allocations: 75216)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-01-18 16:35:20 +0530
+Processing by HomeController#index as HTML
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 1501)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-18 16:35:20 +0530
+Processing by UserController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/login.html.erb within layouts/application
+  Rendered layouts/_flash.html.erb (Duration: 1.1ms | Allocations: 807)
+  Rendered user/login.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1863)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 7123)
+Completed 200 OK in 14ms (Views: 13.9ms | ActiveRecord: 0.0ms | Allocations: 8200)
+
+
+Started POST "/user/check_login" for 127.0.0.1 at 2024-01-18 16:35:24 +0530
+Processing by UserController#check_login as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"123456", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "123456"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:38:in `check_login'
+  Rendering layout layouts/application.html.erb
+  Rendering user/login.html.erb within layouts/application
+  Rendered layouts/_flash.html.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered user/login.html.erb within layouts/application (Duration: 0.6ms | Allocations: 420)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 5540)
+Completed 200 OK in 15ms (Views: 7.9ms | ActiveRecord: 1.6ms | Allocations: 10401)
+
+
+Started POST "/user/check_login" for 127.0.0.1 at 2024-01-18 16:35:35 +0530
+Processing by UserController#check_login as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"arunantony9567@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "arunantony9567@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:38:in `check_login'
+Redirected to http://127.0.0.1:3000/home/index
+Completed 302 Found in 184ms (ActiveRecord: 2.4ms | Allocations: 13666)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-01-18 16:35:35 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 16ms (ActiveRecord: 0.0ms | Allocations: 4574)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-18 16:35:35 +0530
+Processing by UserController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/login.html.erb within layouts/application
+  Rendered layouts/_flash.html.erb (Duration: 0.3ms | Allocations: 200)
+  Rendered user/login.html.erb within layouts/application (Duration: 0.9ms | Allocations: 571)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 5770)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 6073)
+
+
+Started POST "/user/check_login" for 127.0.0.1 at 2024-01-18 16:35:52 +0530
+Processing by UserController#check_login as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"arunantony9567@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "arunantony9567@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:38:in `check_login'
+Redirected to http://127.0.0.1:3000/home/index
+Completed 302 Found in 180ms (ActiveRecord: 0.4ms | Allocations: 973)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-01-18 16:35:52 +0530
+Processing by HomeController#index as HTML
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 498)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-18 16:35:53 +0530
+Processing by UserController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/login.html.erb within layouts/application
+  Rendered layouts/_flash.html.erb (Duration: 0.2ms | Allocations: 206)
+  Rendered user/login.html.erb within layouts/application (Duration: 0.8ms | Allocations: 527)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 5615)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 5864)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7525273840613381370)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7525273840613381370)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/user/check_login" for 127.0.0.1 at 2024-01-18 16:36:52 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UserController#check_login as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"arunantony9567@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "arunantony9567@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:38:in `check_login'
+Redirected to http://127.0.0.1:3000/home/index
+Completed 302 Found in 188ms (ActiveRecord: 2.8ms | Allocations: 21473)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-01-18 16:36:53 +0530
+Processing by HomeController#index as HTML
+  [1m[36mShortUrl Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "short_urls" WHERE "short_urls"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/controllers/home_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered layouts/_flash.html.erb (Duration: 0.8ms | Allocations: 834)
+  Rendered home/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1771)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 61.5ms | Allocations: 46194)
+Completed 200 OK in 115ms (Views: 70.5ms | ActiveRecord: 1.7ms | Allocations: 52866)
+
+
+Started GET "/home/about" for 127.0.0.1 at 2024-01-18 16:36:58 +0530
+Processing by HomeController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/about.html.erb within layouts/application
+  Rendered home/about.html.erb within layouts/application (Duration: 0.6ms | Allocations: 279)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 5547)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.0ms | Allocations: 5843)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-01-18 16:37:00 +0530
+Processing by HomeController#index as HTML
+  [1m[36mShortUrl Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "short_urls" WHERE "short_urls"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/controllers/home_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered layouts/_flash.html.erb (Duration: 0.2ms | Allocations: 190)
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 290)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 5381)
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.4ms | Allocations: 6331)
+
+
+Started GET "/home/about" for 127.0.0.1 at 2024-01-18 16:37:04 +0530
+Processing by HomeController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/about.html.erb within layouts/application
+  Rendered home/about.html.erb within layouts/application (Duration: 0.1ms | Allocations: 41)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 5278)
+Completed 200 OK in 7ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 5543)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-01-18 16:39:00 +0530
+Processing by HomeController#index as HTML
+  [1m[36mShortUrl Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "short_urls" WHERE "short_urls"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/controllers/home_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered layouts/_flash.html.erb (Duration: 0.3ms | Allocations: 196)
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 296)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 5386)
+Completed 200 OK in 13ms (Views: 10.5ms | ActiveRecord: 0.8ms | Allocations: 6207)
+
+
+Started GET "/home/view" for 127.0.0.1 at 2024-01-18 16:39:04 +0530
+Processing by HomeController#view as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:43:in `view'
+  Rendering layout layouts/application.html.erb
+  Rendering home/view.html.erb within layouts/application
+  [1m[36mShortUrl Load (1.0ms)[0m  [1m[34mSELECT "short_urls".* FROM "short_urls" WHERE "short_urls"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 29], ["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/home/view.html.erb:179
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT "short_urls".* FROM "short_urls" WHERE "short_urls"."user_id" = $1 ORDER BY "short_urls"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 29], ["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/home/view.html.erb:197
+  Rendered home/view.html.erb within layouts/application (Duration: 17.9ms | Allocations: 15820)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.3ms | Allocations: 20821)
+Completed 200 OK in 32ms (Views: 23.0ms | ActiveRecord: 3.5ms | Allocations: 22540)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-01-18 16:40:09 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.0ms | Allocations: 4545)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-18 16:40:09 +0530
+Processing by UserController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/login.html.erb within layouts/application
+  Rendered layouts/_flash.html.erb (Duration: 0.6ms | Allocations: 801)
+  Rendered user/login.html.erb within layouts/application (Duration: 2.1ms | Allocations: 2247)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 59.3ms | Allocations: 46329)
+Completed 200 OK in 65ms (Views: 64.4ms | ActiveRecord: 0.0ms | Allocations: 51055)
+
+
+Started POST "/user/check_login" for 127.0.0.1 at 2024-01-18 16:40:24 +0530
+Processing by UserController#check_login as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"arunantony9567@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "arunantony9567@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:38:in `check_login'
+Redirected to http://127.0.0.1:3000/home/index
+Completed 302 Found in 181ms (ActiveRecord: 2.7ms | Allocations: 17458)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-01-18 16:40:24 +0530
+Processing by HomeController#index as HTML
+  [1m[36mShortUrl Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "short_urls" WHERE "short_urls"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/controllers/home_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered layouts/_flash.html.erb (Duration: 0.3ms | Allocations: 274)
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 776)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 6073)
+Completed 200 OK in 14ms (Views: 9.8ms | ActiveRecord: 1.2ms | Allocations: 9063)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-01-18 16:41:13 +0530
+Processing by HomeController#index as HTML
+  [1m[36mShortUrl Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "short_urls" WHERE "short_urls"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/controllers/home_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered layouts/_flash.html.erb (Duration: 0.8ms | Allocations: 774)
+  Rendered home/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1325)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 7993)
+Completed 200 OK in 13ms (Views: 10.6ms | ActiveRecord: 0.6ms | Allocations: 9958)
+
+
+Started GET "/home/about" for 127.0.0.1 at 2024-01-18 16:41:14 +0530
+Processing by HomeController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/about.html.erb within layouts/application
+  Rendered home/about.html.erb within layouts/application (Duration: 0.7ms | Allocations: 290)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 5535)
+Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 5818)
+
+
+Started GET "/home/about" for 127.0.0.1 at 2024-01-18 16:41:25 +0530
+Processing by HomeController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/about.html.erb within layouts/application
+  Rendered home/about.html.erb within layouts/application (Duration: 0.7ms | Allocations: 362)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 7239)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.0ms | Allocations: 8290)
+
+
+Started GET "/home/about" for 127.0.0.1 at 2024-01-18 16:41:46 +0530
+Processing by HomeController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/about.html.erb within layouts/application
+  Rendered home/about.html.erb within layouts/application (Duration: 0.5ms | Allocations: 364)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 7245)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.0ms | Allocations: 8318)
+
+
+Started GET "/home/about" for 127.0.0.1 at 2024-01-18 16:42:02 +0530
+Processing by HomeController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/about.html.erb within layouts/application
+  Rendered home/about.html.erb within layouts/application (Duration: 0.5ms | Allocations: 364)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 7274)
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.0ms | Allocations: 8344)
+
+
+Started GET "/home/about" for 127.0.0.1 at 2024-01-18 16:42:12 +0530
+Processing by HomeController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/about.html.erb within layouts/application
+  Rendered home/about.html.erb within layouts/application (Duration: 0.7ms | Allocations: 364)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 7233)
+Completed 200 OK in 12ms (Views: 12.0ms | ActiveRecord: 0.0ms | Allocations: 8292)
+
+
+Started GET "/home/about" for 127.0.0.1 at 2024-01-18 16:42:20 +0530
+Processing by HomeController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/about.html.erb within layouts/application
+  Rendered home/about.html.erb within layouts/application (Duration: 0.6ms | Allocations: 367)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 7240)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.0ms | Allocations: 8314)
+
+
+Started GET "/home/view" for 127.0.0.1 at 2024-01-18 16:42:34 +0530
+Processing by HomeController#view as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:43:in `view'
+  Rendering layout layouts/application.html.erb
+  Rendering home/view.html.erb within layouts/application
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT "short_urls".* FROM "short_urls" WHERE "short_urls"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 29], ["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/home/view.html.erb:179
+  [1m[36mShortUrl Load (0.3ms)[0m  [1m[34mSELECT "short_urls".* FROM "short_urls" WHERE "short_urls"."user_id" = $1 ORDER BY "short_urls"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 29], ["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/home/view.html.erb:197
+  Rendered home/view.html.erb within layouts/application (Duration: 7.1ms | Allocations: 5132)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 11747)
+Completed 200 OK in 19ms (Views: 15.4ms | ActiveRecord: 1.2ms | Allocations: 13795)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-01-18 16:48:33 +0530
+Processing by HomeController#index as HTML
+  [1m[36mShortUrl Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "short_urls" WHERE "short_urls"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/controllers/home_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered layouts/_flash.html.erb (Duration: 0.6ms | Allocations: 787)
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1339)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 8011)
+Completed 200 OK in 22ms (Views: 9.7ms | ActiveRecord: 4.3ms | Allocations: 13056)
+
+
+Started GET "/home/view" for 127.0.0.1 at 2024-01-18 16:48:37 +0530
+Processing by HomeController#view as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:43:in `view'
+  Rendering layout layouts/application.html.erb
+  Rendering home/view.html.erb within layouts/application
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT "short_urls".* FROM "short_urls" WHERE "short_urls"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 29], ["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/home/view.html.erb:179
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT "short_urls".* FROM "short_urls" WHERE "short_urls"."user_id" = $1 ORDER BY "short_urls"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 29], ["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/home/view.html.erb:197
+  Rendered home/view.html.erb within layouts/application (Duration: 13.0ms | Allocations: 15733)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 20729)
+Completed 200 OK in 22ms (Views: 17.6ms | ActiveRecord: 2.5ms | Allocations: 22625)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2024-01-18 16:48:53 +0530
+Processing by HomeController#index as HTML
+  [1m[36mShortUrl Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "short_urls" WHERE "short_urls"."user_id" = $1[0m  [["user_id", 29]]
+  ↳ app/controllers/home_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered layouts/_flash.html.erb (Duration: 0.3ms | Allocations: 169)
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 269)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 5359)
+Completed 200 OK in 18ms (Views: 15.3ms | ActiveRecord: 0.7ms | Allocations: 6212)
+
+

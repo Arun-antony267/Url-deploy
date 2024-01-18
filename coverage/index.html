@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2024-01-18T14:17:40+05:30">2024-01-18T14:17:40+05:30</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2024-01-18T17:06:57+05:30">2024-01-18T17:06:57+05:30</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -32,9 +32,9 @@
   <a name="AllFiles"></a>
   <div>
     <b>22</b> files in total.
-    <b>632</b> relevant lines. 
+    <b>638</b> relevant lines. 
     <span class="green"><b>0</b> lines covered</span> and
-    <span class="red"><b>632</b> lines missed </span>
+    <span class="red"><b>638</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -83,10 +83,10 @@
       <tr>
         <td class="strong"><a href="#6af660fcb32d9b9f9c9e94fc216acf1952c24e00" class="src_link" title="app/controllers/home_controller.rb">app/controllers/home_controller.rb</a></td>
         <td class="red strong">0.0 %</td>
-        <td>168</td>
-        <td>148</td>
+        <td>175</td>
+        <td>154</td>
         <td>0</td>
-        <td>148</td>
+        <td>154</td>
         <td>0.0</td>
       </tr>
       
@@ -290,9 +290,9 @@
   <a name="Controllers"></a>
   <div>
     <b>6</b> files in total.
-    <b>497</b> relevant lines. 
+    <b>503</b> relevant lines. 
     <span class="green"><b>0</b> lines covered</span> and
-    <span class="red"><b>497</b> lines missed </span>
+    <span class="red"><b>503</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -341,10 +341,10 @@
       <tr>
         <td class="strong"><a href="#6af660fcb32d9b9f9c9e94fc216acf1952c24e00" class="src_link" title="app/controllers/home_controller.rb">app/controllers/home_controller.rb</a></td>
         <td class="red strong">0.0 %</td>
-        <td>168</td>
-        <td>148</td>
+        <td>175</td>
+        <td>154</td>
         <td>0</td>
-        <td>148</td>
+        <td>154</td>
         <td>0.0</td>
       </tr>
       
@@ -825,25 +825,25 @@
         <li class="missed" data-hits="0" data-linenumber="2">
           
           
-          <code class="ruby">    add_flash_types :info, :error, :success, :confirm</code>
+          <code class="ruby">  add_flash_types :info, :error, :success, :confirm</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="3">
           
           
-          <code class="ruby">    protect_from_forgery with: :exception</code>
+          <code class="ruby">  protect_from_forgery with: :exception</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="4">
           
           
-          <code class="ruby">    skip_before_action :verify_authenticity_token</code>
+          <code class="ruby">  skip_before_action :verify_authenticity_token</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="5">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">end</code>
         </li>
       
     </ol>
@@ -2274,9 +2274,9 @@
     <h3>app/controllers/home_controller.rb</h3>
     <h4><span class="red">0.0 %</span> covered</h4>
     <div>
-      <b>148</b> relevant lines. 
+      <b>154</b> relevant lines. 
       <span class="green"><b>0</b> lines covered</span> and
-      <span class="red"><b>148</b> lines missed.</span>
+      <span class="red"><b>154</b> lines missed.</span>
     </div>
   </div>
   
@@ -3285,7 +3285,49 @@
           <code class="ruby">  end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="168">
+        <li class="never" data-hits="" data-linenumber="168">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="169">
+          
+          
+          <code class="ruby">  def delete</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="170">
+          
+          
+          <code class="ruby">   url = ShortUrl.find_by(shortened_url: params[:url])</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="171">
+          
+          
+          <code class="ruby">   puts &quot;//////////////////#{url.original_url}?????????????????&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="172">
+          
+          
+          <code class="ruby">   url.delete</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="173">
+          
+          
+          <code class="ruby">   redirect_to &quot;/home/view&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="174">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="175">
           
           
           <code class="ruby">end</code>

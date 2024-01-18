@@ -54,6 +54,11 @@ function Header() {
               User Details 
             </button>
           </a>
+          <a href="/home/about">
+            <button class="btn btn-outline-primary" type="button">
+              About
+            </button>
+          </a>
           <a href="/">
             <button class="btn btn-outline-primary" type="button">
               Logout

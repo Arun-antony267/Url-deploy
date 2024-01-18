@@ -36,6 +36,11 @@ function Header4() {
         </div>
       </div>
       <div class="dropdown">
+      <a href="/home/about">
+            <button class="btn btn-outline-primary" type="button">
+              About
+            </button>
+          </a>
         <a href="/">
           <button class="btn btn-outline-primary" type="button">
             Logout

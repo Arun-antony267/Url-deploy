@@ -76,4 +76,7 @@ Rails.application.routes.draw do
   post "user/history"
   post "user/delete_urls"
   post "user/delete_urls_confirm"
+
+  post "home/delete"
+  get "home/about"
 end

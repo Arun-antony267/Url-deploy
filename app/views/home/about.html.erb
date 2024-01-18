@@ -1,0 +1,37 @@
+ <style>
+     body {
+      background-image: url(<%= asset_path "bg-4.jpg" %>); 
+      background-size: cover;
+      background-position: center center;
+      height: 100vh;
+    }
+</style>
+
+<body>
+<div id="header2"></div>
+
+<div class="partition">
+      <div class='p'>
+        <h1>URL SHORTNER</h1>
+      </div>
+    </div>
+    <div class="partition2">
+        <div class= "container p-3">
+          <p>In this web page we offer four methods in which you can shorten a <span style= "color: blue">LONG URL </span> to a short url.</p>
+          <p> First method is by using single url shortening. You only provide a singel long url at a time
+          we will provide you with a short your which will be easy to remember. 
+           <p>Create a Short Url <a href="/home/new">here.</a></p>
+           </p>
+          <p>Another method we offer is by shortening multiple Long urls at a time you only need to sperate them using a comma(,).
+          After you submit it, you will get all the corresponding short urls.
+           <p>Short multiple Url <a href="/home/new">here.</a></p>
+           </p>
+          <p>Another way is by using a file upload if you have a lot of urls to shorten we recommend using the file upload. In file file upload 
+          only csv files are permitted and file should only contain one column of urls with no headers.
+          the number of rows has no limit.    
+           <p>If you want to use upload file of URL's Click <a href="/file/upload">here.</a></p>
+          </p>
+        </div>  
+    </div>
+
+</body>

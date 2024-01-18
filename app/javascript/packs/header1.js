@@ -12,6 +12,11 @@ function Component() {
         </a>
       </h1>
       <div class="con-right">
+      <a href="/home/index">
+          <button class="btn btn-outline-primary" type="button">
+            Home
+          </button>
+        </a>
         <div class="dropdown">
           <button class="btn btn-outline-primary">Create New Link</button>
 
@@ -52,11 +57,11 @@ function Component() {
               User Details 
             </button>
           </a>
-        <a href="/home/index">
-          <button class="btn btn-outline-primary" type="button">
-            Home
-          </button>
-        </a>
+          <a href="/home/about">
+            <button class="btn btn-outline-primary" type="button">
+              About
+            </button>
+          </a>
       </div>
     </div>
 
