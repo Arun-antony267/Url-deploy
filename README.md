@@ -37,12 +37,19 @@ Make sure you have the following installed in your system.
 - psql (postgreSQl) --version 16.1
 - Nodejs -v 18.13.0
 - Yarn -v 1.22.19
+- sideKiq -V 7.2.0
+
 
 After that clone the repository and run following commands
 
 - bundle install
 - rails assets:precompile
 - rails db:migrate
+ 
+ You need to run the sidekiq in another terminal with same project directory in which your project will be running using the following command
+
+ - bundle exec sidekiq
+
  
  after these commands you are good to go you can launch the website localy by running 
 
@@ -53,5 +60,5 @@ After that clone the repository and run following commands
 
 You can access the project using the following link 
 
-:- https://url-shortner-e2w9.onrender.com/
+:- https://url-shortner-s7ah.onrender.com/
 

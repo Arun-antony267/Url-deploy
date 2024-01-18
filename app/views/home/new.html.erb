@@ -15,7 +15,7 @@
     <div class='p-2'>
     <div class="form-container">
          <%= form_tag :action => 'multi_line' do %> 
-              <textarea  rows="2" cols= "50" name="multi_url" placeholder="Use for single and multiple urls shortening" ></textarea><br>
+              <input type = "text" name="multi_url" placeholder="Use for single and multiple urls shortening" ><br>
         <button type="submit" class= "button" >create</button>
          <% end %>
          <p>note: Use comma ( , ) to seperate between multiple url's.</p>

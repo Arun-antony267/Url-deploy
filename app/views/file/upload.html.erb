@@ -3,15 +3,43 @@
     background-image: url(<%= asset_path("bg-4.jpg") %>); 
     background-size: cover;
     background-position: center center;
-    height: 100vh;
+    height: auto;
   }
+  <% $jobs_array.each_with_index do |index| %>
+    .loader-<%= index %> {
+      display: block;
+      position: relative;
+      height: 12px;
+      width: 80%;
+      border: 1px solid #fff;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .loader-<%= index %>:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 0;
+      background: #FF3D00;
+      animation: <%= "#{$animation_duration}s prog ease-in forwards" %>;
+    }
+  <% end %>
+
+  @keyframes prog {
+    to {
+      width: 100%;
+    }
+  }
+      
 </style>
 
 <body>
   <div id="header2"></div>
   <%= render "layouts/flash" %>
 
- <div class = "p-5">
     <div class='p-2'>
       <div class="form-container">
         <br><p>File Upload</p>
@@ -20,9 +48,28 @@
         <%= form.file_field :file, direct_upload: true %>
         <%= form.submit %>
         <% end %>
-        <p>See the uploaded files <a href= "/file/files"> Here .</a></p>
       </div>
     </div>
-  </div>
+    <% if $jobs_array.present? %><br>
+    <div class="form-container">
+           <h5>List of Jobs:</h5>
+            <ul>
+               <% $jobs_array.each_with_index do |jobs, index| %>
+                <span class="loader-<%= index %>"></span>
+                <% file_name = UrlFile.find_by(job_id: $jobs_array[index]) %>
+                        <%= form_tag({ action: :file_result }) do  %>
+                        <%= hidden_field_tag 'jobs', jobs %>
+                        <p>You can see the result of the file <%= file_name.name %> </p>
+                        <%= submit_tag 'check' %>
+                        <% end %>
+                  <br>
+                 <% end %>
+            </ul>
+            <% else %>
+              <div class="form-container">
+            <p>See the uploaded files Here.</p>
+            </div>
+            <%end%>
+          </div>
 </body>
 

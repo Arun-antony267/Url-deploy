@@ -37,7 +37,7 @@ class UserController < ApplicationController
     pass = params[:password]
     @user = User.find_by(email: email)
 
-    if @user && @user.authenticate(pass)
+  if @user && @user.authenticate(pass)
       $name = @user.name
       $id = @user.id
       flash[:message] = "Logged In Succesfully"
@@ -53,9 +53,9 @@ class UserController < ApplicationController
     urls = ShortUrl.where(user_id: $id)
     @last_url = urls.last
     @count = urls.count
-    @most_repeated_data = ShortUrl.group(:original_url).count.max_by { |_, count| count }
+    @most_repeated_data = urls.group(:original_url).count.max_by { |_, count| count }
     if @most_repeated_data != nil
-      @repeated_url_list = ShortUrl.where(original_url: @most_repeated_data.first)
+      @repeated_url_list = urls.where(original_url: @most_repeated_data.first)
       @dates = urls.pluck("DATE(created_at)")
       @dates_grp = @dates.uniq
       respond_to do |format|
@@ -75,7 +75,7 @@ class UserController < ApplicationController
     @file_all = UrlFile.all
     urls = ShortUrl.where(user_id: $id)
     @file = UrlFile.where(created_at: @date.beginning_of_day..@date.end_of_day)
-    @group_by_date = urls.where(created_at: @date.beginning_of_day..@date.end_of_day)
+    @group_by_date = urls.where(created_at: @date.beginning_of_day..@date.end_of_day).paginate(page: params[:page], per_page: 15)
     puts "///////////////////"
     puts @file
     puts "/////////////////////"

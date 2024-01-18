@@ -8,6 +8,8 @@ class FileController < ApplicationController
     if $id.present?
       $jobs_array = @@jobs
       $animation_duration = $file_size
+      status = Sidekiq::Status::complete?($file_handle_job_id)
+      puts "?/??/?///#{status}////////"
       puts "Animation duration is : #{$animation_duration}"
       puts "File Job array is : #{@@jobs}"
     else
@@ -19,7 +21,7 @@ class FileController < ApplicationController
     if $id.present?
       $name_array = @@name_array
       count = UrlFile.count
-      $file_id = UrlFile.all.ids
+      $file_id = UrlFile.all
       0.upto(count - 1) do
         $file_name = UrlFile.find_by(id: $file_id[count = count - 1])
         a = @@name_array.push($file_name.name)
@@ -78,7 +80,6 @@ class FileController < ApplicationController
         job_id = file.job_id
         @short_url = ShortUrl.where(job_id: job_id)
         @user_details = User.find_by(id: $id)
-
         respond_to do |format|
           format.html
           format.pdf do
@@ -119,23 +120,23 @@ class FileController < ApplicationController
   def uploadJob
     file = params[:file]
     $file_name = file.original_filename
-    if is_csv_file?($file_name)
+    if is_csv_file?(file.original_filename)
       file_content = file.read
       $file_size = file.size.to_s
       $animation_duration = $file_size[0]
       num = SecureRandom.hex(4)
       @post = UrlFile.new(name: file.original_filename, attachment: file, job_id: num, user_id: $id)
       if @post.save
-        file_strip = file_content.split
-        line_count = file_strip.count
-        $job_id = FileHandleJob.perform_async(file.original_filename, file_strip, line_count, $id, num)
+        $file_handle_job_id = FileHandleJob.perform_async(file.original_filename, file_content, $id, num)
         a = @@jobs.push(num)
         puts "Size of the file is: #{$file_size[0]}"
         puts "Ainmation time is : #{$animation_duration}"
+        puts "@@jobs contains #{@@jobs}"
+        puts "////////////#{$file_handle_job_id}??????????"
         render "upload"
       else
         flash[:message] = "File Not uploaded"
-        render "upload"
+        redirect_to :action => "upload"
       end
     else
       flash[:message] = "Invalid File"
@@ -176,7 +177,7 @@ class FileController < ApplicationController
     if $line_count.present?
       puts "line count is: #{$line_count}"
       0.upto($line_count) do |n|
-        if $file_strip[n] =~ /\A#{URI::regexp(["http", "https"])}\z/&& ($original_url =~ /\Ahttps:\/\/.+\z/)
+        if $file_strip[n] =~ /\A#{URI::regexp(["http", "https"])}\z/ && ($original_url =~ /\Ahttps:\/\/.+\z/)
           display = "https://url-shortner-s7ah.onrender.com/i?q="
           string = SecureRandom.uuid[0..6]
           file_srt_url = display + string

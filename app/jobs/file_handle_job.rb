@@ -2,10 +2,12 @@ class FileHandleJob
   include Sidekiq::Worker
   include Sidekiq::Status::Worker
 
-  def perform(file_name, file_strip, line_count, id, job_id)
+  def perform(file_name, file_content, id, job_id)
+    file_strip = file_content.split
+    line_count = file_strip.count
     if line_count.present?
       0.upto(line_count) do |n|
-        if file_strip[n] =~  /\A#{URI::regexp(["http", "https"])}\z/&& (file_strip[n]  =~ /\A(?:http|https):\/\/.+\z/)
+        if file_strip[n] =~ /\A#{URI::regexp(["http", "https"])}\z/ && (file_strip[n] =~ /\A(?:http|https):\/\/.+\z/)
           display = "https://url-shortner-s7ah.onrender.com/"
           string = SecureRandom.uuid[0..6]
           file_srt_url = display + string
